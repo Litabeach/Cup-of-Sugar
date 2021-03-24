@@ -1,17 +1,23 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Post extends Model {
+class Ask_Give extends Model {
 
 }
 
-Post.init(
+Ask_Give.init(
+
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
+        },
+        //whether the post is an ask or give. Maybe should be DataTypes.STRING.BINARY?
+        ask_or_give: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         title: {
             type: DataTypes.STRING,
@@ -21,23 +27,22 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        //zip code field, can be left blank?
+        //can be left blank?
         zip_code: {
             type: DataTypes.INTEGER,
             allowNull: true,
         },
-        //type of resource such as: clothing, food, home services etc. Hardcoded in drop down menu. Select multiple types?
+        // type of resource such as: clothing, food, home services etc. Should this be a separate model?
         resource_type: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        
-        //can be left blank.
+        // can be left blank.
         contact: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-
+        //refers to the user model
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -64,8 +69,8 @@ Post.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blog',
+        modelName: 'ask_give',
     }
 );
 
-module.exports = Blog;
+module.exports = Ask_Give;
