@@ -1,11 +1,11 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Blog extends Model {
+class Post extends Model {
 
 }
 
-Blog.init(
+Post.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -17,10 +17,27 @@ Blog.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        description: {
+        content: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        //zip code field, can be left blank?
+        zip_code: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        },
+        //type of resource such as: clothing, food, home services etc. Hardcoded in drop down menu. Select multiple types?
+        resource_type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        
+        //can be left blank.
+        contact: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -40,7 +57,7 @@ Blog.init(
             defaultValue: Sequelize.fn('now'),
             allowNull: false
         },
-        
+
     },
     {
         sequelize,
