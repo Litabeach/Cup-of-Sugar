@@ -15,3 +15,5 @@ var testUrl = "https://api.data.charitynavigator.org/v2/Organizations?app_id=8f3
 }
 
 testAPI()
+
+// Parameters that work: pageSize, search, searchType, rated, fundraisingOrgs, state, city, zip, minRating, maxRating
