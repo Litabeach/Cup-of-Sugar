@@ -1,0 +1,63 @@
+Pages:
+Landing
+Login
+Registration
+Dashboard
+Edit Post
+Ask_Give
+Resources
+Logout
+
+//Landing
+Navigate to the application url
+Present user with a background image, login button, register link, and continue as guest button (for viewing gives annonymously)
+
+//Register
+Register link navigates to a similar login page with username (email) and password fields (add location?) and Register button
+After registering, direct to the dashboard
+
+//Login
+Login navigates to a login page with username (email) and password fields and Login button
+After logging in/registering, direct to the dashboard
+
+//Guest
+Continue as Guest navigates to the Ask/Give page
+Guests can view all asks and gives, as well as the resources page
+The footer contains register link, ask/give link, resources link, and login link
+
+//Dashboard
+Dashboard contains the user's name
+Then the create post form where new posts can be created
+Create post form contains fields for ask/give category, item type, title, description, item location (zip code)
+Then list of user-created asks/gives
+User-posts contain category, type, title, description, item location (zip)
+Posts can be edited (link next to post)
+Selecting edit post button loads the post into the edit post form where changes can be made to the post
+Posts can be deleted (link next to post)
+Selecting delete post deletes the selected post
+The footer contains dashboard link, ask/give link, resources link, and logout link
+
+
+//Ask_Give
+Top of page contains two buttons [Ask] and [Give] which act as filters. Either one or both can be selected.
+Page contains query/filter fields for type, location?
+Page content is a list of Posts
+Posts contain category, type, title, description, item location, and submitter's contact information
+
+//Resources
+
+//logout
+
+
+
+Categories:
+Home & Garden
+Clothing, Shoes, & Accessories
+Baby & Kids
+Electronics
+Vehicles
+Toys, Games, & Hobbies
+Sports & Outdoors
+Pet supplies
+Health & Beauty
+General
