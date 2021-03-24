@@ -1,27 +1,25 @@
-const loginFormHandler = async (event) => {
+const signupFormHandler = async (event) => {
     event.preventDefault();
   
+    const name = document.querySelector(PLACEHOLDER).value.trim();
     const email = document.querySelector(PLACEHOLDER).value.trim();
     const password = document.querySelector(PLACEHOLDER).value.trim();
   
-    if (email && password) {
-
-      const response = await fetch('/api/users/login', {
+    if (name && email && password) {
+      const response = await fetch('/api/users/signup', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
         document.location.replace('/dash');
       } else {
-        alert('Failed to log in');
+        alert(response.statusText);
       }
     }
   };
 
-  
-  
   document
-    .querySelector(PLACEHOLDER)
-    .addEventListener('submit', loginFormHandler);
+  .querySelector(PLACEHOLDER)
+  .addEventListener('submit', signupFormHandler);
