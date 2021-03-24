@@ -1,11 +1,12 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Blog extends Model {
+class Ask_Give extends Model {
 
 }
 
-Blog.init(
+Ask_Give.init(
+
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,14 +14,35 @@ Blog.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        //whether the post is an ask or give. Maybe should be DataTypes.STRING.BINARY?
+        ask_or_give: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        description: {
+        content: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        //can be left blank?
+        zip_code: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        },
+        // type of resource such as: clothing, food, home services etc. Should this be a separate model?
+        resource_type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        // can be left blank.
+        contact: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        //refers to the user model
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -40,15 +62,15 @@ Blog.init(
             defaultValue: Sequelize.fn('now'),
             allowNull: false
         },
-        
+
     },
     {
         sequelize,
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'blog',
+        modelName: 'ask_give',
     }
 );
 
-module.exports = Blog;
+module.exports = Ask_Give;
