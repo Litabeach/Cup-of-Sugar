@@ -1,6 +1,4 @@
-//Save these to .env
-const api_key = "75451247a85f3bdd608e2d9ed6f9227d"
-const app_id = "8f3b7de4"
+
 
 function charityFormHandler(event) {
     event.preventDefault();
@@ -27,7 +25,7 @@ router.get('organizations', async (req, res) => {
     try {
         //axios is a package that allows us to call the API from here
         const response = await axios.get(testUrl);
-        // console.log(data)
+        console.log(data)
         //need to create view for organizations
         res.render("organizations", {
             charity: response.data
