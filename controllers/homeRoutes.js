@@ -36,6 +36,22 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+//logout - no page yet, untested
+//if we chose to have a logout page
+// router.get('/logout', (req, res) => {
+//     res.render('logout', {
+//       loggedIn: req.session.logged_in
+//     });
+//     if (req.session.logged_in) {
+//       req.session.destroy(() => {
+//         res.status(204).end();
+//         alert("you have logged out");
+//       });
+//     } else {
+//       res.status(404).end();
+//     }
+//   });
+
 //Resources page
 //works!
 router.get('/resources', (req, res) => {
