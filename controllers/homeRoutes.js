@@ -4,10 +4,11 @@ const router = require('express').Router();
 //Using the root endpoint
 
 //READ the homepage
+//works!
 router.get('/', async (req, res) => {
     try {
 
-        res.render ('', {
+        res.render ('homepage', {
 
         })
     } catch (err) {
@@ -16,6 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 //Login page
+//works!
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -25,6 +27,7 @@ router.get('/login', (req, res) => {
 });
 
 //Signup page
+//works!
 router.get('/signup', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -34,8 +37,9 @@ router.get('/signup', (req, res) => {
 });
 
 //Resources page
+//works!
 router.get('/resources', (req, res) => {
-    res.render('resources')
+    res.render('national')
 });
 
 module.exports = router;
