@@ -1,13 +1,14 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Ask_Give } = require('../../models');
+// const withAuth = require('../../utils/auth')
 
-//Using the /post endpoint
+//Using the /api/post endpoint
 
 //CREATE new post
 router.put('/', async (req, res) => {
     try {
-        const postData = await Post.create({
-
+        const postData = await Ask_Give.create({
+            ...req.body,
         });
         res.status(200).json(postData);
     } catch (err) {
@@ -15,19 +16,18 @@ router.put('/', async (req, res) => {
     }
 });
 
-
 //UPDATE a give by ID
-router.put('/edit/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
-        const askData = await Ask.update(req.body, {
+        const postData = await Ask.update(req.body, {
             where: {
                 id: req.params.id,
             }
         });
-        if (!askData) {
+        if (!postData) {
             res.status(404).json({ message: "No posts found with that ID!" })
         }
-        res.status(200).json(askData);
+        res.status(200).json(postData);
     } catch (err) {
         res.status(500).json(err);
     }
