@@ -33,7 +33,7 @@ router.get('organizations', async (req, res) => {
     } catch (err) {
     }
 })
-module.exports = router
+module.exports = router;
 
 
 
