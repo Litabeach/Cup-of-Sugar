@@ -1,0 +1,56 @@
+[
+	{
+		"id" : 1,
+		"name" : "Mrs. Omaura",
+		"email" : "mrsomaura@hotmail.com",
+		"password" : "password12345"
+	},
+	{
+		"id" : 2,
+		"name" : "Leto Bleach",
+		"email" : "lbleach@aol.com",
+		"password" : "password12345"
+	},
+	{
+		"id" : 3,
+		"name" : "Amerita Pasta",
+		"email" : "amipasta@gmail.com",
+		"password" : "password12345"
+	},
+	{
+		"id" : 4,
+		"name" : "Anise Pho",
+		"email" : "apho@gmail.com",
+		"password" : "password12345"
+	},
+	{
+		"id" : 5,
+		"name" : "Kayla LaBread",
+		"email" : "labread@yahoo.com",
+		"password" : "password12345"
+	},
+	{
+		"id" : 6,
+		"name" : "Gao Xiong",
+		"email" : "gxiong@gmail.com",
+		"password" : "password12345"
+	},
+	{
+		"id" : 7,
+		"name" : "Sarah Peterson",
+		"email" : "speterson@hotmail.com",
+		"password" : "password12345"
+	},
+	{
+		"id" : 8,
+		"name" : "Joe Lamb",
+		"email" : "jlamb@hotmail.com",
+		"password" : "password12345"
+	},
+	{
+		"id" : 9,
+		"name" : "Shanice Jones",
+		"email" : "shajones@minneapolis.edu",
+		"password" : "password12345"
+	}
+]

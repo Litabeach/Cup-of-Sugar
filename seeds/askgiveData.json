@@ -1,0 +1,86 @@
+[
+	{
+		"id" : 1,
+		"ask_or_give" : "ask",
+		"title" : "Lawn Mowing Needed",
+		"content" : "I need help getting my lawn mowed this week. The city sent me a letter and I can't afford their fines for leavnig it long. Please give me a call if you can help out. ",
+		"zip_code" : 55406,
+		"resource_type" : "Services",
+		"contact" : "(555)465-7710",
+		"user_id" : 1,
+		"created_at" : "2021-03-25 12:47:16",
+		"updated_at" : "2021-03-25 12:47:16"
+	},
+	{
+		"id" : 2,
+		"ask_or_give" : "give",
+		"title" : "South Minneapolis Free Clothing Store",
+		"content" : "South mpls free clothing store is open for you to shop for free. Open hours Saturdays 9am-3pm (no appointment needed) with occupancy limits. ",
+		"zip_code" : 55408,
+		"resource_type" : "Clothing",
+		"contact" : " HUGE Theater, 3037 Lyndale Ave So Mpls 55408",
+		"user_id" : 3,
+		"created_at" : "2021-03-25 12:47:16",
+		"updated_at" : "2021-03-25 12:47:16"
+	},
+	{
+		"id" : 3,
+		"ask_or_give" : "give",
+		"title" : "Free Bagels",
+		"content" : "We were donated two pallets of bagels. Stop by anytime today to grab a few bags!",
+		"zip_code" : 55411,
+		"resource_type" : "Food",
+		"contact" : "Community Covenant Church  901 N Humboldt Ave, Minneapolis, MN 55411",
+		"user_id" : 9,
+		"created_at" : "2021-03-25 12:47:16",
+		"updated_at" : "2021-03-25 12:47:16"
+	},
+	{
+		"id" : 4,
+		"ask_or_give" : "give",
+		"title" : "Free Food",
+		"content" : "There are free food tables set up at GFS. Will be here 9am-5pm tues, weds and thurs. Stop by as needed.",
+		"zip_code" : 55407,
+		"resource_type" : "Food",
+		"contact" : "George Floyd Square 38th and Chicago",
+		"user_id" : 4,
+		"created_at" : "2021-03-25 12:47:16",
+		"updated_at" : "2021-03-25 12:47:16"
+	},
+	{
+		"id" : 5,
+		"ask_or_give" : "give",
+		"title" : "Pop Up Vaccine Event for People Experiencing Homelessness",
+		"content" : "For Minnesotans who work with homeless members of the community: Pop Up Vaccine Event for People Experiencing Homelessness. DAY: Friday, March 26th. TIME: 10 am – 4 pm. The one dose Janssen (J&J) vaccine will be provided. A collaboration between Health Care for the Homeless and Hennepin Healthcare, and in partnership with Avivo street outreach, St. Stephen’s street outreach, American Indian Task Force (AITF) and American Indian Movement (AIM).",
+		"zip_code" : 55404,
+		"resource_type" : "Healthcare",
+		"contact" : "All Nations Indian Church Parking Lot, 1515 E 23rd Street, Mpls, MN 55404",
+		"user_id" : 6,
+		"created_at" : "2021-03-25 12:47:16",
+		"updated_at" : "2021-03-25 12:47:16"
+	},
+	{
+		"id" : 6,
+		"ask_or_give" : "ask",
+		"title" : "Car repair",
+		"content" : "I'm in need of help with car repairs. My car was damaged in a hit and run few days ago and apparently progressive said I didn't have enough insurance. Any mechanics that can help with this model buick enclave 2010 anything ??? South mpls preferred maybe an estimate on the damage or any knowledge on where to go that's good and inexpensive",
+		"zip_code" : 55406,
+		"resource_type" : "Services",
+		"contact" : "(555)725-5599",
+		"user_id" : 8,
+		"created_at" : "2021-03-25 12:47:16",
+		"updated_at" : "2021-03-25 12:47:16"
+	},
+	{
+		"id" : 7,
+		"ask_or_give" : "ask",
+		"title" : "Advice on squirrel stuck in my attic?",
+		"content" : "There's a squirrel rampaging around my attic. Has been for a few days. Any thoughts on how to get it out?",
+		"zip_code" : 55401,
+		"resource_type" : "Misc",
+		"contact" : null,
+		"user_id" : 2,
+		"created_at" : "2021-03-25 12:47:16",
+		"updated_at" : "2021-03-25 12:47:16"
+	}
+]
