@@ -41,12 +41,8 @@
 
     </form>
 
-        {{#each ask}}
-    <div>
-        <h3>{{ask.title}}</h3>
-        <p>{{ask.description}}</p>
-        <p>{{ask.category}}</p>
-    </div>
+    {{#each ask}}
+   {{> ask}}
     {{/each}}
 
 </div>
