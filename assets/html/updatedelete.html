@@ -113,68 +113,46 @@ footer {
         </div>
       </nav>
       <!-- nav ends -->
-
 <div class="container">
-    <div class='page-title'><h2>My Cup Of Sugar</h2></div>
-    <p>View all of your posts here. Click on any ask or give to update or delete it.</p>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-sm-5">
-            <div class='ask-title'><h3>My Asks</h3></div>
-       
-        <div class="card">
-            <div class="card-body">
-                <h3>Title</h3>
-                <h4>Created at | Category</h4>
-                <p>Content</p>
-            </div>
+      <form>
+          <h2>Title</h2>
+        <div class="form-group">
+          <label for="changeTitle">Change Title</label>
+          <input type="text" class="form-control" id="changeTitle" placeholder="{{title}}">
         </div>
-        <div class="card">
-            <div class="card-body">
-                <h3>Title</h3>
-                <h4>Created at | Category</h4>
-                <p>Content</p>
-            </div>
+        <div class="form-group">
+          <label for="changeCategory">Change Category</label>
+          <select class="form-control" id="changeCategory">
+            <option selected>{{resource.type}}</option>
+            <option value="1">Clothing, Shoes, & Accessories</option>
+            <option value="2">Baby & Kids</option>
+            <option value="3">Health & Beauty</option>
+            <option value="4">Electronics</option>
+            <option value="5">Vehicles</option>
+            <option value="6">Toys, Games, & Hobbies</option>
+            <option value="7">Sports & Outdoors</option>
+            <option value="8">Pet supplies</option>
+            <option value="9">Home & Garden</option>
+            <option value="10">General</option>
+          </select>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <h3>Title</h3>
-                <h4>Created at | Category</h4>
-                <p>Content</p>
-            </div>
+        <div class="form-group">
+          <label for="changeContent">Change Content</label>
+          <textarea class="form-control" id="changeContent" rows="3"></textarea>
         </div>
+        <div class="form-group">
+            <label for="changeZip">Change Zip</label>
+            <input type="text" class="form-control" id="changeTitle" placeholder="{{zip_code}}">
+          </div>
+          <div class="form-group">
+            <label for="changeZip">Change Contact Information</label>
+            <input type="text" class="form-control" id="changeTitle" placeholder="{{contact}}">
+          </div>
+          <button type="submit" class="btn btn-primary">Update Post</button>
+          <button type="submit" class="btn btn-primary">Delete Post</button>
+        <br>
+      </form>
     </div>
-
-        <div class="col-sm-2"></div>
-
-        <div class="col-sm-5">
-            <div class='card-title'><h3>My Gives</h3></div>
-            <div class="card">
-                <div class="card-body">
-                    <h3>Title</h3>
-                    <h4>Created at | Category</h4>
-                    <p>Content</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h3>Title</h3>
-                    <h4>Created at | Category</h4>
-                    <p>Content</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h3>Title</h3>
-                    <h4>Created at | Category</h4>
-                    <p>Content</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <footer>
