@@ -34,10 +34,16 @@
       </div>
       </form>
 
-    {{#if}}
+      {{#if}}
       <div>
         <a href="#"><button class="newPost">Create New Ask</button></a>
       </div>
        {{/if}}
+
+    {{#each ask}}
+    {{> asksearch}}
+    {{/each}}
+
+    
   </div>
   
