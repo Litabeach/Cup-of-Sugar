@@ -1,0 +1,26 @@
+[
+	{
+		"id" : 1,
+		"content" : "I'll be there around 2pm today",
+		"created_at" : "2021-03-26 16:59:56",
+		"updated_at" : "2021-03-26 16:59:56",
+		"user_id" : 7,
+		"ask_give_id" : 4
+	},
+	{
+		"id" : 2,
+		"content" : "My son Billy is available later this week.",
+		"created_at" : "2021-03-26 17:00:44",
+		"updated_at" : "2021-03-26 17:00:44",
+		"user_id" : 5,
+		"ask_give_id" : 1
+	},
+	{
+		"id" : 3,
+		"content" : "Can we pitch in to help you out? ",
+		"created_at" : "2021-03-26 17:00:44",
+		"updated_at" : "2021-03-26 17:00:44",
+		"user_id" : 8,
+		"ask_give_id" : 6
+	}
+]
