@@ -4,14 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cup of Sugar</title>
+    <title>Document</title>
     <script src="https://kit.fontawesome.com/63e7a601a3.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="" /> -->
 </head>
-<body>
+<body class="body">
+    <!-- css -->
+    <style>
+         .container {
+    margin-top: 100px;
+    background-color:  rgb(10, 157, 164);
+    text-align: center;
+    border: 2px solid black;
+    box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+  }
+  
+  .jumbotron {
+    text-align: center;
+    background-color:  rgb(10, 157, 164);
+    color: white;
+  }
+  
 
+.navbar {
+    background-color: rgb(10, 157, 164); 
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+  }
+  body {
+    height: auto;
+    background-image: url("/Cup_of_Sugar_wireframes.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 70px;
+  }
+  .btn  {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 35px;
+  margin-right: 35px;
+  background-color: white;
+  color: black;
+  border: 1px solid rgb(0, 0, 12, 0.8);
+}
+
+.btn:hover {
+  background-color:rgb(10, 157, 164);
+  color: white;
+  border: 1px solid white;
+}
+
+.btn:active {
+  background-color: rgb(138, 246, 246);
+}
+
+.btn:active {
+  -webkit-box-shadow: inset 0px 0px 5px black;
+  -moz-box-shadow: inset 0px 0px 5px black;
+  box-shadow: inset 0px 0px 5px black;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    height: auto;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: black;
+    text-align: center;
+  }
+    </style>
+    <!-- css ends -->
     <!-- nav begins -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -43,17 +114,22 @@
       </nav>
       <!-- nav ends -->
 
-{{{ body }}}
+<div class="jumbotron container col-md-6">
+    <h1 class="display-4">Cup of sugar!</h1>
+    <p class="lead">This is a placeholder description for porduct</p>
+    <p></p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Login</a>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Register</a>
 
+    </p>
+  </div>
 <footer>
-    {{#if }}
-
     <button class="btn btn-primary" type="submit"><i class="fas fa-home"></i></button>
     <button class="btn btn-primary" type="submit"><i class="fas fa-tachometer-alt"></i></button>
     <button class="btn btn-primary" type="submit"><i class="fas fa-hand-holding-heart"></i></button>
     <button class="btn btn-primary" type="submit"><i class="fas fa-cog"></i></button>
-      {{/if }}
+  
 </footer>
-
 </body>
 </html>
