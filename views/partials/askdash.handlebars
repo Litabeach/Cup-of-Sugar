@@ -1,11 +1,11 @@
 
 {{!-- wrapped in a link so when clicked it will take user to update/delete page. Need get route to render.--}}
-<a href="/dash/{{ask.id}}" class="upDelLink">
+<a href="/dash/{{askgives.id}}" class="upDelLink">
 <div class="card">
     <div class="card-body">
-        <h3>{{ask.title}}</h3>
-        <h4>Created at {{ask.createdAt}} | Category: {{ask.resource_type}}</h4>
-        <p>{{ask.content}}</p>
+        <h3>{{askgives.title}}</h3>
+        <h4>Created at {{askgives.createdAt}} | Category: {{askgives.resource_type}}</h4>
+        <p>{{askgives.content}}</p>
     </div>
 </div>
 </a>

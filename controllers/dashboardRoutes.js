@@ -9,19 +9,22 @@ const withAuth = require('../utils/auth')
 
 //render dashboard with all the users asks and gives
 router.get('/', withAuth, async (req, res) => {
+    const user = req.session.user_id;
     try {
         const askgiveData = await Ask_Give.findAll({
-            where: {
-                user_id: req.session.user_id,
-            },
-            attributes: ["id", "title", "description", "createdAt"],
             include: [
                 {
                     model: User,
                     attributes: ["name"]
                 },
-            ]
+            ],
+            attributes: ["id", "title", "content", "zip_code","resource_type","contact", "createdAt", "updatedAt" ],
+            where: {
+                user_id: user,
+            },
         })
+        console.log(askgiveData)
+        console.log(user)
 
         if (!askgiveData) {
             res.status(404).json({
@@ -30,10 +33,10 @@ router.get('/', withAuth, async (req, res) => {
             return;
         }
 
-        const blogs = blogData.map((blog) => blog.get({ plain: true }));
-
+        const askgives = askgiveData.map((askgive) => askgive.get({ plain: true }));
+        console.log(askgives)
         res.render('dashboard', {
-            blogs,
+            askgives,
             loggedIn: req.session.logged_in
         })
 
