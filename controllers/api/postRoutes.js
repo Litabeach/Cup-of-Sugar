@@ -5,7 +5,7 @@ const { Ask_Give } = require('../../models');
 //Using the /api/post endpoint
 
 //CREATE new post
-router.put('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const postData = await Ask_Give.create({
             ...req.body,
@@ -32,5 +32,7 @@ router.put('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+//add delete route for a post
 
 module.exports = router;
