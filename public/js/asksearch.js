@@ -3,25 +3,28 @@ const askSearchHandler = async (event) => {
   
     const category = document.querySelector('#inputCategory').value;
 
-    const city = document.querySelector('#inputCity').value.trim();
+    //const city = document.querySelector('#inputCity').value.trim();
 
     const zip = document.querySelector('#inputZip').value.trim();
-  
-   console.log(category)
-      const response = await fetch('', {
-        method: 'GET',
+    //const ask = 'ask';
+
+    console.log('category',category);
+
+      const response = await fetch('/api/asks/ask_search', {
+        method: 'POST',
         body: JSON.stringify({ 
-            category, city, zip}),
+            category, zip}),
         headers: { 'Content-Type': 'application/json' },
       });
+      console.log("response",response);
   
-      if (response.ok) {
-        document.location.reload();
-      } else {
-        alert(response.statusText);
-      }
+      // if (response.ok) {
+      //   document.location.reload();
+      // } else {
+      //   alert(response.statusText);
+      // }
     
   };
 
   document
-  .querySelector('.searchAsks').addEventListener('submit', giveSearchHandler);
+  .querySelector('#searchAsks').addEventListener('click', askSearchHandler);

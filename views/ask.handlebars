@@ -7,11 +7,11 @@
       <H4>Category:</H4>
       <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
         <option selected> Select</option>
-        <option value="1">Clothing, Shoes, & Accessories</option>
-        <option value="2">Baby & Kids</option>
-        <option value="3">Health & Beauty</option>
-        <option value="4">Electronics</option>
-        <option value="5">Vehicles</option>
+        <option value="Services">Services</option>
+        <option value="2">Clothing</option>
+        <option value="Food">Food</option>
+        <option value="4">Healthcare</option>
+        <option value="5">Misc</option>
         <option value="6">Toys, Games, & Hobbies</option>
         <option value="7">Sports & Outdoors</option>
         <option value="8">Pet supplies</option>
@@ -30,7 +30,7 @@
       </div>
 
       <div>
-        <button class="searchAsks" type="submit">Search</button>
+        <button id="searchAsks" type="submit">Search</button>
       </div>
       </form>
 
@@ -40,7 +40,7 @@
       </div>
        {{/if}}
 
-    {{#each ask}}
+    {{#each asks}}
     {{> asksearch}}
     {{/each}}
 
