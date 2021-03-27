@@ -10,7 +10,7 @@ const withAuth = require('../utils/auth');
 router.get('/', (req, res) => {
     try {
 
-        res.render ('homepage', {
+        res.render ('landing', {
 
         })
     } catch (err) {
