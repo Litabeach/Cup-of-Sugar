@@ -1,0 +1,29 @@
+<div class="container">
+    <div class='page-title'>
+        <h2>My Cup Of Sugar</h2>
+        <p>View all of your posts here. Click on any ask or give to update or delete it.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class='ask-title'>
+                <h3>My Asks and Gives</h3>
+            </div>
+            {{#each askgives}}
+            <a href="/dash/{{id}}" class="upDelLink">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>{{title}}</h3>
+                        <h4>Created at {{createdAt}} | Category: {{resource_type}}</h4>
+                        <p>{{content}}</p>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</div>
+</div>
+</div>

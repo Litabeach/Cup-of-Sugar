@@ -1,0 +1,51 @@
+{{#if}}
+  
+  <div class="container col-md-6">
+    <form>
+
+      <H3>Search Gives</H3>
+
+      <H4>Category:</H4>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
+        <option selected> Select</option>
+        <option value="1">Clothing, Shoes, & Accessories</option>
+        <option value="2">Baby & Kids</option>
+        <option value="3">Health & Beauty</option>
+        <option value="4">Electronics</option>
+        <option value="5">Vehicles</option>
+        <option value="6">Toys, Games, & Hobbies</option>
+        <option value="7">Sports & Outdoors</option>
+        <option value="8">Pet supplies</option>
+        <option value="9">Home & Garden</option>
+        <option value="10">General</option>
+      </select>
+
+      <H4>Your location</H4>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+
+      <div>
+        <button class="searchGives" type="submit">Search</button>
+      </div>
+      </form>
+
+    {{#if logged_in}}
+      <div>
+        <a href="#"><button class="newPost">Create New Give</button></a>
+      </div>
+       {{/if}}
+
+  {{#each give}}
+    {{> givesearch}}
+    {{/each}}
+
+  </div>
+
+  <script src="/js/givesearch.js"></script>
+  

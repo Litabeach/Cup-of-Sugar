@@ -7,14 +7,14 @@ const askRoutes = require('./askRoutes');
 const giveRoutes = require('./giveRoutes');
 
 //Post routes
-// const postRoutes = require('./postRoutes')
+const postRoutes = require('./postRoutes');
 
 //User dashboard
-const userRoutes = require('./userRoutes')
+const userRoutes = require('./userRoutes');
 
 router.use('/asks', askRoutes);
 router.use('/gives', giveRoutes);
-// router.use('/post'. postRoutes);
+router.use('/post', postRoutes);
 router.use('/user', userRoutes);
 
 module.exports = router;
