@@ -1,0 +1,34 @@
+<div class="container">
+    <div class='page-title'>
+        <h2>My Cup Of Sugar</h2>
+        <p>View all of your posts here. Click on any ask or give to update or delete it.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5">
+            <div class='ask-title'>
+                <h3>My Asks</h3>
+            </div>
+
+            {{#each ask}}
+             {{> askdash}}
+            {{/each}}
+
+        </div>
+
+        <div class="col-sm-2"></div>
+
+        <div class="col-sm-5">
+            <div class='give-title'>
+                <h3>My Gives</h3>
+            </div>
+
+            {{#each give}}
+            {{> givedash}}
+            {{/each}}
+        
+        </div>
+    </div>
+</div>
