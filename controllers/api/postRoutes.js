@@ -7,9 +7,7 @@ const { Ask_Give } = require('../../models');
 //CREATE new post
 router.post('/', async (req, res) => {
     try {
-        const postData = await Ask_Give.create({
-            ...req.body,
-        });
+        const postData = await Ask_Give.create(req.body);
         res.status(200).json(postData);
     } catch (err) {
         res.status(500).json(err);
@@ -25,7 +23,7 @@ router.put('/:id', async (req, res) => {
             }
         });
         if (!postData) {
-            res.status(404).json({ message: "No posts found with that ID!" })
+            res.status(404).json({ message: "No posts found with that ID!" });
         }
         res.status(200).json(postData);
     } catch (err) {

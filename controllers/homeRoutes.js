@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
         res.render ('landing', {
 
-        })
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -58,7 +58,7 @@ router.get('/asks', withAuth, async (req, res) =>{
         res.render('ask', {
             asks,
             loggedIn: req.session.logged_in
-        })
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -83,7 +83,7 @@ router.get('/gives', withAuth, async (req, res) =>{
         res.render('give', {
             gives,
             loggedIn: req.session.logged_in
-        })
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -93,13 +93,13 @@ router.get('/gives', withAuth, async (req, res) =>{
 
 //GET route for the navigation page
 router.get('/navigation', (req, res) => {
-    res.render('navigation')
+    res.render('navigation');
 });
 
 //Resources page
 //works!
 router.get('/resources', (req, res) => {
-    res.render('resources')
+    res.render('resources');
 });
 
 module.exports = router;

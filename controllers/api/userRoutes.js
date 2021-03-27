@@ -31,14 +31,14 @@ router.post('/login', async (req, res) => {
         return;
       } 
       const validPassword = await userData.checkPassword(req.body.password);
-      console.log(validPassword)
+      console.log(validPassword);
       if (!validPassword) {
         res
           .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       }
-  console.log(userData)
+  console.log(userData);
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
