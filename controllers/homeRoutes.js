@@ -41,7 +41,9 @@ router.get('/signup', (req, res) => {
 
 //Get all asks, render them to the ask page
 router.get('/asks', (req, res) =>{
-        res.render('ask');
+        res.render('ask', {
+            loggedIn: req.session.logged_in
+        });
  
 });
 

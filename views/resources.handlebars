@@ -25,7 +25,7 @@
                 <div class="dropdown">
 
                     <H4>Select category of organization</H4>
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="catNum">
             <option selected> Select</option>
             <option value="1">Animals</option>
             <option value="2">Arts Culture Humanities</option>
@@ -44,7 +44,7 @@
 <div class="col-sm-4">
     <div class="dropdown">
         <H4>Select your current state</H4>
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="state">
             <option selected> Select</option>
             <option value="CO">Colorado</option>
             <option value="MN">Minnesota</option>
@@ -67,4 +67,8 @@
                 </div>
             </div>
         </div>
+
+        <button id="searchResources" type="submit">Search</button>
     </div>
+
+    {{!-- <script src="/js/api.js"></script> --}}
