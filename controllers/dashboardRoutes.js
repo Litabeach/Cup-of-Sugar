@@ -8,7 +8,7 @@ const withAuth = require('../utils/auth');
 //from the /dashboard:
 
 //render dashboard with all the users asks and gives
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     const user = req.session.user_id;
     try {
         const askgiveData = await Ask_Give.findAll({

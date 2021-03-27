@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
 //UPDATE a give by ID
 router.put('/:id', async (req, res) => {
     try {
-        const postData = await Ask.update(req.body, {
+        const postData = await Ask_Give.update(req.body, {
             where: {
                 id: req.params.id,
             }
@@ -32,5 +32,6 @@ router.put('/:id', async (req, res) => {
 });
 
 //add delete route for a post
+
 
 module.exports = router;
