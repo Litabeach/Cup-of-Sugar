@@ -6,7 +6,7 @@
       <H3>Search Gives</H3>
 
       <H4>Category:</H4>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
         <option selected> Select</option>
         <option value="1">Clothing, Shoes, & Accessories</option>
         <option value="2">Baby & Kids</option>
@@ -31,11 +31,11 @@
       </div>
 
       <div>
-        <button class="searchAsks" type="submit">Search</button>
+        <button class="searchGives" type="submit">Search</button>
       </div>
       </form>
 
-    {{#if}}
+    {{#if logged_in}}
       <div>
         <a href="#"><button class="newPost">Create New Give</button></a>
       </div>
@@ -46,4 +46,6 @@
     {{/each}}
 
   </div>
+
+  <script src="/js/givesearch.js"></script>
   
