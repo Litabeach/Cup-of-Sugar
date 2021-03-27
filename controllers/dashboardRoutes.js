@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { Ask_Give, User } = require('../models')
-const withAuth = require('../utils/auth')
+const { Ask_Give, User } = require('../models');
+const withAuth = require('../utils/auth');
 
 //Need GET route to the create post form
 //Need GET route to view an existing post for updating or deleting
@@ -22,9 +22,9 @@ router.get('/', withAuth, async (req, res) => {
             where: {
                 user_id: user,
             },
-        })
-        console.log(askgiveData)
-        console.log(user)
+        });
+        console.log(askgiveData);
+        console.log(user);
 
         if (!askgiveData) {
             res.status(404).json({
@@ -34,16 +34,16 @@ router.get('/', withAuth, async (req, res) => {
         }
 
         const askgives = askgiveData.map((askgive) => askgive.get({ plain: true }));
-        console.log(askgives)
+        console.log(askgives);
         res.render('dashboard', {
             askgives,
             loggedIn: req.session.logged_in
-        })
+        });
 
     } catch (err) {
-        res.status(500).json(err)
+        res.status(500).json(err);
     }
-})
+});
 
 
 //GET create new post page
@@ -55,7 +55,7 @@ router.get("/createpost", withAuth, async (req, res) => {
     res.render('askpost', {
       loggedIn: req.session.logged_in
     });
-  })
+  });
 
   //render post by id, this is where user can update or delete
 router.get("/getpost:id", withAuth, async (req, res) => {
@@ -66,7 +66,7 @@ router.get("/getpost:id", withAuth, async (req, res) => {
     res.render('updatedelete:id', {
       loggedIn: req.session.logged_in
     });
-  })
+  });
 
 
 
