@@ -38,23 +38,8 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
-//logout - no page yet, untested
-//if we chose to have a logout page
-// router.get('/logout', (req, res) => {
-//     res.render('logout', {
-//       loggedIn: req.session.logged_in
-//     });
-//     if (req.session.logged_in) {
-//       req.session.destroy(() => {
-//         res.status(204).end();
-//         alert("you have logged out");
-//       });
-//     } else {
-//       res.status(404).end();
-//     }
-//   });
 
-//READ all asks
+//Get all asks, render them to the ask page
 router.get('/asks', withAuth, async (req, res) =>{
     try{
         const askData = await Ask_Give.findAll({
@@ -70,7 +55,7 @@ router.get('/asks', withAuth, async (req, res) =>{
             ]
         });
         const asks = askData.map((ask_give) => ask_give.get({ plain: true }));
-        res.render('asks', {
+        res.render('ask', {
             asks,
             loggedIn: req.session.logged_in
         })
@@ -79,7 +64,7 @@ router.get('/asks', withAuth, async (req, res) =>{
     }
 });
 
-//READ all gives
+//GEt all gives, render them to the give page
 router.get('/gives', withAuth, async (req, res) =>{
     try{
         const giveData = await Ask_Give.findAll({
@@ -95,7 +80,7 @@ router.get('/gives', withAuth, async (req, res) =>{
             ]
         });
         const gives = giveData.map((ask_give) => ask_give.get({ plain: true }));
-        res.render('gives', {
+        res.render('give', {
             gives,
             loggedIn: req.session.logged_in
         })
@@ -104,9 +89,12 @@ router.get('/gives', withAuth, async (req, res) =>{
     }
 });
 
-//Need a GET route for the dashboard
 
-//Need a GET route for the navigation page
+
+//GET route for the navigation page
+router.get('/navigation', (req, res) => {
+    res.render('navigation')
+});
 
 //Resources page
 //works!
