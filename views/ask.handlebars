@@ -1,51 +1,56 @@
+<div class="container col-md-6">
+  <form>
 
-  <div class="container col-md-6">
-    <form>
+    <H3>Search Asks and Gives</H3>
 
-      <H3>Search Asks</H3>
+    <H4>Ask or Give:</H4>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
+      <option selected> Select</option>
+      <option value="ask">Asks</option>
+      <option value="give">Gives</option>
+    </select>
 
-      <H4>Category:</H4>
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
-        <option selected> Select</option>
-        <option value="Services">Services</option>
-        <option value="2">Clothing</option>
-        <option value="Food">Food</option>
-        <option value="4">Healthcare</option>
-        <option value="5">Misc</option>
-        <option value="6">Toys, Games, & Hobbies</option>
-        <option value="7">Sports & Outdoors</option>
-        <option value="8">Pet supplies</option>
-        <option value="9">Home & Garden</option>
-        <option value="10">General</option>
-      </select>
+    <H4>Category:</H4>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
+      <option selected> Select</option>
+      <option value="Services">Services</option>
+      <option value="2">Clothing</option>
+      <option value="Food">Food</option>
+      <option value="4">Healthcare</option>
+      <option value="5">Misc</option>
+      <option value="6">Toys, Games, & Hobbies</option>
+      <option value="7">Sports & Outdoors</option>
+      <option value="8">Pet supplies</option>
+      <option value="9">Home & Garden</option>
+      <option value="10">General</option>
+    </select>
 
-      <H4>Your location</H4>
-      <div class="col-md-6">
-        <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="col-md-2">
-        <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
+    <H4>Your location</H4>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
 
-      <div>
-        <button id="searchAsks" type="submit">Search</button>
-      </div>
-      </form>
+    <div>
+      <button id="searchAsks" type="submit">Search</button>
+    </div>
+  </form>
 
-      {{#if logged_in}}
-      <div>
-        <a href="#"><button class="newPost">Create New Ask</button></a>
-      </div>
-       {{/if}}
-
-    {{#each asks}}
-    {{> asksearch}}
-    {{/each}}
-
-    
+  {{#if logged_in}}
+  <div>
+    <a href="#"><button class="newPost">Create New Ask or Give</button></a>
   </div>
+  {{/if}}
 
-    <script src="/js/asksearch.js"></script>
-  
+  {{#each asks}}
+  {{> asksearch}}
+  {{/each}}
+
+
+</div>
+
+<script src="/js/asksearch.js"></script>

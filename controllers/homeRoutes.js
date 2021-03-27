@@ -41,57 +41,15 @@ router.get('/signup', (req, res) => {
 
 //Get all asks, render them to the ask page
 router.get('/asks', (req, res) =>{
-    // try{
-    //     const askData = await Ask_Give.findAll({
-    //         // where: {
-    //         //     ask_or_give: 'ask'
-    //         // },
-    //         // attributes: ['title', 'content', 'resource_type', 'contact', 'createdAt', 'updatedAt'],
-    //         // include: [
-    //         //     {
-    //         //         model: User,
-    //         //         attributes: ['name']
-    //         //     }
-    //         // ]
-    //     });
-    //     const asks = askData.map((ask_give) => ask_give.get({ plain: true }));
         res.render('ask');
-    //     , {
-    //         asks,
-    //         loggedIn: req.session.logged_in
-    //     });
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
+ 
 });
 
+//Get all gives, render them to the give page
+router.get('/gives', (req, res) =>{
+    res.render('give');
 
-
-//GEt all gives, render them to the give page
-router.get('/gives', withAuth, async (req, res) =>{
-    try{
-        const giveData = await Ask_Give.findAll({
-            where: {
-                ask_or_give: 'give',
-            },
-            attributes: ['title', 'content', 'resource_type', 'contact', 'createdAt', 'updatedAt'],
-            include: [
-                {
-                    model: User,
-                    attributes: ['name']
-                }
-            ]
-        });
-        const gives = giveData.map((ask_give) => ask_give.get({ plain: true }));
-        res.render('give', {
-            gives,
-            loggedIn: req.session.logged_in
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
 });
-
 
 
 //GET route for the navigation page
