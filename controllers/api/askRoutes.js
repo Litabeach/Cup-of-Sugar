@@ -5,25 +5,27 @@ const withAuth = require('../../utils/auth');
 // Using the /api/ask endpoint
 
 //ask Search API
-router.post('/ask_search', async (req, res) =>{
+router.post('/ask_search', withAuth, async (req, res) =>{
     try{
         console.log('Req.body');
         console.log(req.body);
         const askData = await Ask_Give.findAll({
-            where: {
-                //ask_or_give: req.body.ask,
-                resource_type: req.body.category,
-                // city: req.body.city,
-                zip_code: req.body.zip
-                
-            },
-            attributes: ['ask_or_give', 'title', 'content', 'resource_type', 'contact', 'createdAt', 'updatedAt','zip'],
+            ...req.body,
             include: [
                 {
                     model: User,
                     attributes: ['name']
                 }
-            ]
+            ],
+            where: {
+                ask_or_give: 'ask',
+                resource_type: req.body.category,
+                // city: req.body.city,
+                zip_code: req.body.zip
+                
+            },
+          
+        
         });
         
         const asks = askData.map((ask_give) => ask_give.get({ plain: true }));
