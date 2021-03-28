@@ -4,6 +4,7 @@ const router = require('express').Router();
 
 //Get all asks, render them to the ask page
 router.get('/asks', (req, res) => {
+    console.log("get asks")
     res.render('ask', {
         loggedIn: req.session.logged_in
     });

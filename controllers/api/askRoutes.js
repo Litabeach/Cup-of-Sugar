@@ -5,12 +5,11 @@ const withAuth = require('../../utils/auth');
 // Using the /api/ask endpoint
 
 //ask Search API
-router.post('/ask_search', withAuth, async (req, res) =>{
+router.get('/ask_search/:category/:askGive/:zip', withAuth, async (req, res) =>{
     try{
-        // console.log('Req.body');
-        // console.log(req.body);
+        console.log(req.params);
         const askData = await Ask_Give.findAll({
-            ...req.body,
+
             include: [
                 {
                     model: User,
@@ -25,24 +24,24 @@ router.post('/ask_search', withAuth, async (req, res) =>{
                   },
             ],
             where: {
-                ask_or_give: req.body.askGive,
-                resource_type: req.body.category,
+                ask_or_give: req.params.askGive,
+                resource_type: req.params.category,
                 // city: req.body.city,
-                zip_code: req.body.zip
-                
+                zip_code: req.params.zip
             },
-          
-        
         });
         
         const asks = askData.map((ask_give) => ask_give.get({ plain: true }));
         
         console.log('Here is the asks variable: ', asks);
 
-        res.render('ask', {
+        res.render('ask1', {
+
             asks,
             loggedIn: req.session.logged_in
         });
+        // res.json(asks)
+
     } catch (err) {
         res.status(500).json(err);
     }
