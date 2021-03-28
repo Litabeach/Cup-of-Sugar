@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Ask_Give, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Using the /api/ask endpoint
+// Using the /api/asks endpoint
 
 //ask Search API
 router.post('/ask_search', withAuth, async (req, res) =>{
@@ -47,6 +47,5 @@ router.post('/ask_search', withAuth, async (req, res) =>{
         res.status(500).json(err);
     }
 });
-
 
 module.exports = router;
