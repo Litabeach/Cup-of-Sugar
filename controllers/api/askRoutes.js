@@ -35,7 +35,7 @@ router.get('/ask_search/:category/:askGive/:zip', withAuth, async (req, res) =>{
         
         console.log('Here is the asks variable: ', asks);
 
-        res.render('ask1', {
+        res.render('ask', {
 
             asks,
             loggedIn: req.session.logged_in
