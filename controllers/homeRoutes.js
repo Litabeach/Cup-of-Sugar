@@ -10,7 +10,9 @@ const withAuth = require('../utils/auth');
 router.get('/', (req, res) => {
     try {
 
-        res.render ('landing', {
+        res.render('landing', {
+
+            loggedIn: req.session.logged_in
 
         });
     } catch (err) {
@@ -40,13 +42,15 @@ router.get('/signup', (req, res) => {
 
 
 //Get all asks, render them to the ask page
-router.get('/asks', (req, res) =>{
-        res.render('ask');
- 
+router.get('/asks', (req, res) => {
+    res.render('ask', {
+        loggedIn: req.session.logged_in
+    });
+
 });
 
 //Get all gives, render them to the give page
-router.get('/gives', (req, res) =>{
+router.get('/gives', (req, res) => {
     res.render('give');
 
 });
