@@ -45,7 +45,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-
 //GET create new post page
 router.get("/createpost", withAuth, async (req, res) => {
     if (!req.session.logged_in) {

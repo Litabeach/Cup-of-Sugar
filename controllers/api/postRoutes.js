@@ -51,7 +51,7 @@ router.get('/:id', async (req,res) => {
     }
 })
 
-//UPDATE a give by ID
+//UPDATE a post by ID
 router.put('/:id', async (req, res) => {
     try {
         const postData = await Ask_Give.update({

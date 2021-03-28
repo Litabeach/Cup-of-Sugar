@@ -27,6 +27,7 @@ const newPostHandler = async (event) => {
       } else {
         alert(response.statusText);
       }
-    }   
+    
+  };
 
   document.querySelector('#postAsk').addEventListener('click', newPostHandler);
