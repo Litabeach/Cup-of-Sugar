@@ -30,6 +30,12 @@ router.get('/dashboard', (req, res) => {
 //Resources page
 //works!
 router.get('/resources', (req, res) => {
+    res.render('resources', {
+        loggedIn: req.session.logged_in
+    });
+});
+
+router.get('/national', (req, res) => {
     res.render('national', {
         loggedIn: req.session.logged_in
     });

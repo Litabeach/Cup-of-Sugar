@@ -24,7 +24,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
 
               <li class="nav-item dropdown">
@@ -51,10 +51,10 @@
 <footer>
     {{!-- {{#if }} --}}
 
-    <button class="btn btn-primary" type="submit"><i class="fas fa-home"></i></button>
-    <button class="btn btn-primary" type="submit"><i class="fas fa-tachometer-alt"></i></button>
-    <button class="btn btn-primary" type="submit"><i class="fas fa-hand-holding-heart"></i></button>
-    <button id="logout" class="btn btn-primary" type="submit"><i class="fas fa-cog"></i></button>
+    <a href="/"><button class="btn btn-primary" type="submit"><i class="fas fa-home"></i></button></a>
+    <a href="/navigation"><button class="btn btn-primary" type="submit"><i class="fas fa-tachometer-alt"></i></button></a>
+    <a href="#"><button class="btn btn-primary" type="submit"><i class="fas fa-hand-holding-heart"></i></button></a>
+    <a href="#"><button id="logout" class="btn btn-primary" type="submit"><i class="fas fa-cog"></i></button></a>
       {{!-- {{/if }} --}}
 </footer>
 <script>"/js/logout.js"</script>
