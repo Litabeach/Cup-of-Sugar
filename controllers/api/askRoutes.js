@@ -18,10 +18,10 @@ router.post('/ask_search', withAuth, async (req, res) =>{
                   },
                   {
                     model: Comment,
-                    attributes: ['content'],
-                    // include: {
-                    //   model: User, attributes: ['name'],
-                    // }
+                    attributes: ['content', 'createdAt'],
+                    include: {
+                      model: User, attributes: ['name'],
+                    }
                   },
             ],
             where: {
