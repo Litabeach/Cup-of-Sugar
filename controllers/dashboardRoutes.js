@@ -7,7 +7,7 @@ const withAuth = require('../utils/auth');
 
 //from the /dashboard:
 
-//render dashboard with all the users asks and gives
+//render git p with all the users asks and gives
 router.get('/', async (req, res) => {
     const user = req.session.user_id;
     try {
@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
 
         const askgives = askgiveData.map((askgive) => askgive.get({ plain: true }));
         console.log(askgives);
-        res.render('dashboard', {
+        res.render('navigation', {
             askgives,
             loggedIn: req.session.logged_in
         });

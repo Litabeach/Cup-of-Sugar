@@ -50,10 +50,10 @@ router.get('/asks', (req, res) => {
 });
 
 //Get all gives, render them to the give page
-router.get('/gives', (req, res) => {
-    res.render('give');
+// router.get('/gives', (req, res) => {
+//     res.render('give');
 
-});
+// });
 
 
 //GET route for the navigation page
