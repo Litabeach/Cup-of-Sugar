@@ -1,4 +1,9 @@
-{{asksearch}}
+    {{#each asks}}
+    <h3>{{title}}</h3>
+    <p>{{content}}</p>
+    <p>{{resource_type}}</p>
+    <p>{{contact}}</p>
+    {{/each}}
 
 <form class="comment-form">
     <label for="comments">Leave a comment:</label>
