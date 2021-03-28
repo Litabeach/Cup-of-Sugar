@@ -1,0 +1,22 @@
+    {{#each asks}}
+    <h3>{{title}}</h3>
+    <p>{{content}}</p>
+    <p>{{resource_type}}</p>
+    <p>{{contact}}</p>
+    {{/each}}
+
+<form class="comment-form">
+    <label for="comments">Leave a comment:</label>
+    <br>
+    <textarea id="comment" name="comment" placeholder="Enter comment here."></textarea>
+    <button class="commentBtn" type="submit">Save Comment</button>
+</form>
+</div>
+
+{{#each comments as |comment|}}
+<div class="post">
+    <h3>Comment by {{user.name}}</h3>
+    <p>{{format_date comment.createdAt}}</p>
+    <p>{{comment.text}}</p>
+</div>
+{{/each}}
