@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 // Using the /api/ask endpoint
 
 //ask Search API
-router.get('/ask_search/:category/:askGive/:zip', withAuth, async (req, res) => {
+router.get('/ask_search/:category/:askGive/:zip', async (req, res) => {
     try {
         // console.log(req.params);
         const askData = await Ask_Give.findAll({
