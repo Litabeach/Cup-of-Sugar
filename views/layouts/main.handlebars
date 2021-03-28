@@ -33,7 +33,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   {{#if loggedIn}}
-                  <li><a class="dropdown-item" id="logout" href="/">Logout</a></li>
+                  <li><a class="dropdown-item" id="logout" href="/logout">Logout</a></li>
                   {{else}}
                   <li><a class="dropdown-item" href="/login">Login</a></li>
                   <li><a class="dropdown-item" href="/signup">Sign Up</a></li>
@@ -49,14 +49,21 @@
 {{{ body }}}
 
 <footer>
-    {{!-- {{#if }} --}}
-
-    <button class="btn btn-primary" type="submit"><i class="fas fa-home"></i></button>
-    <button class="btn btn-primary" type="submit"><i class="fas fa-tachometer-alt"></i></button>
-    <button class="btn btn-primary" type="submit"><i class="fas fa-hand-holding-heart"></i></button>
+    {{#if logged_in }}
+    <a href="/controllers/dashboardRoutes/"><button class="btn btn-primary" type="submit"><i class="fas fa-home"></i></button></a>
+    {{else}}
+    <a href="/api/userRoutes/logout"><button id="login" class="btn btn-primary" type="submit"><i class="fas fa-cog"></i></button></a>
+    {{/if }}
+    {{!-- <a href="/controllers/navigationRoutes/asks"><button class="btn btn-primary" type="submit"><i class="fas fa-tachometer-alt"></i></button></a> --}}
+    <a href="../../controllers/navigationRoutes/asks"><button class="btn btn-primary" type="submit"><i class="fas fa-hand-holding-heart"></i></button></a>  
+    {{#if logged_in }}  
     <button id="logout" class="btn btn-primary" type="submit"><i class="fas fa-cog"></i></button>
-      {{!-- {{/if }} --}}
+    {{else }}
+    <a href="/controllers/landingRoutes/signup"><button class="btn btn-primary" type="submit"><i class="fas fa-home"></i></button></a>
+    {{/if}}
 </footer>
+{{#if logged_in}}
 <script>"/js/logout.js"</script>
+{{/if}}
 </body>
 </html>
