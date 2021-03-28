@@ -26,7 +26,9 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('login');
+    res.render('login', {
+        loggedIn: req.session.logged_in
+    });
 });
 
 //Signup page
@@ -36,12 +38,16 @@ router.get('/signup', (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('signup');
+    res.render('signup', {
+        loggedIn: req.session.logged_in
+    });
 });
 
 //GET route for the navigation page
 router.get('/navigation', (req, res) => {
-    res.render('navigation');
+    res.render('navigation', {
+        loggedIn: req.session.logged_in
+    });
 });
 
 module.exports = router;

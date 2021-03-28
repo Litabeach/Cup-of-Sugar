@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Ask_Give, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+
 // Using the /api/ask endpoint
 
 //ask Search API
@@ -47,6 +48,5 @@ router.get('/ask_search/:category/:askGive/:zip', withAuth, async (req, res) => 
         res.status(500).json(err);
     }
 });
-
 
 module.exports = router;

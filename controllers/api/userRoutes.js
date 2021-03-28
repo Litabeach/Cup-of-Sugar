@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-//Using the /user endpoint
+//Using the /api/user endpoint
 
 
 
@@ -45,6 +45,9 @@ router.post('/login', async (req, res) => {
         res.json({ user: userData, message: 'You are now logged in!' });
         //need res.render navigation page when someone logs in
       });
+      res.render('navigation', {
+        loggedIn: req.session.logged_in
+    });
     } catch (err) {
       res.status(400).json(err);
     }
