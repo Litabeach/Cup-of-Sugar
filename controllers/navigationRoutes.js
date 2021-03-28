@@ -10,11 +10,13 @@ router.get('/asks', (req, res) => {
 
 });
 
-//Get all gives, render them to the give page
-// router.get('/gives', (req, res) => {
-//     res.render('give');
+//get route to render singlepost
+router.get('/commentpost', (req, res) => {
+    res.render('singlepost', {
+        loggedIn: req.session.logged_in
+    });
 
-// });
+});
 
 //Need Dashboard route
 router.get('/dashboard', (req, res) => {
