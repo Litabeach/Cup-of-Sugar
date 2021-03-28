@@ -18,14 +18,19 @@ router.get('/asks', (req, res) => {
 
 //Need Dashboard route
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard');
+    res.render('dashboard' , {
+        loggedIn: req.session.logged_in
+    });
+    
 });
  
 
 //Resources page
 //works!
 router.get('/resources', (req, res) => {
-    res.render('national');
+    res.render('national', {
+        loggedIn: req.session.logged_in
+    });
 });
 
 module.exports = router;
