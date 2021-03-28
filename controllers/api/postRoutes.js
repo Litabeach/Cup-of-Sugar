@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Ask_Give } = require('../../models');
+const { Ask_Give, Comment } = require('../../models');
 // const withAuth = require('../../utils/auth')
 
 //Using the /api/post endpoint
@@ -50,7 +50,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-//add delete route for a post
+//DELETE a post
 router.delete('/:id', async (req, res) => {
     try {
         const postData = await Ask_Give.destroy({
@@ -63,6 +63,16 @@ router.delete('/:id', async (req, res) => {
             return;
         }
         res.status(200).json(postData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+//CREATE a comment on a post
+router.post('/comment', async (req, res) => {
+    try {
+        const comment = await Comment.create(req.body);
+        res.status(200).json(comment);
     } catch (err) {
         res.status(500).json(err);
     }
