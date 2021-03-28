@@ -42,7 +42,7 @@ const updateFormHandler = async (event) => {
     ];
   
     if (post_id) {
-      const response = await fetch('/dash/:id', {
+      const response = await fetch('/api/post/:id', {
         method: 'DELETE',
         body: JSON.stringify({
           post_id
@@ -51,7 +51,7 @@ const updateFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace("/dash");
+        document.location.replace("/dashboard");
       } else {
         alert(response.statusText);
       }

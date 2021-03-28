@@ -5,6 +5,7 @@ const { Ask_Give, Comment } = require('../../models');
 //Using the /api/post endpoint
 
 //CREATE new post
+
 router.post('/askpost', async (req, res) => {
     console.log("I'M HERE")
     try {
@@ -69,12 +70,14 @@ router.put('/:id', async (req, res) => {
 
 //DELETE a post
 router.delete('/:id', async (req, res) => {
+    console.log("I'M HERE")
     try {
         const postData = await Ask_Give.destroy({
             where: {
-                id: req.params.id,
+                id: req.body.post_id,
             }
         });
+       
         if(!postData) {
             res.statusMessage(404).json({ message: "No posts found with that ID!" });
             return;
