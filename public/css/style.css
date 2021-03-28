@@ -1,5 +1,5 @@
 
-         .container {
+    .container {
     margin-top: 100px;
     background-color:  rgb(10, 157, 164);
     text-align: center;
@@ -67,3 +67,22 @@ footer {
     border-top-color: black;
     text-align: center;
   }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .card {
+    text-align: left;
+  }
+
+.newpost {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* #inputZip {
+  width: 100%;
+  margin: 0 auto;
+} */

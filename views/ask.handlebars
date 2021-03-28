@@ -25,25 +25,32 @@
       <option value="10">General</option>
     </select>
 
-    <H4>Your location</H4>
+    <H4>Your Zip Code</H4>
     <div class="col-md-6">
-      <label for="inputCity" class="form-label">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="col-md-2">
-      <label for="inputZip" class="form-label">Zip</label>
+      <label for="inputZip" class="form-label">Zip Code</label>
       <input type="text" class="form-control" id="inputZip">
     </div>
+    {{!-- <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div> --}}
 
     <div>
       <button id="searchAsks" type="submit">Search</button>
     </div>
   </form>
+  </div>
 
   {{#if loggedIn}}
-  <div>
-    <a href="#"><button class="newPost">Create New Ask or Give</button></a>
-  </div>
+  <div class="container col-md-6 newpost">
+<div class="row">
+    <div class="col-sm-12">
+      <div>
+        <a href="#"><button class="newPost">Create New Post</button></a>
+      </div>
+      </div>
+</div>
+</div>
   {{/if}}
 
   {{#each asks}}
@@ -51,6 +58,6 @@
   {{/each}}
 
 
-</div>
+
 
 <script src="/js/asksearch.js"></script>

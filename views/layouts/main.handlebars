@@ -32,9 +32,12 @@
                   Dropdown link
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  {{#if loggedIn}}
+                  <li><a class="dropdown-item"id="logout" href="#">Logout</a></li>
+                  {{else}}
+                  <li><a class="dropdown-item" href="/login">Login</a></li>
+                  <li><a class="dropdown-item" href="/signup">Sign Up</a></li>
+                  {{/if}}
                 </ul>
               </li>
             </ul>
