@@ -33,7 +33,7 @@ const newPostHandler = async (event) => {
   
 
   document
-  .querySelector('#postAsk').addEventListener('click', newPostHandler);
+  .querySelector('#newPost').addEventListener('click', newPostHandler);
 
   //Possible Route
 //   router.post('/askpost', async (req, res) => {

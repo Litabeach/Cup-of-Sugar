@@ -7,7 +7,7 @@ const withAuth = require('../utils/auth');
 
 //from the /dashboard:
 
-//render git p with all the users asks and gives
+//render dashboard with all the users asks and gives
 router.get('/', async (req, res) => {
     const user = req.session.user_id;
     try {
@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
 
         const askgives = askgiveData.map((askgive) => askgive.get({ plain: true }));
         console.log(askgives);
-        res.render('navigation', {
+        res.render('dashboard', {
             askgives,
             loggedIn: req.session.logged_in
         });
@@ -44,7 +44,6 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
 
 //GET create new post page
 router.get("/createpost", withAuth, async (req, res) => {
@@ -67,7 +66,5 @@ router.get("/getpost:id", withAuth, async (req, res) => {
       loggedIn: req.session.logged_in
     });
   });
-
-
 
 module.exports = router;
