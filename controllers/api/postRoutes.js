@@ -54,9 +54,15 @@ router.get('/:id', async (req,res) => {
 //UPDATE a give by ID
 router.put('/:id', async (req, res) => {
     try {
-        const postData = await Ask_Give.update(req.body, {
+        const postData = await Ask_Give.update({
+            title: req.body.title,
+            resource_type: req.body.resource_type,
+            content: req.body.content,
+            zip_code: req.body.zip_code,
+            contact: req.body.contact
+        }, {
             where: {
-                id: req.params.id,
+                id: req.body.post_id,
             }
         });
         if (!postData) {

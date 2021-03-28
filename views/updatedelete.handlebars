@@ -27,13 +27,13 @@
         </div>
         <div class="form-group">
             <label for="changeZip">Change Zip</label>
-            <input type="text" class="form-control" id="changeTitle" placeholder="{{post.zip_code}}">
+            <input type="text" class="form-control" id="changeZip" value={{post.zip_code}}>
         </div>
         <div class="form-group">
             <label for="changeContact">Change Contact Information</label>
-            <input type="text" class="form-control" id="changeTitle" placeholder="{{post.contact}}">
+            <input type="text" class="form-control" id="changeContact" value={{post.contact}}>
         </div>
-        <button type="submit" class="btn btn-primary update">Update Post</button>
+        <button type="submit" class="btn btn-primary" id="update">Update Post</button>
         <button type="submit" class="btn btn-primary delete">Delete Post</button>
         <br>
     </form>
