@@ -5,15 +5,6 @@ const { Ask_Give, Comment } = require('../../models');
 //Using the /api/post endpoint
 
 //CREATE new post
-// router.post('/askpost', async (req, res) => {
-//     try {
-//         const postData = await Ask_Give.create(req.body);
-//         res.status(200).json(postData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
 router.post('/askpost', async (req, res) => {
     console.log("I'M HERE")
     try {
