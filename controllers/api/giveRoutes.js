@@ -9,8 +9,7 @@ router.post('/give_search', withAuth, async (req, res) =>{
     try{
         // console.log('Req.body');
         // console.log(req.body);
-        const askData = await Ask_Give.findAll({
-            ...req.body,
+        const askData = await Ask_Give.findAll(req.body, {
             include: [
                 {
                     model: User,
