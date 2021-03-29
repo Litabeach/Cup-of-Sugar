@@ -1,28 +1,32 @@
+body{
+  font-family: 'Merriweather', serif;
+}
 
-    .container {
-    margin-top: 100px;
-    background-color:  rgb(10, 157, 164);
-    text-align: center;
-    border: 2px solid black;
-    box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
-  }
+
+.container {
+  margin-top: 100px;
+  background-color:  white;
+  text-align: center;
+  border: 2px solid black;
+  box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+}
+
+.jumbotron {
+  text-align: center;
+  background-color:  white;
   
-  .jumbotron {
-    text-align: center;
-    background-color:  rgb(10, 157, 164);
-    color: white;
-  }
+}
   
 
 .navbar {
-    background-color: rgb(10, 157, 164); 
+    background-color: white; 
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: black;
   }
   body {
     height: auto;
-    /* background-image: url("/Cup_of_Sugar_wireframes.png"); */
+     background-image: url("/images/Cup_of_Sugar_wireframes.png"); 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -54,7 +58,27 @@
   -moz-box-shadow: inset 0px 0px 5px black;
   box-shadow: inset 0px 0px 5px black;
 }
+.tooltip-wrap {
+  position: relative;
+}
+.tooltip-wrap .tooltip-content {
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  background-color: #fff;
+  padding: .5em;
+}
+.tooltip-wrap:hover .tooltip-content {
+  display: block;
+}
 
+
+
+.photo:hover {
+    opacity: 0.33;
+}
 footer {
     position: fixed;
     left: 0;
