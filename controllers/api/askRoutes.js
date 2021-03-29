@@ -14,14 +14,6 @@ router.get('/ask_search/:category/:askGive/:zip', async (req, res) => {
                     model: User,
                     attributes: ['name'],
                 },
-
-                {
-                    model: Comment,
-                    attributes: ['content', 'createdAt'],
-                    include: {
-                        model: User, attributes: ['name'],
-                    }
-                },
             ],
 
             where: {
@@ -48,5 +40,7 @@ router.get('/ask_search/:category/:askGive/:zip', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
 
 module.exports = router;

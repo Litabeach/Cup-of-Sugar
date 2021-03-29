@@ -11,12 +11,12 @@ router.get('/asks', (req, res) => {
 });
 
 //get route to render singlepost
-router.get('/commentpost', (req, res) => {
-    res.render('singlepost', {
-        loggedIn: req.session.logged_in
-    });
+// router.get('/commentpost', (req, res) => {
+//     res.render('singlepost', {
+//         loggedIn: req.session.logged_in
+//     });
 
-});
+// });
 
 //Need Dashboard route
 router.get('/dashboard', (req, res) => {

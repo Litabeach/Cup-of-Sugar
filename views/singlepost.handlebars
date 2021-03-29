@@ -1,15 +1,14 @@
-    {{#each asks}}
     <h3>{{title}}</h3>
+    <p>by: {{user.name}} on {{format_date createdAt}}</p>
     <p>{{content}}</p>
     <p>{{resource_type}}</p>
-    <p>{{contact}}</p>
-    {{/each}}
+    <p>{{contact}}</p>   
 
 <form class="comment-form">
     <label for="comments">Leave a comment:</label>
     <br>
-    <textarea id="comment" name="comment" placeholder="Enter comment here."></textarea>
-    <button class="commentBtn" type="submit">Save Comment</button>
+    <textarea id="comment" name="comment" placeholder="Enter comment here." data-id={{ask_give.id}}></textarea>
+    <button class="commentBtn" type="submit" id="commentBtn">Save Comment</button>
 </form>
 </div>
 
@@ -17,6 +16,8 @@
 <div class="post">
     <h3>Comment by {{user.name}}</h3>
     <p>{{format_date comment.createdAt}}</p>
-    <p>{{comment.text}}</p>
+    <p>{{comment.content}}</p>
 </div>
-{{/each}}
+{{/each}} 
+
+<script src="/js/comment.js"></script>

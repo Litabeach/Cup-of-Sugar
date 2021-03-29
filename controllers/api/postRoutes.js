@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Ask_Give, Comment } = require('../../models');
+const { Ask_Give, Comment, User } = require('../../models');
 // const withAuth = require('../../utils/auth')
 
 //Using the /api/post endpoint
@@ -32,24 +32,38 @@ router.get('/askpost', (req, res) => {
     res.render('askpost');
 });
 
-//READ post by ID
-router.get('/:id', async (req,res) => {
+//get post by ID
+router.get('/:id', async (req, res) => {
     try {
-        const postData = await Ask_Give.findAll({
-            where: {
-                id: req.params.id,
-                // user_id: req.session.id,
-            }
-        });
-        if (!postData) {
-            res.status(404).json({ message: "No posts found with that ID!" });
-            return;
-        }
-        res.status(200).json(postData);
+      const askGiveData = await Ask_Give.findByPk(req.params.id, {
+        include: [
+            {
+                model: User,
+                attributes: ['name'],
+            },
+
+            {
+                model: Comment,
+                attributes: ['content', 'createdAt'],
+                include: {
+                    model: User, 
+                    attributes: ['name'],
+                }
+            },
+        ],
+      });
+  
+      const asks = askGiveData.get({ plain: true });
+      console.log("here is the data:", asks)
+  
+      res.render('singlepost', {
+        ...asks,
+        // logged_in: req.session.logged_in
+      });
     } catch (err) {
-        res.status(400).json(err);
+      res.status(500).json(err);
     }
-})
+  });
 
 //UPDATE a post by ID
 router.put('/:id', async (req, res) => {
@@ -94,15 +108,19 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-//CREATE a comment on a post
-router.post('/comment', async (req, res) => {
+//Create a comment
+router.post("/comment/:id", async (req, res) => {
     try {
-        const comment = await Comment.create(req.body);
-        res.status(200).json(comment);
+        const newComment = await Comment.create({
+            content: req.body.content,
+            ask_give_id: req.body.ask_give_id,
+            user_id: user_id
+        });
+        res.status(200).json(newComment);
+        console.log(newComment)
     } catch (err) {
-        res.status(500).json(err);
+        res.status(400).json(err);
     }
-});
-
+})
 
 module.exports = router;
