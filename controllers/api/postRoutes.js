@@ -32,28 +32,53 @@ router.get('/askpost', (req, res) => {
     res.render('askpost');
 });
 
-//READ post by ID
-router.get('/:id', async (req,res) => {
+// //READ post by ID
+// router.get('/:id', async (req,res) => {
+//     try {
+//         const askGiveData = await Ask_Give.findOne({
+//             where: {
+//                 id: req.params.id,
+//                 // user_id: req.session.id,
+//             }
+//         });
+//         if (!askGiveData) {
+//             res.status(404).json({ message: "No posts found with that ID!" });
+//             return;
+//         }
+//         const asks = askGiveData.get({ plain: true });
+//         res.render('singlepost', {
+//             asks
+//           })
+//         res.status(200).json(askGiveData);
+//     } catch (err) {
+//         res.status(400).json(err);
+//     }
+// })
+
+
+//get post by ID
+router.get('/:id', async (req, res) => {
     try {
-        const postData = await Ask_Give.findOne({
-            where: {
-                id: req.params.id,
-                // user_id: req.session.id,
-            }
-        });
-        if (!postData) {
-            res.status(404).json({ message: "No posts found with that ID!" });
-            return;
-        }
-        const asks = postData.get({ plain: true });
-        res.render('singlepost', {
-            asks
-          })
-        res.status(200).json(postData);
+      const askGiveData = await Ask_Give.findByPk(req.params.id, {
+        // include: [
+        //   {
+        //     model: User,
+        //     attributes: ['name'],
+        //   },
+        // ],
+      });
+  
+      const asks = askGiveData.get({ plain: true });
+      console.log("here is the data:", asks)
+  
+      res.render('singlepost', {
+        ...asks,
+        // logged_in: req.session.logged_in
+      });
     } catch (err) {
-        res.status(400).json(err);
+      res.status(500).json(err);
     }
-})
+  });
 
 //UPDATE a post by ID
 router.put('/:id', async (req, res) => {
