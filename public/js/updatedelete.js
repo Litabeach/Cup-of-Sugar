@@ -17,17 +17,17 @@ const updateFormHandler = async (event) => {
     const post_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
   ];
-  
-      const response = await fetch(`/dash/${post_id}`, {
+   console.log(post_id)
+      const response = await fetch(`/api/post/:id'`, {
         method: 'PUT',
         body: JSON.stringify({
-          title, resource_type, content, zip_code, contact
+          title, resource_type, content, zip_code, contact, post_id
         }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        document.location.replace("/dash");
+        document.location.replace("/dashboard");
       } else {
         alert(response.statusText);
       }
@@ -42,7 +42,7 @@ const updateFormHandler = async (event) => {
     ];
   
     if (post_id) {
-      const response = await fetch('/dash/:id', {
+      const response = await fetch('/api/post/:id', {
         method: 'DELETE',
         body: JSON.stringify({
           post_id
@@ -51,7 +51,7 @@ const updateFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace("/dash");
+        document.location.replace("/dashboard");
       } else {
         alert(response.statusText);
       }
@@ -60,7 +60,7 @@ const updateFormHandler = async (event) => {
 
   //calls update
   document
-  .querySelector('.update').addEventListener('submit', updateFormHandler);
+  .querySelector('#update').addEventListener('click', updateFormHandler);
 
   document
   .querySelector('.delete').addEventListener('click', deleteFormHandler);

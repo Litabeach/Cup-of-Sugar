@@ -4,6 +4,12 @@
         <p>
 Here you can manage any posts you’ve published on Cup of Sugar. Click on a post to update or delete it, or click on the “Create New Post” button to make a new ask or give.
 </p>
+        {{#if name}}
+        <h2>{{name}}'s Cup Of Sugar</h2>
+        {{else}}
+        <h2>My Cup Of Sugar</h2>
+        {{/if}}
+        <p>View all of your posts here. Click on any ask or give to update or delete it.</p>
     </div>
 </div>
 <div class="container">
@@ -25,7 +31,7 @@ Here you can manage any posts you’ve published on Cup of Sugar. Click on a pos
 <div class="row">
     <div class="col-sm-12">
       <div>
-        <a href="#"><button class="newPost">Create New Post</button></a>
+        <a href="/api/post/askpost"><button class="newPost">Create New Post</button></a>
       </div>
       </div>
 </div>

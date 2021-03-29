@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-//Using the /user endpoint
+//Using the /api/user endpoint
 
 
 
@@ -11,6 +11,7 @@ router.post('/signup', async (req, res) => {
       const userData = await User.create(req.body);
       req.session.save(() => {
         req.session.user_id = userData.id;
+        req.session.name = userData.name;
         req.session.logged_in = true;
         res.status(200).json(userData);
         //need res.render navigation page when someone registers
@@ -37,14 +38,19 @@ router.post('/login', async (req, res) => {
           .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
         return;
+      
       }
   console.log(userData);
       req.session.save(() => {
         req.session.user_id = userData.id;
+        req.session.name = userData.name;
         req.session.logged_in = true;
         res.json({ user: userData, message: 'You are now logged in!' });
         //need res.render navigation page when someone logs in
       });
+      res.render('navigation', {
+        loggedIn: req.session.logged_in
+    });
     } catch (err) {
       res.status(400).json(err);
     }

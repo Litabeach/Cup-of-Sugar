@@ -1,11 +1,10 @@
 const router = require('express').Router();
-const { Ask_Give, User } = require('../models');
+// const { Ask_Give, User } = require('../models');
 const withAuth = require('../utils/auth');
-
 
 //Using the root endpoint
 
-//READ the homepage
+//READ the landing page
 //works!
 router.get('/', (req, res) => {
     try {
@@ -27,7 +26,9 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('login');
+    res.render('login', {
+        loggedIn: req.session.logged_in
+    });
 });
 
 //Signup page
@@ -37,34 +38,17 @@ router.get('/signup', (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('signup');
-});
-
-
-//Get all asks, render them to the ask page
-router.get('/asks', (req, res) => {
-    res.render('ask', {
+    res.render('signup', {
         loggedIn: req.session.logged_in
     });
-
 });
-
-//Get all gives, render them to the give page
-router.get('/gives', (req, res) => {
-    res.render('give');
-
-});
-
 
 //GET route for the navigation page
 router.get('/navigation', (req, res) => {
-    res.render('navigation');
-});
-
-//Resources page
-//works!
-router.get('/resources', (req, res) => {
-    res.render('resources');
+    res.render('navigation', {
+        loggedIn: req.session.logged_in,
+        name: req.session.name
+    });
 });
 
 module.exports = router;

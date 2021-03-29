@@ -1,0 +1,29 @@
+    <h3>{{title}}</h3>
+    <p>by: {{user.name}} on {{format_date createdAt}}</p>
+    <p>{{content}}</p>
+    <p>Category: {{resource_type}}</p>
+    <p>Contact: {{contact}}</p>   
+    
+    {{!-- <p>{{user.id}}</p> --}}
+
+<form class="comment-form">
+    <label for="comments">Leave a comment:</label>
+    <br>
+    <textarea id="comment-content" name="comment" placeholder="Enter comment here." data-id={{id}}></textarea>
+    <button class="commentBtn" type="submit" id="commentBtn">Save Comment</button>
+</form>
+</div>
+<h4>
+    Comments
+</h4>
+{{#each comments as |comment|}}
+<div id="commentID" user_id={{comment.user.id}}>
+    <div>
+    <p>{{comment.content}}</p>
+    <p>-{{comment.user.name}}, {{format_date comment.createdAt}}</p>
+</div>
+{{/each}} 
+<br>
+<br>
+<br>
+<script src="/js/comment.js"></script>
