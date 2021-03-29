@@ -37,6 +37,7 @@ router.post('/login', async (req, res) => {
           .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
         return;
+      
       }
   console.log(userData);
       req.session.save(() => {
