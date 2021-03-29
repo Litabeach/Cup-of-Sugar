@@ -46,7 +46,8 @@ router.get('/signup', (req, res) => {
 //GET route for the navigation page
 router.get('/navigation', (req, res) => {
     res.render('navigation', {
-        loggedIn: req.session.logged_in
+        loggedIn: req.session.logged_in,
+        name: req.session.name
     });
 });
 

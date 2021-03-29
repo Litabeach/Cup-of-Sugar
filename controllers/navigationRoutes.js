@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const axios = require('axios');
 // const { Ask_Give, User } = require('../models');
 // const withAuth = require('../utils/auth');
 
@@ -21,7 +22,8 @@ router.get('/asks', (req, res) => {
 //Need Dashboard route
 router.get('/dashboard', (req, res) => {
     res.render('dashboard' , {
-        loggedIn: req.session.logged_in
+        loggedIn: req.session.logged_in,
+        name: req.session.name
     });
     
 });
@@ -34,6 +36,22 @@ router.get('/resources', (req, res) => {
         loggedIn: req.session.logged_in
     });
 });
+
+//render info to resource page
+router.get('/resources/:category/:state', async (req, res) => {
+    var apiUrl = `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}&categoryID=${req.params.category}&state=${req.params.state}`
+    try {
+        //axios is a package that allows us to call the API from here
+        const response = await axios.get(apiUrl);
+        console.log(response);
+        //need to create view for organizations
+        res.render("resources", {
+            charity: response.data
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 router.get('/national', (req, res) => {
     res.render('national', {
