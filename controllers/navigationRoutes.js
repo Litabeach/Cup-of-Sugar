@@ -22,7 +22,8 @@ router.get('/asks', (req, res) => {
 //Need Dashboard route
 router.get('/dashboard', (req, res) => {
     res.render('dashboard' , {
-        loggedIn: req.session.logged_in
+        loggedIn: req.session.logged_in,
+        name: req.session.name
     });
     
 });
