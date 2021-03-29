@@ -2,7 +2,8 @@
      <a href="/api/post/{{id}}">
     <h3>{{title}}</h3>
     </a>
+    <p>by: {{user.name}} on {{format_date createdAt}}</p>
     <p>{{content}}</p>
-    <p>{{resource_type}}</p>
-    <p>{{contact}}</p>
+    <p> Category: {{resource_type}}</p>
+    <p> Contact: {{contact}}</p>
 </div>

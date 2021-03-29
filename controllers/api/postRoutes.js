@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Ask_Give, Comment } = require('../../models');
+const { Ask_Give, Comment, User } = require('../../models');
 // const withAuth = require('../../utils/auth')
 
 //Using the /api/post endpoint
@@ -32,40 +32,25 @@ router.get('/askpost', (req, res) => {
     res.render('askpost');
 });
 
-// //READ post by ID
-// router.get('/:id', async (req,res) => {
-//     try {
-//         const askGiveData = await Ask_Give.findOne({
-//             where: {
-//                 id: req.params.id,
-//                 // user_id: req.session.id,
-//             }
-//         });
-//         if (!askGiveData) {
-//             res.status(404).json({ message: "No posts found with that ID!" });
-//             return;
-//         }
-//         const asks = askGiveData.get({ plain: true });
-//         res.render('singlepost', {
-//             asks
-//           })
-//         res.status(200).json(askGiveData);
-//     } catch (err) {
-//         res.status(400).json(err);
-//     }
-// })
-
-
 //get post by ID
 router.get('/:id', async (req, res) => {
     try {
       const askGiveData = await Ask_Give.findByPk(req.params.id, {
-        // include: [
-        //   {
-        //     model: User,
-        //     attributes: ['name'],
-        //   },
-        // ],
+        include: [
+            {
+                model: User,
+                attributes: ['name'],
+            },
+
+            {
+                model: Comment,
+                attributes: ['content', 'createdAt'],
+                include: {
+                    model: User, 
+                    attributes: ['name'],
+                }
+            },
+        ],
       });
   
       const asks = askGiveData.get({ plain: true });
@@ -129,9 +114,10 @@ router.post("/comment/:id", async (req, res) => {
         const newComment = await Comment.create({
             content: req.body.content,
             ask_give_id: req.body.ask_give_id,
-            user_id: req.session.user_id
+            user_id: user_id
         });
         res.status(200).json(newComment);
+        console.log(newComment)
     } catch (err) {
         res.status(400).json(err);
     }

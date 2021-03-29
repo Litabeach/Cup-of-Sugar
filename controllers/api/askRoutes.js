@@ -14,14 +14,6 @@ router.get('/ask_search/:category/:askGive/:zip', async (req, res) => {
                     model: User,
                     attributes: ['name'],
                 },
-
-                {
-                    model: Comment,
-                    attributes: ['content', 'createdAt'],
-                    include: {
-                        model: User, attributes: ['name'],
-                    }
-                },
             ],
 
             where: {
