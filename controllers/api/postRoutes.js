@@ -21,10 +21,8 @@ router.post('/askpost', async (req, res) => {
         }
         );
         console.log(newPost)
-        console.log(user_id)
         res.status(200).json(newPost);
     } catch (err) {
-        console.log(user_id)
         res.status(500).json(err);
     }
 });
@@ -119,12 +117,10 @@ router.post("/comment/", async (req, res) => {
             user_id: req.session.user_id
         });
         res.status(200).json(newComment);
-        // console.log("comment", newComment)
     } catch (err) {
         res.status(400).json(err);
         console.log("user id", user_id)
     }
-    
 });
 
 module.exports = router;

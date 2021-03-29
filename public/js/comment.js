@@ -68,10 +68,8 @@ document
 
     const content = document.querySelector('#comment-content').value.trim();
     const ask_give_id = document.querySelector('#comment-content').getAttribute("data-id");
-    // var sessionVal = '@Session["user_id"]';
-    // console.log(sessionVal);
-    // const user_id = document.querySelector('#commentID').getAttribute("user-id");
-    const user_id = "user"
+    const user_id = document.querySelector('#commentID').getAttribute("user-id");
+    
 
 
     console.log(content)

@@ -1,8 +1,8 @@
     <h3>{{title}}</h3>
     <p>by: {{user.name}} on {{format_date createdAt}}</p>
     <p>{{content}}</p>
-    <p>{{resource_type}}</p>
-    <p>{{contact}}</p>   
+    <p>Category: {{resource_type}}</p>
+    <p>Contact: {{contact}}</p>   
     
     {{!-- <p>{{user.id}}</p> --}}
 
@@ -17,7 +17,8 @@
     Comments
 </h4>
 {{#each comments as |comment|}}
-<div id="commentID" user-id={{user.id}}>
+<div id="commentID" user_id={{comment.user.id}}>
+    <div>
     <p>{{comment.content}}</p>
     <p>-{{comment.user.name}}, {{format_date comment.createdAt}}</p>
 </div>
