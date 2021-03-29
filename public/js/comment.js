@@ -10,7 +10,7 @@ const commentFormHandler = async (event) => {
     const user_id = "user"
   
     if (content) {
-      const response = await fetch('/api/post/:id', {
+      const response = await fetch('/api/comment/:id', {
         method: 'POST',
         body: JSON.stringify({ 
             content, ask_give_id, user_id }),

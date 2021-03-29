@@ -35,7 +35,7 @@ router.get('/askpost', (req, res) => {
 //READ post by ID
 router.get('/:id', async (req,res) => {
     try {
-        const postData = await Ask_Give.findAll({
+        const postData = await Ask_Give.findOne({
             where: {
                 id: req.params.id,
                 // user_id: req.session.id,
@@ -45,7 +45,10 @@ router.get('/:id', async (req,res) => {
             res.status(404).json({ message: "No posts found with that ID!" });
             return;
         }
-        res.render('singlepost');
+        const asks = postData.get({ plain: true });
+        res.render('singlepost', {
+            asks
+          })
         res.status(200).json(postData);
     } catch (err) {
         res.status(400).json(err);
@@ -95,15 +98,18 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-//CREATE a comment on a post
-router.post('/comment', async (req, res) => {
+//Create a comment
+router.post("/comment/:id", async (req, res) => {
     try {
-        const comment = await Comment.create(req.body);
-        res.status(200).json(comment);
+        const newComment = await Comment.create({
+            content: req.body.content,
+            ask_give_id: req.body.ask_give_id,
+            user_id: req.session.user_id
+        });
+        res.status(200).json(newComment);
     } catch (err) {
-        res.status(500).json(err);
+        res.status(400).json(err);
     }
-});
-
+})
 
 module.exports = router;
