@@ -33,7 +33,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   {{#if loggedIn}}
-                  <li><a class="dropdown-item" id="logout" href="/">Logout</a></li>
+                  <li><a class="dropdown-item" id="logout" href="/logout">Logout</a></li>
                   {{else}}
                   <li><a class="dropdown-item" href="/login">Login</a></li>
                   <li><a class="dropdown-item" href="/signup">Sign Up</a></li>
@@ -49,14 +49,21 @@
 {{{ body }}}
 
 <footer>
-    {{!-- {{#if }} --}}
-
-    <a href="/"><button class="btn btn-primary" type="submit"><i class="fas fa-home"></i></button></a>
-    <a href="/navigation"><button class="btn btn-primary" type="submit"><i class="fas fa-tachometer-alt"></i></button></a>
-    <a href="#"><button class="btn btn-primary" type="submit"><i class="fas fa-hand-holding-heart"></i></button></a>
-    <a href="#"><button id="logout" class="btn btn-primary" type="submit"><i class="fas fa-cog"></i></button></a>
-      {{!-- {{/if }} --}}
+    {{!-- {{#if logged_in}} --}}
+    <a href="/dashboard"><button class="btn btn-primary" type="submit"><i class="fas fa-home"> Dashboard</i></button></a>
+    {{!-- {{else}} --}}
+    <a href="/login"><button id="login" class="btn btn-primary" type="submit"><i class="fas fa-sign-in-alt"> Login</i></button></a>
+    {{!-- {{/if }} --}}
+    <a href="/navigation/asks"><button class="btn btn-primary" type="submit"><i class="fas fa-hand-holding-heart"> Ask/Give</i></button></a>  
+    <a href="/navigation/resources"><button class="btn btn-primary" type="submit"><i class="fas fa-hands-helping"> Resources</i></button></a>  
+    {{!-- {{#if logged_in}}   --}}
+    <a href="/"><button id="logout" class="btn btn-primary" type="submit"><i class="fas fa-sign-out-alt"> Logout</i></button></a>
+    {{!-- {{else }} --}}
+    <a href="/signup"><button class="btn btn-primary" type="submit"><i class="fas fa-user-plus"> Register</i></button></a>
+    {{!-- {{/if}} --}}
 </footer>
+{{#if logged_in}}
 <script>"/js/logout.js"</script>
+{{/if}}
 </body>
 </html>
