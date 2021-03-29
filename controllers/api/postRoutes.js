@@ -54,7 +54,7 @@ router.get('/:id', async (req, res) => {
       });
   
       const asks = askGiveData.get({ plain: true });
-      console.log("here is the data:", asks)
+      console.log("here is the data from the get post by ID route:", asks)
   
       res.render('singlepost', {
         ...asks,
@@ -109,12 +109,16 @@ router.delete('/:id', async (req, res) => {
 });
 
 //Create a comment
-router.post("/comment/:id", async (req, res) => {
+router.post("/comment/", async (req, res) => {
     try {
         const newComment = await Comment.create({
-            content: req.body.content,
-            ask_give_id: req.body.ask_give_id,
-            user_id: user_id
+            // content: req.body.content,
+            // ask_give_id: req.body.ask_give_id,
+            // user_id: user_id
+
+            content: req.body.text,
+            user_id: req.session.user_id,
+            ask_give_id: req.body.ask_give_id  
         });
         res.status(200).json(newComment);
         console.log(newComment)
