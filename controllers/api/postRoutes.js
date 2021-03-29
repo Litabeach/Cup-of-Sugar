@@ -21,8 +21,10 @@ router.post('/askpost', async (req, res) => {
         }
         );
         console.log(newPost)
+        console.log(user_id)
         res.status(200).json(newPost);
     } catch (err) {
+        console.log(user_id)
         res.status(500).json(err);
     }
 });
@@ -39,22 +41,22 @@ router.get('/:id', async (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['name'],
+                attributes: ['name', 'id'],
             },
 
             {
                 model: Comment,
-                attributes: ['content', 'createdAt'],
+                attributes: ['content', 'createdAt', 'user_id'],
                 include: {
                     model: User, 
-                    attributes: ['name'],
+                    attributes: ['name', 'id'],
                 }
             },
         ],
       });
   
       const asks = askGiveData.get({ plain: true });
-      console.log("here is the data from the get post by ID route:", asks)
+    //   console.log("here is the data from the get post by ID route:", asks)
   
       res.render('singlepost', {
         ...asks,
@@ -112,19 +114,17 @@ router.delete('/:id', async (req, res) => {
 router.post("/comment/", async (req, res) => {
     try {
         const newComment = await Comment.create({
-            // content: req.body.content,
-            // ask_give_id: req.body.ask_give_id,
-            // user_id: user_id
-
-            content: req.body.text,
-            user_id: req.session.user_id,
-            ask_give_id: req.body.ask_give_id  
+            content: req.body.content,
+            ask_give_id: req.body.ask_give_id,
+            user_id: req.session.user_id
         });
         res.status(200).json(newComment);
-        console.log(newComment)
+        // console.log("comment", newComment)
     } catch (err) {
         res.status(400).json(err);
+        console.log("user id", user_id)
     }
-})
+    
+});
 
 module.exports = router;

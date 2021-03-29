@@ -27,7 +27,7 @@ router.get('/ask_search/:category/:askGive/:zip', async (req, res) => {
 
 
         const asks = askData.map((ask_give) => ask_give.get({ plain: true }));
-        console.log('Here is the asks variable: ', asks);
+        // console.log('Here is the asks variable: ', asks);
 
         res.render('ask', {
             asks,

@@ -10,31 +10,22 @@ router.get('/asks', (req, res) => {
 
 });
 
-//get route to render singlepost
-// router.get('/commentpost', (req, res) => {
-//     res.render('singlepost', {
-//         loggedIn: req.session.logged_in
-//     });
-
-// });
-
-//Need Dashboard route
+//Dashboard route
 router.get('/dashboard', (req, res) => {
     res.render('dashboard' , {
         loggedIn: req.session.logged_in
     });
-    
 });
  
 
 //Resources page
-//works!
 router.get('/resources', (req, res) => {
     res.render('resources', {
         loggedIn: req.session.logged_in
     });
 });
 
+//National resources page
 router.get('/national', (req, res) => {
     res.render('national', {
         loggedIn: req.session.logged_in

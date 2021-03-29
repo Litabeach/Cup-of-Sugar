@@ -3,11 +3,13 @@
     <p>{{content}}</p>
     <p>{{resource_type}}</p>
     <p>{{contact}}</p>   
+    
+    {{!-- <p>{{user.id}}</p> --}}
 
 <form class="comment-form">
     <label for="comments">Leave a comment:</label>
     <br>
-    <textarea id="comment-content" name="comment" placeholder="Enter comment here." data-id={{ask_give.id}}></textarea>
+    <textarea id="comment-content" name="comment" placeholder="Enter comment here." data-id={{id}}></textarea>
     <button class="commentBtn" type="submit" id="commentBtn">Save Comment</button>
 </form>
 </div>
@@ -15,7 +17,7 @@
     Comments
 </h4>
 {{#each comments as |comment|}}
-<div>
+<div id="commentID" user-id={{user.id}}>
     <p>{{comment.content}}</p>
     <p>-{{comment.user.name}}, {{format_date comment.createdAt}}</p>
 </div>
