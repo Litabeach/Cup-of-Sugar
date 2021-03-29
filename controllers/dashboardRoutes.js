@@ -37,7 +37,8 @@ router.get('/', withAuth, async (req, res) => {
         console.log(askgives);
         res.render('dashboard', {
             askgives,
-            loggedIn: req.session.logged_in
+            loggedIn: req.session.logged_in,
+            name: req.session.name
         });
 
     } catch (err) {
