@@ -20,6 +20,7 @@
     </div>
 
     <div class="container">
+    <form>
         <div class="row">
             <div class="col-sm-8">
                 <div class="dropdown">
@@ -54,21 +55,13 @@
         </select>
     </div>
     </div>
-
+ <button id="searchResources" type="submit">Search</button>
         </div>
-        <div class="row">
-            <div class="card">
-                <div class="card-body">
-                    <h4>Charity Name</h4>
-                    <p>Mission</p>
-                    <p>Contact Information</p>
-                    <a href="/">Website</a>
-                    <p>Can add mailing address</p>
-                </div>
-            </div>
-        </div>
+       {{#each charity}}
+       {{> resourcelist}}
+       {{/each}}
 
-        <button id="searchResources" type="submit">Search</button>
+       </form>
     </div>
 
     <script src="/js/api.js"></script>
