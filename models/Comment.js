@@ -18,7 +18,7 @@ Comment.init({
     createdAt: {
         type: DataTypes.DATE,
         defaultValue: Sequelize.fn('now'),
-        allowNull: false
+        allowNull: true
     },
 
     updatedAt: {
