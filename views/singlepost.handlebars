@@ -4,15 +4,15 @@
     <p>Category: {{resource_type}}</p>
     <p>Contact: {{contact}}</p>   
     
-    {{!-- <p>{{user.id}}</p> --}}
 
+{{#if loggedIn}}
 <form class="comment-form">
     <label for="comments">Leave a comment:</label>
     <br>
     <textarea id="comment-content" name="comment" placeholder="Enter comment here." data-id={{id}}></textarea>
     <button class="commentBtn" type="submit" id="commentBtn">Save Comment</button>
 </form>
-</div>
+{{/if}}
 <h4>
     Comments
 </h4>
