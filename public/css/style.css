@@ -1,66 +1,109 @@
-body{
-  font-family: 'Merriweather', serif;
-}
-
-
 .container {
   margin-top: 100px;
-  background-color:  white;
+  background-color: rgba(71, 221, 241, 0.4);
+  color: black;
   text-align: center;
+  border-radius: 6px;
   border: 2px solid black;
   box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+
+}
+
+.nav {
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.welcome {
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: rgba(71, 221, 241, 0.4);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  border: 2px solid black;
+  box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+  width: 50%;
+ 
 }
 
 .jumbotron {
   text-align: center;
-  background-color:  white;
-  
+  background-color:  transparent;
+
 }
-  
+
 
 .navbar {
-    background-color: white; 
-    border-bottom-width: 1px;
+  /* background-color: #2fe0ffc5;  */
+    /* border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: black;
-  }
-  body {
-    height: auto;
-    background-image: url("/images/Cup_of_Sugar_wireframes.png");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: 70px;
-  }
-  .btn  {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 35px;
-  margin-right: 35px;
-  background-color: white;
-  color: black;
-  border: 1px solid rgb(0, 0, 12, 0.8);
+    border-bottom-color: black; */
+  width: 100%;
+  /* display: inline-block; */
+  color: white;
+  /* position: fixed; */
+  
+  top: 0px;
+  text-align: center;
+}
+
+#headerLogo {
+  /* display: inline-block; */
+  /* margin: 0px auto; */
+  font-family: 'Lily Script One', cursive;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  flex-grow: 3;
+  margin-right: 0;
+  /* margin: 0px 220px 0px 220px; */
+}
+
+body {
+  height: auto;
+  top: 75px;
+  background-image: url("/images/shutterstock_1415147612.jpg");
+  font-family: 'Merriweather', serif;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 70px;
+}
+
+.btn {
+  /* margin: 5px 60px 5px 60px; */
+  margin: 5px;
+  padding: 1px 10px 1px 10px;
+  background-color: transparent;
+  /* align-items: center; */
+  color: white;
+  border: 0px solid rgb(0, 0, 12, 0.8);
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .btn:hover {
-  background-color:rgb(10, 157, 164);
-  color: white;
-  border: 1px solid white;
+  background-color: white;
+  color: rgb(10, 157, 164);
+  border: 0px solid white;
 }
 
 .btn:active {
-  background-color: rgb(138, 246, 246);
+  background-color: pink;
+  border: 0px solid white;
 }
 
 .btn:active {
-  -webkit-box-shadow: inset 0px 0px 5px black;
-  -moz-box-shadow: inset 0px 0px 5px black;
-  box-shadow: inset 0px 0px 5px black;
+  -webkit-box-shadow: inset 0px 0px 5px white;
+  -moz-box-shadow: inset 0px 0px 5px white;
+  box-shadow: inset 0px 0px 5px white;
 }
+
 .tooltip-wrap {
   position: relative;
 }
+
 .tooltip-wrap .tooltip-content {
   display: none;
   position: absolute;
@@ -70,6 +113,7 @@ body{
   background-color: #fff;
   padding: .5em;
 }
+
 .tooltip-wrap:hover .tooltip-content {
   display: block;
 }
@@ -77,29 +121,30 @@ body{
 
 
 .photo:hover {
-    opacity: 0.33;
+  opacity: 0.33;
 }
+
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    height: auto;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: black;
-    text-align: center;
-  }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: white; */
+  height: auto;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: white;
+  text-align: center;
+}
 
-  a {
-    text-decoration: none;
-    color: black;
-  }
+a {
+  text-decoration: none;
+  color:#000000;
+}
 
-  .card {
-    text-align: left;
-  }
+.card {
+  text-align: left;
+}
 
 .newpost {
   margin: 0 auto;
@@ -110,3 +155,18 @@ footer {
   width: 100%;
   margin: 0 auto;
 } */
+
+#askSearch {
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 669px) {
+
+  .navbar {
+    flex-direction: column;
+  }
+  
+}

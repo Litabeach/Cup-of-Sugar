@@ -28,7 +28,7 @@ Click here to view a list of nationally branched resources and organizations.
             <div class="col-sm-8">
                 <div class="dropdown">
 
-                    <H4>Select category of organization</H4>
+                    <H4 style="margin: 10px">Select category of organization</H4>
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="catNum">
             <option selected> Select</option>
             <option value="1">Animals</option>
@@ -47,7 +47,7 @@ Click here to view a list of nationally branched resources and organizations.
 </div>
 <div class="col-sm-4">
     <div class="dropdown">
-        <H4>Select your current state</H4>
+        <H4 style="margin: 10px">Select your current state</H4>
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="state">
             <option selected> Select</option>
             <option value="AL">Alabama</option>
@@ -104,11 +104,18 @@ Click here to view a list of nationally branched resources and organizations.
         </select>
     </div>
     </div>
- <button id="searchResources" type="submit">Search</button>
+    <div>
+        <button id="searchResources" class="btn btn-info" type="submit">Search</button>
+    </div>
         </div>
+    
+    {{#if charity}}
        {{#each charity}}
        {{> resourcelist}}
        {{/each}}
+    {{else}}
+    <p>{{message}}</p>
+    {{/if}}
 
        </form>
     </div>

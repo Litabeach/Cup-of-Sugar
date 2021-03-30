@@ -1,3 +1,5 @@
+    
+    <div class="container">
     <h3>{{title}}</h3>
     <p>by: {{user.name}} on {{format_date createdAt}}</p>
     <p>{{content}}</p>
@@ -21,8 +23,11 @@
     <p>{{comment.content}}</p>
     <p>-{{comment.user.name}}, {{format_date comment.createdAt}}</p>
 </div>
+
 {{/each}} 
 <br>
 <br>
 <br>
+
 <script src="/js/comment.js"></script>
+</div>
