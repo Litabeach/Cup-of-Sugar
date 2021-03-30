@@ -1,33 +1,49 @@
-    
-    <div class="container">
-    <h3>{{title}}</h3>
-    <p>by: {{user.name}} on {{format_date createdAt}}</p>
-    <p>{{content}}</p>
-    <p>Category: {{resource_type}}</p>
-    <p>Contact: {{contact}}</p>   
-    
+<div class="container">
 
-{{#if loggedIn}}
-<form class="comment-form">
-    <label for="comments">Leave a comment:</label>
+    <div class="row">
+        <div class="card">
+            <h3>{{title}}</h3>
+            <p><b>Written by: </b>Written by: {{user.name}} on {{format_date createdAt}}</p>
+            <p><b>Body: </b>{{content}}</p>
+            <p><b>Category: </b>{{resource_type}}</p>
+            <p><b>Contact: </b>{{contact}}</p>
+
+        </div>
+    </div>
+
+    {{#if loggedIn}}
     <br>
-    <textarea id="comment-content" name="comment" placeholder="Enter comment here." data-id={{id}}></textarea>
-    <button class="commentBtn" type="submit" id="commentBtn">Save Comment</button>
-</form>
-{{/if}}
-<h4>
-    Comments
-</h4>
-{{#each comments as |comment|}}
-    <div>
-    <p>{{comment.content}}</p>
-    <p>-{{comment.user.name}}, {{format_date comment.createdAt}}</p>
+    <form class="comment-form">
+        <h4> <label for="comments">Leave a comment:</label></h4>
+
+        <textarea id="comment-content" name="comment" placeholder="Enter comment here." data-id={{id}}
+            style="width: 100%"></textarea>
+        <button class="commentBtn" type="submit" id="commentBtn">Save Comment</button>
+    </form>
+
+
+    {{/if}}
+</div>
+<div class="container">
+    <h3>Comments</h3>
+
+
+    {{#each comments as |comment|}}
+    <div class="row">
+        <div class="card">
+
+            <p>{{comment.content}}</p>
+            <p>-{{comment.user.name}}, {{format_date comment.createdAt}}</p>
+
+        </div>
+    </div>
+    {{/each}}
+    <br>
+    <br>
+    <br>
+
 </div>
 
-{{/each}} 
-<br>
-<br>
-<br>
+
 
 <script src="/js/comment.js"></script>
-</div>

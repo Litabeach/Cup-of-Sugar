@@ -32,7 +32,7 @@ Search below for our current posts. Selecting a category and a zip code will bri
     </select>
 
     <H4>Your Zip Code</H4>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <label for="inputZip" class="form-label"></label>
       <input type="text" class="form-control" id="inputZip">
     </div>
@@ -43,6 +43,12 @@ Search below for our current posts. Selecting a category and a zip code will bri
   </form>
   {{!-- </div> --}}
   </div>
+
+ 
+
+  {{#each asks}}
+  {{> asksearch}}
+  {{/each}}
 
   {{#if loggedIn}}
   <div class="container col-md-6 newpost" style="margin-bottom: 20px">
@@ -55,11 +61,7 @@ Search below for our current posts. Selecting a category and a zip code will bri
 </div>
 </div>
 
-  {{/if}}
-
-  {{#each asks}}
-  {{> asksearch}}
-  {{/each}}
+{{/if}}  
  
 
 

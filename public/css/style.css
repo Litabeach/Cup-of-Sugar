@@ -23,7 +23,8 @@
   border-radius: 6px;
   border: 2px solid black;
   box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
-  width: 50%;
+  width: 75%;
+  padding: 10px;
  
 }
 
