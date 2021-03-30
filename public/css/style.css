@@ -9,6 +9,11 @@
 
 }
 
+.nav {
+  justify-content: center;
+  flex-grow: 1;
+}
+
 .welcome {
   margin: 0 auto;
   margin-top: 100px;
@@ -35,7 +40,7 @@
     border-bottom-style: solid;
     border-bottom-color: black; */
   width: 100%;
-  display: inline-block;
+  /* display: inline-block; */
   color: white;
   /* position: fixed; */
   
@@ -50,7 +55,9 @@
   font-size: 40px;
   text-align: center;
   color: white;
-  margin: 0px 220px 0px 220px;
+  flex-grow: 3;
+  margin-right: 0;
+  /* margin: 0px 220px 0px 220px; */
 }
 
 body {
@@ -66,7 +73,8 @@ body {
 }
 
 .btn {
-  margin: 5px 60px 5px 60px;
+  /* margin: 5px 60px 5px 60px; */
+  margin: 5px;
   padding: 1px 10px 1px 10px;
   background-color: transparent;
   /* align-items: center; */
@@ -155,3 +163,10 @@ a {
   font-weight: bold;
 }
 
+@media screen and (max-width: 669px) {
+
+  .navbar {
+    flex-direction: column;
+  }
+  
+}

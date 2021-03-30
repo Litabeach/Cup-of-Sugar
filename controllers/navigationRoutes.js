@@ -39,7 +39,11 @@ router.get('/resources/:category/:state', async (req, res) => {
             charity: response.data
         });
     } catch (err) {
-        res.status(500).json(err);
+        console.log("ERR:", err)
+        res.render("resources", {
+            message: err.response.data.errorMessage
+        })
+        // res.status(500).json(err);
     }
 })
 
