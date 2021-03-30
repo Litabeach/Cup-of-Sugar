@@ -7,7 +7,7 @@ const { Ask_Give, Comment, User } = require('../../models');
 //CREATE new post
 
 router.post('/askpost', async (req, res) => {
-    console.log("I'M HERE")
+    console.log("I'M HERE");
     try {
         const newPost = await Ask_Give.create(
             {
@@ -20,7 +20,7 @@ router.post('/askpost', async (req, res) => {
             user_id: req.session.user_id
         }
         );
-        console.log(newPost)
+        console.log(newPost);
         res.status(200).json(newPost);
     } catch (err) {
         res.status(500).json(err);
@@ -90,7 +90,7 @@ router.put('/:id', async (req, res) => {
 
 //DELETE a post
 router.delete('/:id', async (req, res) => {
-    console.log("I'M HERE")
+    console.log("I'M HERE");
     try {
         const postData = await Ask_Give.destroy({
             where: {
@@ -119,7 +119,7 @@ router.post("/comment/", async (req, res) => {
         res.status(200).json(newComment);
     } catch (err) {
         res.status(400).json(err);
-        console.log("user id", user_id)
+        console.log("user id", user_id);
     }
 });
 
