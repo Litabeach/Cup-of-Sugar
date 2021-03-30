@@ -17,7 +17,6 @@
     Comments
 </h4>
 {{#each comments as |comment|}}
-<div id="commentID" user_id={{comment.user.id}}>
     <div>
     <p>{{comment.content}}</p>
     <p>-{{comment.user.name}}, {{format_date comment.createdAt}}</p>
