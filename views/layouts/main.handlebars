@@ -60,7 +60,7 @@
     <a href="/navigation/asks"><button class="btn btn-primary" type="submit"><i class="fas fa-hand-holding-heart"> Community Forum</i></button></a>  
     <a href="/navigation/resources"><button class="btn btn-primary" type="submit"><i class="fas fa-hands-helping"> Resources</i></button></a>  
     {{#if loggedIn}}
-    <a href="/navigation"><button id="logoutNOW" class="btn btn-primary"><i class="fas fa-sign-out-alt"> Logout</i></button></a>
+    <a href="/api/user/logout"><button id="logout" class="btn btn-primary" type="submit"><i class="fas fa-sign-out-alt"> Logout</i></button></a>
     {{else}}
     <a href="/login"><button id="login" class="btn btn-primary" type="submit"><i class="fas fa-sign-in-alt"> Login</i></button></a>
     <a href="/signup"><button class="btn btn-primary" type="submit"><i class="fas fa-user-plus"> Register</i></button></a>
