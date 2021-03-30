@@ -113,8 +113,16 @@ Click here to view a list of nationally branched resources and organizations.
        {{#each charity}}
        {{> resourcelist}}
        {{/each}}
-    {{else}}
+    {{/if}}
+
+    {{#if message}}
+    <div class="row">
+    <div class="card">
+        <div class="card-body">
     <p>{{message}}</p>
+    </div>
+    </div>
+    </form>
     {{/if}}
 
        </form>
