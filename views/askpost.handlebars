@@ -1,16 +1,16 @@
 <div class="container col-md-6">
-    <form>
-        <H2>Create New Post</h2>
+  <form>
+    <H2>Create New Post</h2>
 
-       <H4>Ask or Give:</H4>
+    <H4>Ask or Give:</H4>
     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
       <option selected> Select</option>
       <option value="ask">Asks</option>
       <option value="give">Gives</option>
     </select>
-        
-        <H4>Select category</H4>
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
+
+    <H4>Select category</H4>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
       <option selected> Select</option>
       <option value="Services">Services</option>
       <option value="Clothing">Clothing</option>
@@ -23,31 +23,32 @@
       <option value="9">Home and Garden</option>
       <option value="10">General</option>
     </select>
-        <H4>Title</H4>
-        <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="titleInput">
-        <H4>Description</H4>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"></label>
-            <textarea class="form-control"  rows="3" id="contentInput"></textarea>
-        </div>
-        <div class="row">
-            <H4>Location</H4>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-             <div class="col-md-2">
-                <label for="inputZip" class="form-label">Contact Info</label>
-                <input type="text" class="form-control" id="inputContact">
-            </div>
-        </div>
-
-     <div>
-        <button id="postAsk" type="submit">Post Ask</button>
+    <H4>Title</H4>
+    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example"
+      id="titleInput">
+    <H4>Description</H4>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"></label>
+      <textarea class="form-control" rows="3" id="contentInput"></textarea>
+    </div>
+    <div class="row">
+      <H4>Location</H4>
+      <div class="col-md-6">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
       </div>
-      </form>
+      <div class="col-md-6">
+        <label for="inputZip" class="form-label">Contact Info</label>
+        <input type="text" class="form-control" id="inputContact">
+      </div>
+    </div>
+    <br>
+    <div>
+      <button id="postAsk" type="submit">Post Ask</button>
+    </div>
+  </form>
 
-    </form>
+  </form>
 
 
 </div>
