@@ -1,8 +1,10 @@
+
+<div class="container">
 <div>
 <h1> Community Forum</h1>
-  <h2>
+  <h3>
 Search below for our current posts. Selecting a category and a zip code will bring you all of your neighbors’ current requests and offers of help. Click on a post to see it’s full information and to leave a comment.
-  </h2>
+  </h3>
 </div>
 
 <div class="container col-md-6">
@@ -33,7 +35,7 @@ Search below for our current posts. Selecting a category and a zip code will bri
 
     <H4>Your Zip Code</H4>
     <div class="col-md-6">
-      <label for="inputZip" class="form-label">Zip Code</label>
+      <label for="inputZip" class="form-label"></label>
       <input type="text" class="form-control" id="inputZip">
     </div>
     {{!-- <div class="col-md-2">
@@ -42,28 +44,29 @@ Search below for our current posts. Selecting a category and a zip code will bri
     </div> --}}
 
     <div>
-      <button id="searchAsks" type="submit">Search</button>
+      <button id="searchAsks" class="btn btn-info" type="submit">Search</button>
     </div>
   </form>
   </div>
+  </div>
 
   {{#if loggedIn}}
-  <div class="container col-md-6 newpost">
+  <div class="container col-md-6 newpost" style="margin-bottom: 20px">
 <div class="row">
     <div class="col-sm-12">
       <div>
-        <a href="/api/post/askpost"><button class="newPost">Create New Post</button></a>
+        <a href="/api/post/askpost"><button class="newPost btn btn-info">Create New Post</button></a>
       </div>
       </div>
 </div>
 </div>
+
   {{/if}}
 
   {{#each asks}}
   {{> asksearch}}
-  {{else}}
-  <p>There are no current offerings meeting that criteria. Please check back again soon!</p>
   {{/each}}
+ 
 
 
 
