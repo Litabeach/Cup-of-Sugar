@@ -1,9 +1,18 @@
 
-
+body {
+  height: auto;
+  background-image: url("/images/shutterstock_1415147612.jpg");
+  font-family: 'Merriweather', serif;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 70px;
+}
 
         .container {
           margin-top: 100px;
-          background-color: rgba(71, 221, 241, 0.4);
+          background-color: rgba(71, 221, 241, 0.827);
           color: black;
           text-align: center;
           border-radius: 6px;
@@ -25,16 +34,7 @@
     border-bottom-style: solid;
     border-bottom-color: black;
   }
-  body {
-    height: auto;
-    background-image: url("/images/shutterstock_1415147612.jpg");
-    font-family: 'Merriweather', serif;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: 70px;
-  }
+
   .btn  {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -112,3 +112,25 @@ footer {
   width: 100%;
   margin: 0 auto;
 } */
+
+.pSection {
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 300px;
+}
+
+.contentcontainer {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1070px;
+  position: relative;
+  z-index: 1;
+}
+
+.pImage {
+  width: 70%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-height: 900px;
+}
