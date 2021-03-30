@@ -4,14 +4,12 @@ const newCommentHandler = async function (event) {
 
   const content = document.querySelector('#comment-content').value.trim();
   const ask_give_id = document.querySelector('#comment-content').getAttribute("data-id");
-  const user_id = document.querySelector('#commentID').getAttribute("user-id");
 
   if (content) {
 
     const response = await fetch(`/api/post/comment/`, {
       method: 'POST',
-      // body: JSON.stringify({ content: content, ask_give_id: ask_give_id }),
-      body: JSON.stringify({ content: content, ask_give_id: ask_give_id, user_id: user_id }),
+      body: JSON.stringify({ content: content, ask_give_id: ask_give_id }),
       headers: {
         'Content-Type': 'application/json',
       },
