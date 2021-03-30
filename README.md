@@ -1,6 +1,8 @@
 # Cup of Sugar
 Connecting good neighbors wherever they may be.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Description 
 
 Cup of Sugar is simply a platform for good neighbors to be good neighbors. Cup of Sugar users can easily find local and national resources, browse posts about what resources or services are available or needed in their community, and connect with one another to help fulfill those needs. Users can create posts of their own as well where they can offer up free food or clothing, or to ask for help with something in their home.
@@ -34,11 +36,11 @@ npm start
 
 ## Credits
 
-[Anna Fotis](https://github.com/AHFotis)
-[Omaur Bliss](https://github.com/OmaurBliss)
-[Lita Beach](https://github.com/Litabeach)
-[Kyle Kleven](https://github.com/kdkleven)
-[Amy Pastorius](https://github.com/past0073)
+- [Anna Fotis](https://github.com/AHFotis)
+- [Omaur Bliss](https://github.com/OmaurBliss)
+- [Lita Beach](https://github.com/Litabeach)
+- [Kyle Kleven](https://github.com/kdkleven)
+- [Amy Pastorius](https://github.com/past0073)
 
 With help from [Blake Dragos](https://github.com/BlakeDragos)
 
@@ -52,8 +54,8 @@ Unless required by applicable law or agreed to in writing, software distributed 
 ## Questions
 Please feel free to reach out to any one of us with questions:
 
-Anna Fotis - annahickey2@gmail.com
-Omaur Bliss - omaurbliss@gmail.com
-Lita Beach - litabeach123@gmail.com
-Kyle Kleven - kylekleven8@gmail.com
-Amy Pastorius: past0073@umn.edu
+- Anna Fotis: annahickey2@gmail.com
+- Omaur Bliss: omaurbliss@gmail.com
+- Lita Beach: litabeach123@gmail.com
+- Kyle Kleven: kylekleven8@gmail.com
+- Amy Pastorius: past0073@umn.edu
