@@ -1,4 +1,4 @@
-//search with all three parameters
+//search
 const askSearchHandler = async (event) => {
     event.preventDefault();
     
