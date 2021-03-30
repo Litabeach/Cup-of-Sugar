@@ -13,7 +13,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/navigation');
+        document.location.replace('/');
       } else {
         alert('Failed to log in');
       }
