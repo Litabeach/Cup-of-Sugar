@@ -17,7 +17,7 @@ Ask_Give.init(
         //whether the post is an ask or give. Maybe should be DataTypes.STRING.BINARY?
         ask_or_give: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         title: {
             type: DataTypes.STRING,
@@ -31,11 +31,13 @@ Ask_Give.init(
         zip_code: {
             type: DataTypes.INTEGER,
             allowNull: true,
+            defaultValue: null
         },
         // type of resource such as: clothing, food, home services etc. Should this be a separate model?
         resource_type: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: null
         },
         // can be left blank.
         contact: {
