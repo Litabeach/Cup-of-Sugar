@@ -1,6 +1,6 @@
 
 body {
-  height: auto;
+  min-height: 500px; 
   background-image: url("/images/shutterstock_1415147612.jpg");
   font-family: 'Merriweather', serif;
   background-attachment: fixed;
