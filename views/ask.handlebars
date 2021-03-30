@@ -3,16 +3,18 @@
 <div>
 <h1> Community Forum</h1>
   <h3>
-Search below for our current posts. Selecting a category and a zip code will bring you all of your neighbors’ current requests and offers of help. Click on a post to see it’s full information and to leave a comment.
-  </h3>
+Search below for our current posts. Selecting a category and a zip code will bring you all of your neighbors’ current requests ("asks") and offers of help ("gives").</h3>
+<h3>Click on a post to see it’s full information.</h3> 
+  
 </div>
 
-<div class="container col-md-6">
+<hr>
+{{!-- <div class="container col-md-6"> --}}
   <form>
 
     <H3>Search Current Posts</H3>
 
-    <H4>Asks or Gives:</H4>
+    <H4>Search Asks or Gives:</H4>
     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
       <option selected> Select</option>
       <option value="ask">Asks</option>
@@ -47,7 +49,7 @@ Search below for our current posts. Selecting a category and a zip code will bri
       <button id="searchAsks" class="btn btn-info" type="submit">Search</button>
     </div>
   </form>
-  </div>
+  {{!-- </div> --}}
   </div>
 
   {{#if loggedIn}}

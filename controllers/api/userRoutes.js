@@ -67,7 +67,7 @@ router.post('/login', async (req, res) => {
         //present a snackbar/alert stating "You have logged out"
       });
       console.log('You are now logged out!');
-      res.render('landing');
+      res.render('navigation');
     } else {
       res.status(404).end();
     }

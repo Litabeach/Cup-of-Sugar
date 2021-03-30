@@ -28,10 +28,10 @@
   <body>
     <header class="navbar">
     <!-- nav begins -->
-    {{!-- <nav class="navbar navbar-expand-lg navbar-light"> --}}
+    <nav class="navbar navbar-expand-lg navbar-light">
       {{!-- <img src="/images/cup_of_sugar_icon.png" alt="cup of sugar" width="65">  --}}
       {{!-- <div class="container-fluid"> --}}
-
+<div class="nav">
         {{#if loggedIn}}
           <a href="/navigation/dashboard" class="btnLeft">
             <button class="btn btn-primary" type="submit">
@@ -55,11 +55,14 @@
             {{!-- </i> --}}
           </button>
         </a>
+        </div>
         {{!-- <img src="/images/cup_of_sugar_icon.png" alt="cup of sugar" width="65"> --}}
 
-        <a class="navbar-brand" id="headerLogo" href="/navigation">
+        <a class="navbar-brand" id="headerLogo" href="/">
           Cup Of Sugar
         </a>
+
+      <div class="nav">
         {{#if loggedIn}}
           <a href="/api/user/logout" class="btnRight">
             <button id="logout" class="btn btn-primary" type="submit">
@@ -83,8 +86,9 @@
             </button>
           </a>
         {{/if}}
-      {{!-- </div>
-    </nav> --}}
+        </div>
+       {{!-- </div> --}}
+    </nav>
     <!-- nav ends -->
 </header>
     {{{ body }}}

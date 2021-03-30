@@ -108,9 +108,14 @@ Click here to view a list of nationally branched resources and organizations.
         <button id="searchResources" class="btn btn-info" type="submit">Search</button>
     </div>
         </div>
+    
+    {{#if charity}}
        {{#each charity}}
        {{> resourcelist}}
        {{/each}}
+    {{else}}
+    <p>{{message}}</p>
+    {{/if}}
 
        </form>
     </div>
