@@ -17,14 +17,15 @@
 
 
 .navbar {
-  /* background-color: white; 
-    border-bottom-width: 1px;
+  /* background-color: #2fe0ffc5;  */
+    /* border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: black; */
   width: 100%;
   display: inline-block;
   color: white;
-  position: sticky;
+  /* position: fixed; */
+  
   top: 0px;
   text-align: center;
 }
@@ -36,11 +37,12 @@
   font-size: 40px;
   text-align: center;
   color: white;
-  margin: 0px 100px 0px 100px;
+  margin: 0px 220px 0px 220px;
 }
 
 body {
   height: auto;
+  top: 75px;
   background-image: url("/images/shutterstock_1415147612.jpg");
   font-family: 'Merriweather', serif;
   background-attachment: fixed;
@@ -51,7 +53,7 @@ body {
 }
 
 .btn {
-  margin: 5px 40px 5px 40px;
+  margin: 5px 60px 5px 60px;
   padding: 1px 10px 1px 10px;
   background-color: transparent;
   /* align-items: center; */
