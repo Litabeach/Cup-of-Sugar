@@ -51,11 +51,10 @@
   </div> --}}
 </div>
 
-{{#if asks}}
+
 {{#each asks}}
 {{> asksearch}}
 {{/each}}
-{{/if}}
 
 {{#unless asks}}
 <div class="row hide" id="no-results">
@@ -66,19 +65,6 @@
   </div>
 </div>
 {{/unless}}
-
-<script>
-  function removeHide() {
-    var noResults = document.getElementById("no-results");
-    noResults.classList.remove("hide");
-  }
-  
- document
- .querySelector('#searchAsks').addEventListener('click', removeHide);
-</script>
-
-
-
 
 {{#if loggedIn}}
 <div class="container col-md-6 newpost" style="margin-bottom: 20px">
