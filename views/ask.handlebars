@@ -55,23 +55,29 @@
 {{#each asks}}
 {{> asksearch}}
 {{/each}}
-{{else}}
-<h1 class="hide" id="no-results">No results found!</h1>
 {{/if}}
 
-{{!-- removing the hide for the h1 if there are no results found--}}
+{{#unless asks}}
+<div class="row hide" id="no-results">
+  <div class="card">
+    <div class="card-body">
+      <p>No results found</p>
+    </div>
+  </div>
+</div>
+{{/unless}}
+
 <script>
-  const searchResults = async function removeHide() {
+  function removeHide() {
     var noResults = document.getElementById("no-results");
     noResults.classList.remove("hide");
   }
-
-  document
-    .querySelector('#searchAsks')
-    .addEventListener('click',
-      removeHide
-    );
+  
+ document
+ .querySelector('#searchAsks').addEventListener('click', removeHide);
 </script>
+
+
 
 
 {{#if loggedIn}}

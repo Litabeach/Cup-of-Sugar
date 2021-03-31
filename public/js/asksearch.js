@@ -21,3 +21,5 @@ const askSearchHandler = async (event) => {
  document
  .querySelector('#searchAsks').addEventListener('click', askSearchHandler);
 
+
+
