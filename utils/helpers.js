@@ -3,12 +3,6 @@ module.exports = {
       // Format date as MM/DD/YYYY
       return date.toLocaleDateString();
     },
-
-    check_asks: (asks) => {
-      if (!asks){
-       alert("no results found!")
-      }
-    }
 }
 
 

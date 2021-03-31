@@ -46,7 +46,6 @@ Search below for our current posts. Selecting a category and a zip code will bri
   {{!-- </div> --}}
 </div>
 
- 
   {{#if asks}}
   {{#each asks}}
   {{> asksearch}}
@@ -67,6 +66,8 @@ Search below for our current posts. Selecting a category and a zip code will bri
     .addEventListener('click', function(event){
       event.preventDefault();
       removeHide();
+      window.stop()
+      return;
     });
   </script>
 

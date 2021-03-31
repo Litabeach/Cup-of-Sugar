@@ -22,9 +22,9 @@ const newPostHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
 
-      if(zip_code < 5 || zip_code > 5 ){
-        alert("You must enter a 5 digit zip code!")
-        event.preventDefault()
+      if(zip_code.length < 5 || zip_code.length > 5 ){
+        alert("Please enter a 5 digit zip code!")
+        return;
       }
   
       if (response.ok) {
@@ -32,8 +32,6 @@ const newPostHandler = async (event) => {
       } else {
         alert(response.statusText);
       }
-
-  
     
   };
 
