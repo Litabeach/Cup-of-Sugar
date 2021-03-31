@@ -10,16 +10,7 @@ router.get('/asks', (req, res) => {
     });
 
 });
-
-//Dashboard route
-router.get('/dashboard', (req, res) => {
-    res.render('dashboard' , {
-        loggedIn: req.session.logged_in,
-        name: req.session.name
-    });
-});
  
-
 //Resources page
 router.get('/resources', (req, res) => {
     res.render('resources', {
@@ -39,7 +30,11 @@ router.get('/resources/:category/:state', async (req, res) => {
             charity: response.data
         });
     } catch (err) {
-        res.status(500).json(err);
+        console.log("ERR:", err)
+        res.render("resources", {
+            message: err.response.data.errorMessage
+        })
+        // res.status(500).json(err);
     }
 })
 

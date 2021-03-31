@@ -28,19 +28,10 @@
   <body>
     <header class="navbar">
     <!-- nav begins -->
-    {{!-- <nav class="navbar navbar-expand-lg navbar-light"> --}}
+    <nav class="navbar navbar-expand-lg navbar-light">
       {{!-- <img src="/images/cup_of_sugar_icon.png" alt="cup of sugar" width="65">  --}}
       {{!-- <div class="container-fluid"> --}}
-
-        {{#if loggedIn}}
-          <a href="/navigation/dashboard" class="btnLeft">
-            <button class="btn btn-primary" type="submit">
-              {{!-- <i class="fas fa-home"> --}}
-              Dashboard
-              {{!-- </i> --}}
-            </button>
-          </a>
-        {{/if }}
+<div class="nav">
         <a href="/navigation/asks" class="btnLeft">
           <button class="btn btn-primary" type="submit">
             {{!-- <i class="fas fa-hand-holding-heart"> --}}
@@ -55,16 +46,19 @@
             {{!-- </i> --}}
           </button>
         </a>
+        </div>
         {{!-- <img src="/images/cup_of_sugar_icon.png" alt="cup of sugar" width="65"> --}}
 
-        <a class="navbar-brand" id="headerLogo" href="/navigation">
+        <a class="navbar-brand" id="headerLogo" href="/">
           Cup Of Sugar
         </a>
+
+      <div class="nav">
         {{#if loggedIn}}
-          <a href="/api/user/logout" class="btnRight">
-            <button id="logout" class="btn btn-primary" type="submit">
-              {{!-- <i class="fas fa-sign-out-alt"> --}}
-              Logout
+          <a href="/dashboard" class="btnLeft">
+            <button class="btn btn-primary" type="submit">
+              {{!-- <i class="fas fa-home"> --}}
+              Dashboard
               {{!-- </i> --}}
             </button>
           </a>
@@ -75,6 +69,16 @@
               {{!-- </i> --}}
             </button>
           </a>
+          {{/if}}
+          {{#if loggedIn}}
+          <a href="/api/user/logout" class="btnRight">
+            <button id="logout" class="btn btn-primary" type="submit">
+              {{!-- <i class="fas fa-sign-out-alt"> --}}
+              Logout
+              {{!-- </i> --}}
+            </button>
+          </a>
+          {{else}}
           <a href="/signup" class="btnRight">
             <button class="btn btn-primary" type="submit">
               {{!-- <i class="fas fa-user-plus"> --}}
@@ -83,8 +87,9 @@
             </button>
           </a>
         {{/if}}
-      {{!-- </div>
-    </nav> --}}
+        </div>
+       {{!-- </div> --}}
+    </nav>
     <!-- nav ends -->
 </header>
     {{{ body }}}

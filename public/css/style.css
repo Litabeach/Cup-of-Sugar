@@ -10,6 +10,25 @@
   box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
 }
 
+.nav {
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.welcome {
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: rgba(71, 221, 241, 0.4);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  border: 2px solid black;
+  box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+  width: 75%;
+  padding: 10px;
+ 
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -21,7 +40,7 @@
     border-bottom-style: solid;
     border-bottom-color: black; */
   width: 100%;
-  display: inline-block;
+  /* display: inline-block; */
   color: white;
   /* position: fixed; */
 
@@ -36,7 +55,9 @@
   font-size: 40px;
   text-align: center;
   color: white;
-  margin: 0px 220px 0px 220px;
+  flex-grow: 3;
+  margin-right: 0;
+  /* margin: 0px 220px 0px 220px; */
 }
 
 body {
@@ -52,7 +73,8 @@ body {
 }
 
 .btn {
-  margin: 5px 60px 5px 60px;
+  /* margin: 5px 60px 5px 60px; */
+  margin: 5px;
   padding: 1px 10px 1px 10px;
   background-color: transparent;
   /* align-items: center; */
@@ -122,7 +144,7 @@ footer {
 
 a {
   text-decoration: none;
-  color: white;
+  color:#000000;
 }
 
 .card {
@@ -146,6 +168,7 @@ a {
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 .section {
   align-items: center;
   background: url('https://images.unsplash.com/photo-1485123263479-f5ea30a2f92d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80') no-repeat center / cover;
@@ -185,4 +208,12 @@ a {
       -1px  1px 0 #000,
        1px  1px 0 #000;
   }
+=======
+@media screen and (max-width: 669px) {
+
+  .navbar {
+    flex-direction: column;
+  }
+  
+>>>>>>> c0c1cae643d8e7548cbd6531f4149216a2d047b4
 }

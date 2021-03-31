@@ -9,10 +9,9 @@ const withAuth = require('../utils/auth');
 router.get('/', (req, res) => {
     try {
 
-        res.render('landing', {
-
-            loggedIn: req.session.logged_in
-
+        res.render('navigation', {
+            loggedIn: req.session.logged_in,
+            name: req.session.name
         });
     } catch (err) {
         res.status(500).json(err);
@@ -43,12 +42,5 @@ router.get('/signup', (req, res) => {
     });
 });
 
-//GET route for the navigation page
-router.get('/navigation', (req, res) => {
-    res.render('navigation', {
-        loggedIn: req.session.logged_in,
-        name: req.session.name
-    });
-});
 
 module.exports = router;
