@@ -56,31 +56,30 @@
 {{> asksearch}}
 {{/each}}
 
-{{#unless asks}}
-<div class="row hide" id="no-results">
-  <div class="card">
-    <div class="card-body">
-      <p>No results found</p>
-    </div>
-  </div>
-</div>
-{{/unless}}
 
-{{#if loggedIn}}
-<div class="container col-md-6 newpost" style="margin-bottom: 20px">
-  <div class="row">
-    <div class="col-sm-12">
-      <div>
-        <a href="/api/post/askpost"><button class="newPost btn btn-info pageBtn">Create New Post</button></a>
+{{#if message}}
+<div class="container">
+ <div class="card"> 
+    <div class="card-body"> 
+      <h4>{{message}}</h4>
+    </div>
+  </div> 
+</div>
+  {{/if}}
+
+  {{#if loggedIn}}
+  <div class="container col-md-6 newpost" style="margin-bottom: 20px">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          <a href="/api/post/askpost"><button class="newPost btn btn-info pageBtn">Create New Post</button></a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-{{/if}}
-
+  {{/if}}
 
 
 
-
-<script src="/js/asksearch.js"></script>
+  <script src="/js/asksearch.js"></script>
