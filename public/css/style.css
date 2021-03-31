@@ -185,6 +185,15 @@ a {
   text-align: left;
 }
 
+.card:hover {
+  background-color: rgb(255, 235, 238);
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
 .newpost {
   margin: 0 auto;
   margin-top: 20px;
