@@ -1,16 +1,29 @@
 //search
 const askSearchHandler = async (event) => {
-    event.preventDefault();
-    
-    var askGive = document.querySelector('#inputAskGive').value.trim();
-    var category = document.querySelector('#inputCategory').value;
-    var zip = document.querySelector('#inputZip').value.trim()
-    
+  event.preventDefault();
 
-    var queryURL = `/api/asks/ask_search?askGive=${askGive}&category=${category}&zip=${zip}`
+  var askGive = document.querySelector('#inputAskGive').value.trim();
+  var category = document.querySelector('#inputCategory').value;
+  var zip = document.querySelector('#inputZip').value.trim()
 
-    location.replace(queryURL)
-    };
+  var queryURL = `/api/asks/ask_search?askGive=${askGive}&category=${category}&zip=${zip}`
+
+  location.replace(queryURL)
+};
+
+
+document
+  .querySelector('#searchAsks').addEventListener('click', askSearchHandler);
   
-   document
-   .querySelector('#searchAsks').addEventListener('click', askSearchHandler);
+  
+  function removeHide() {
+    var noResults = document.getElementById("no-results");
+    noResults.classList.remove("hide");
+  }
+
+
+  document
+  .querySelector('#searchAsks').addEventListener('click', removeHide);
+
+
+

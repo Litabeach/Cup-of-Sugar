@@ -57,6 +57,17 @@
 {{> asksearch}}
 {{/each}}
 
+{{#unless asks}}
+<div class="row hide" id="no-results">
+  <div class="card">
+    <div class="card-body">
+      <p>No results found</p>
+    </div>
+  </div>
+</div>
+{{/unless}}
+
+
 {{#if loggedIn}}
 <div class="container col-md-6 newpost" style="margin-bottom: 20px">
   <div class="row">

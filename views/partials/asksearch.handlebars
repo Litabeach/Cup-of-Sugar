@@ -4,11 +4,15 @@
             <div class="card-body">
                 <a href="/api/post/{{id}}">
                     <h3>{{title}}</h3>
-                </a>
+
+                
                 <p>By: {{user.name}} on {{format_date createdAt}}</p>
-                <p><b>Body: </b>{{content}}</p>
-                <p><b>Category: </b>{{resource_type}}</p>
-                <p><b>Contact:</b>{{contact}}</p>
+                <h5>{{content}}</h5>
+                <p><b>Category: </b>{{resource_type}}<span>
+                    <b>Contact:</b>{{contact}}</p>
+                </span>
+                </a>
+
             </div>
         </div>
     </div>
