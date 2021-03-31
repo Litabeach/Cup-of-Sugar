@@ -226,3 +226,7 @@ p {
   }
   
 }
+
+.hide {
+  display: none
+}
