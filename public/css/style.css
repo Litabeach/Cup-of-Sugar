@@ -206,6 +206,10 @@ p {
   font-size: 18px;
 }
 
+#tinyText {
+  font-size: 12px;
+}
+
 @media screen and (max-width: 669px) {
 
   .navbar {
