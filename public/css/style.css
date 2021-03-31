@@ -1,12 +1,17 @@
+/* * {
+  font-family: 'Montserrat', sans-serif !important;
+} */
+
 .container {
   margin-top: 100px;
-  background-color: rgba(71, 221, 241, 0.4);
+  background-color: rgba(250, 252, 252, 0.777);
   color: black;
   text-align: center;
   border-radius: 6px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
-
+  font-family: 'Montserrat', sans-serif !important;
+  padding: 20px;
 }
 
 .nav {
@@ -14,18 +19,29 @@
   flex-grow: 1;
 }
 
-.welcome {
-  margin: 0 auto;
-  margin-top: 100px;
-  background-color: rgba(71, 221, 241, 0.4);
+.navImages {
+  background-color: rgb(25, 218, 244);
   color: black;
   text-align: center;
   border-radius: 6px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+  font-family: 'Montserrat', sans-serif !important;
+  padding: 20px;
+}
+
+.welcome {
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: rgba(250, 252, 252, 0.777);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  /* border: 2px solid black; */
   box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
   width: 75%;
   padding: 10px;
- 
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .jumbotron {
@@ -42,9 +58,9 @@
     border-bottom-color: black; */
   width: 100%;
   /* display: inline-block; */
-  color: white;
+  color: black;
   /* position: fixed; */
-  
+  background-color: rgba(250, 252, 252, 0.647);
   top: 0px;
   text-align: center;
 }
@@ -55,7 +71,7 @@
   font-family: 'Lily Script One', cursive;
   font-size: 40px;
   text-align: center;
-  color: white;
+  color: black;
   flex-grow: 3;
   margin-right: 0;
   /* margin: 0px 220px 0px 220px; */
@@ -79,7 +95,18 @@ body {
   padding: 1px 10px 1px 10px;
   background-color: transparent;
   /* align-items: center; */
-  color: white;
+  color: black;
+  border: 0px solid rgb(0, 0, 12, 0.8);
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.pageBtn{
+  /* margin: 5px 60px 5px 60px; */
+  margin: 5px;
+  padding: 5px 20px 5px 20px;
+  background-color:rgba(25, 219, 244, 0.492);
+  /* align-items: center; */
+  color: black;
   border: 0px solid rgb(0, 0, 12, 0.8);
   font-family: 'Montserrat', sans-serif !important;
 }
@@ -91,6 +118,17 @@ body {
 }
 
 .btn:active {
+  background-color: pink;
+  border: 0px solid white;
+}
+
+.pageBtn:hover {
+  background-color: white;
+  color: rgb(10, 157, 164);
+  border: 0px solid white;
+}
+
+.pageBtn:active {
   background-color: pink;
   border: 0px solid white;
 }
@@ -122,7 +160,7 @@ body {
 
 
 .photo:hover {
-  opacity: 0.33;
+  opacity: 0.75;
 }
 
 footer {

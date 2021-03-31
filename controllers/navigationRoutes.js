@@ -20,7 +20,7 @@ router.get('/resources', (req, res) => {
 
 //render info to resource page
 router.get('/resources/:category/:state', async (req, res) => {
-    var apiUrl = `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}&categoryID=${req.params.category}&state=${req.params.state}`
+    var apiUrl = `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}&pageSize=20&categoryID=${req.params.category}&state=${req.params.state}`
     try {
         //axios is a package that allows us to call the API from here
         const response = await axios.get(apiUrl);
