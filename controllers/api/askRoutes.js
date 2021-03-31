@@ -16,6 +16,7 @@ router.get('/ask_search', async (req, res) => {
         if (req.query.zip){
             whereClause.zip_code=req.query.zip
         }
+        // if (!req.query.category && !req.query.zip && !req.query.askGive){}
         const askData = await Ask_Give.findAll({
             include: [
                 {

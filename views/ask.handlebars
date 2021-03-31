@@ -38,17 +38,34 @@ Search below for our current posts. Selecting a category and a zip code will bri
     </div>
 
     <div>
-      <button id="searchAsks" class="btn btn-info" type="submit">Search</button>
+      <button id="searchAsks" class="btn btn-info unhide" type="submit">Search</button>
     </div>
   </form>
   {{!-- </div> --}}
   </div>
 
  
-
+  {{#if asks}}
   {{#each asks}}
   {{> asksearch}}
   {{/each}}
+  {{else}}
+  <h1 class="hide" id="no-results">No results found!</h1>
+  {{/if}}
+
+  {{!-- removing the hide for the h1 if there are no results found--}}
+  <script>
+    document
+    .querySelector('#searchAsks')
+    .addEventListener('click', function(event){
+      event.preventDefault();
+      function removeHide() {
+        var element = document.getElementById("no-results");
+        element.classList.remove("hide");
+      }
+      removeHide();
+    });
+  </script>
 
   {{#if loggedIn}}
   <div class="container col-md-6 newpost" style="margin-bottom: 20px">
