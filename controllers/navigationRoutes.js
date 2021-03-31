@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const axios = require('axios');
-// const { Ask_Give, User } = require('../models');
-// const withAuth = require('../utils/auth');
 
 //Get all asks, render them to the ask page
 router.get('/asks', (req, res) => {
@@ -22,10 +20,10 @@ router.get('/resources', (req, res) => {
 router.get('/resources/:category/:state', async (req, res) => {
     var apiUrl = `https://api.data.charitynavigator.org/v2/Organizations?app_id=${process.env.APP_ID}&app_key=${process.env.API_KEY}&pageSize=20&categoryID=${req.params.category}&state=${req.params.state}`
     try {
-        //axios is a package that allows us to call the API from here
+        
         const response = await axios.get(apiUrl);
         console.log(response);
-        //need to create view for organizations
+        
         res.render("resources", {
             charity: response.data
         });
@@ -34,7 +32,6 @@ router.get('/resources/:category/:state', async (req, res) => {
         res.render("resources", {
             message: err.response.data.errorMessage
         })
-        // res.status(500).json(err);
     }
 })
 

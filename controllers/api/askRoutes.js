@@ -1,20 +1,19 @@
 const router = require('express').Router();
 const { Ask_Give, User, Comment } = require('../../models');
 
-// Using the /api/ask endpoint
 
 //ask Search API
 router.get('/ask_search', async (req, res) => {
     try {
         const whereClause = {}
-        if (req.query.askGive){
-            whereClause.ask_or_give=req.query.askGive
+        if (req.query.askGive) {
+            whereClause.ask_or_give = req.query.askGive
         }
-        if (req.query.category){
-            whereClause.resource_type=req.query.category
+        if (req.query.category) {
+            whereClause.resource_type = req.query.category
         }
-        if (req.query.zip){
-            whereClause.zip_code=req.query.zip
+        if (req.query.zip) {
+            whereClause.zip_code = req.query.zip
         }
         const askData = await Ask_Give.findAll({
             include: [
