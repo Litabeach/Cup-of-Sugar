@@ -9,6 +9,10 @@ Cup of Sugar is simply a platform for good neighbors to be good neighbors. Cup o
 
 To achieve this functionality, Cup of Sugar utelizes Express, MySQL, Sequelize, Session-Sequelize, Handlebars, jQuery, javaScript, and CSS to allow logged in users to access existing posts, create, update, or delete their own posts. They also have the ability to connect with one another by commenting on posts. This application also features a customized user experience by dynamically rendering data specific to who they are and what they are looking for during their time on Cup of Sugar.
 
+[Visit Cup of Sugar on Heroku](https://cup-of-sugar-application.herokuapp.com/)
+
+![image](https://user-images.githubusercontent.com/74335621/113085014-b444bd80-91a4-11eb-8a6b-c4df211b94a5.png)
+
 ## Table of Contents 
 
 * [Installation](#installation)
