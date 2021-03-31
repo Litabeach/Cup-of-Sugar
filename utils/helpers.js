@@ -5,7 +5,6 @@ module.exports = {
     },
 
     check_asks: (asks) => {
-      // Format date as MM/DD/YYYY
       if (!asks){
        alert("no results found!")
       }

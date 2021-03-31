@@ -21,12 +21,19 @@ const newPostHandler = async (event) => {
         }),
         headers: { 'Content-Type': 'application/json' },
       });
+
+      if(zip_code < 5 || zip_code > 5 ){
+        alert("You must enter a 5 digit zip code!")
+        event.preventDefault()
+      }
   
       if (response.ok) {
         document.location.replace("/dashboard");
       } else {
         alert(response.statusText);
       }
+
+  
     
   };
 

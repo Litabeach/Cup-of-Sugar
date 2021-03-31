@@ -1,15 +1,17 @@
 
-<div class="container">
+<div class="container" style="width: 50%">
 <div>
-<h1> Community Forum</h1>
-  <h3>
-Search below for our current posts. Selecting a category and a zip code will bring you all of your neighbors’ current requests ("asks") and offers of help ("gives").</h3>
-<h3>Click on a post to see it’s full information.</h3> 
+<h2> Community Forum</h2>
+  <p>
+Search below for our current posts. Selecting a category and a zip code will bring you all of your neighbors’ current requests ("asks") and offers of help ("gives").</p>
+<p>Click on a post to see it’s full information.</p> 
   
 </div>
+  </div>
 
-<hr>
 {{!-- <div class="container col-md-6"> --}}
+
+  <div class="container" style="width: 50%">
   <form>
 
     <H3>Search Current Posts</H3>
@@ -31,18 +33,18 @@ Search below for our current posts. Selecting a category and a zip code will bri
       <option value="Misc">Misc</option>
     </select>
 
-    <H4>Your Zip Code</H4>
+    
     <div class="col-md-12">
-      <label for="inputZip" class="form-label"></label>
+      <H4>Your Zip Code</H4>
       <input type="text" class="form-control" id="inputZip">
     </div>
 
     <div>
-      <button id="searchAsks" class="btn btn-info unhide" type="submit">Search</button>
+      <button id="searchAsks" class="btn btn-info pageBtn" type="submit">Search</button>
     </div>
   </form>
   {{!-- </div> --}}
-  </div>
+</div>
 
  
   {{#if asks}}
@@ -55,14 +57,15 @@ Search below for our current posts. Selecting a category and a zip code will bri
 
   {{!-- removing the hide for the h1 if there are no results found--}}
   <script>
+       function removeHide() {
+        var noResults = document.getElementById("no-results");
+        noResults.classList.remove("hide");
+      }
+
     document
     .querySelector('#searchAsks')
     .addEventListener('click', function(event){
       event.preventDefault();
-      function removeHide() {
-        var element = document.getElementById("no-results");
-        element.classList.remove("hide");
-      }
       removeHide();
     });
   </script>
@@ -72,7 +75,7 @@ Search below for our current posts. Selecting a category and a zip code will bri
 <div class="row">
     <div class="col-sm-12">
       <div>
-        <a href="/api/post/askpost"><button class="newPost btn btn-info">Create New Post</button></a>
+        <a href="/api/post/askpost"><button class="newPost btn btn-info pageBtn">Create New Post</button></a>
       </div>
       </div>
 </div>
