@@ -30,13 +30,12 @@
         <option value="Food">Food</option>
         <option value="Healthcare">Healthcare</option>
         <option value="Home and Garden">Home and Garden</option>
-        <option value="Pet supplies">Pet supplies</option>
+        <option value="Pet Supplies">Pet Supplies</option>
         <option value="Services">Services</option>
         <option value="Sports and Outdoors">Sports and Outdoors</option>
         <option value="Toys, Games, and Hobbies">Toys, Games, and Hobbies</option>
-        <option value="Miscellaneous">Misc</option>
+        <option value="Miscellaneous">Miscellaneous</option>
       </select>
-
 
       <div class="col-md-12">
         <H4>Your Zip Code</H4>
@@ -47,31 +46,37 @@
         <button id="searchAsks" class="btn btn-info pageBtn" type="submit">Search</button>
       </div>
     </form>
-    {{!--
-  </div> --}}
 </div>
-
 
 
 {{#each asks}}
 {{> asksearch}}
 {{/each}}
 
-{{#if loggedIn}}
-<div class="container col-md-6 newpost" style="margin-bottom: 20px">
-  <div class="row">
-    <div class="col-sm-12">
-      <div>
-        <a href="/api/post/askpost"><button class="newPost btn btn-info pageBtn">Create New Post</button></a>
-      </div>
+{{#if message}}
+<div class="container">
+ <div class="card"> 
+    <div class="card-body"> 
+      <h4>{{message}}</h4>
     </div>
   </div>
 </div>
-
 {{/if}}
 
 
+  {{#if loggedIn}}
+  <div class="container col-md-6 newpost" style="margin-bottom: 20px">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          <a href="/api/post/askpost"><button class="newPost btn btn-info pageBtn">Create New Post</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/if}}
 
 
+  <script src="/js/asksearch.js"></script>
 
-<script src="/js/asksearch.js"></script>

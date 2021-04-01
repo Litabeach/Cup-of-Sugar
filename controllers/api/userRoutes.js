@@ -3,8 +3,6 @@ const { User } = require('../../models');
 
 //Using the /api/user endpoint
 
-
-
 //Signup 
 router.post('/signup', async (req, res) => {
     try {
@@ -27,7 +25,7 @@ router.post('/login', async (req, res) => {
       const userData = await User.findOne({ where: { email: req.body.email } });
       if (!userData) {
         res
-          .status(400)
+          // .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       } 
@@ -35,7 +33,7 @@ router.post('/login', async (req, res) => {
       console.log(validPassword);
       if (!validPassword) {
         res
-          .status(400)
+          // .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       
