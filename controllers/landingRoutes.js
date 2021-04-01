@@ -5,7 +5,6 @@ const withAuth = require('../utils/auth');
 //Using the root endpoint
 
 //READ the landing page
-//works!
 router.get('/', (req, res) => {
     try {
 
@@ -19,7 +18,6 @@ router.get('/', (req, res) => {
 });
 
 //Login page
-//works!
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -31,7 +29,6 @@ router.get('/login', (req, res) => {
 });
 
 //Signup page
-//works!
 router.get('/signup', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');

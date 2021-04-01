@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const axios = require('axios');
-// const { Ask_Give, User } = require('../models');
-// const withAuth = require('../utils/auth');
 
 //Get all asks, render them to the ask page
 router.get('/asks', (req, res) => {
@@ -24,17 +22,13 @@ router.get('/resources/:category/:state', async (req, res) => {
     try {
         //axios is a package that allows us to call the API from here
         const response = await axios.get(apiUrl);
-        console.log(response);
-        //need to create view for organizations
         res.render("resources", {
             charity: response.data
         });
     } catch (err) {
-        console.log("ERR:", err)
         res.render("resources", {
             message: err.response.data.errorMessage
         })
-        // res.status(500).json(err);
     }
 })
 
