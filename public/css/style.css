@@ -1,4 +1,154 @@
 
+
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap');
+
+.session { 
+  font-family: 'Montserrat', sans-serif !important;
+  
+  padding: 0;
+  margin: 0;
+  
+  background-color: grey;  
+  height: 100%;
+}
+
+
+
+.pin-up {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  background-color:  rgb(25, 218, 244);
+}
+
+
+
+.content-wrap{
+  position:relative;
+  width: 333px;
+  height: 222px;
+  border-radius: 4px;
+  background-color: rgb(4, 100, 255);
+  margin-right: 111px;
+  margin-top: -10px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  background-color: rgb(4, 100, 255);
+  border-radius: 4px;
+  font-size: 30px;
+  color: white;
+}
+
+
+
+.sideline {
+  position: absolute;
+  top: calc(50vh - 111px - 7px);
+  left: calc(50vw + 0px);
+  height: 222px;
+  width: 3px;
+  background-color: white;
+  transform: scaleY(0);
+  transform-origin: top center;
+  z-index: 1;
+}
+
+
+
+.text-wrap {
+  height: 100vh;
+  width: 333px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  
+  background-color:  rgb(25, 218, 244);
+}
+
+.hideme
+{
+    opacity:0;
+}
+
+.text {
+  font-size: 30px;
+  width: 100px;
+  height: 50px;
+  text-transform: uppercase;
+  color: white;
+}
+
+ .below {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  
+  z-index: -4;
+  background-size: 100%;
+  background-image: url("/images/shutterstock_613188038.jpg");
+
+}
+
+
+.p {
+  display: inline-block;
+  font-family: 'Dancing Script';
+  font-size: 100px;
+  color: black;
+  text-transform: none;
+  margin: 0 20px;
+  opacity: 0.0;
+  animation: fadeIn ease 20s;
+  -webkit-animation: fadeIn ease 20s;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.below span {
+  color: green;
+  font-size: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50vh);
+} 
+
+
 .container {
   margin-top: 100px;
   background-color: rgba(250, 252, 252, 0.777);

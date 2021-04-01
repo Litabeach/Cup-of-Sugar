@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Ask_Give, User, Comment } = require('../../models');
+const axios = require('axios');
 
 
 //ask Search API
@@ -28,10 +29,18 @@ router.get('/ask_search', async (req, res) => {
 
         const asks = askData.map((ask_give) => ask_give.get({ plain: true }));
 
+        if(asks.length==0){
+            res.render('ask', {
+                loggedIn: req.session.logged_in,
+                message: "No results found."
+            });
+        }
+        else {
         res.render('ask', {
             asks,
             loggedIn: req.session.logged_in
         });
+    }
 
     } catch (err) {
         res.status(500).json(err);
