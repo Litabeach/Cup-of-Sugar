@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,102 +29,71 @@
 
   <body>
     <header class="navbar">
+
     <!-- nav begins -->
     <nav class="navbar navbar-expand-lg navbar-light">
-      {{!-- <img src="/images/cup_of_sugar_icon.png" alt="cup of sugar" width="65">  --}}
-      {{!-- <div class="container-fluid"> --}}
-<div class="nav">
+
+      <div class="nav">
         <a href="/navigation/asks" class="btnLeft">
           <button class="btn btn-primary" type="submit">
-            {{!-- <i class="fas fa-hand-holding-heart"> --}}
             Community
-            {{!-- </i> --}}
           </button>
         </a>
         <a href="/navigation/resources" class="btnLeft">
           <button class="btn btn-primary" type="submit">
-            {{!-- <i class="fas fa-hands-helping"> --}}
             Resources
-            {{!-- </i> --}}
           </button>
         </a>
-        </div>
-        {{!-- <img src="/images/cup_of_sugar_icon.png" alt="cup of sugar" width="65"> --}}
+      </div>
 
-        <a class="navbar-brand" id="headerLogo" href="/">
-          Cup Of Sugar
-        </a>
+
+      <a class="navbar-brand" id="headerLogo" href="/">
+        Cup Of Sugar
+      </a>
 
       <div class="nav">
         {{#if loggedIn}}
-          <a href="/dashboard" class="btnLeft">
-            <button class="btn btn-primary" type="submit">
-              {{!-- <i class="fas fa-home"> --}}
-              Dashboard
-              {{!-- </i> --}}
-            </button>
-          </a>
+        <a href="/dashboard" class="btnLeft">
+          <button class="btn btn-primary" type="submit">
+            Dashboard
+          </button>
+        </a>
         {{else}}
-          <a href="/login" class="btnRight">
-            <button id="loginNav" class="btn btn-primary" type="submit">
-              Login
-              {{!-- </i> --}}
-            </button>
-          </a>
-          {{/if}}
-          {{#if loggedIn}}
-          <a href="/api/user/logout" class="btnRight">
-            <button id="logout" class="btn btn-primary" type="submit">
-              {{!-- <i class="fas fa-sign-out-alt"> --}}
-              Logout
-              {{!-- </i> --}}
-            </button>
-          </a>
-          {{else}}
-          <a href="/signup" class="btnRight">
-            <button class="btn btn-primary" type="submit">
-              {{!-- <i class="fas fa-user-plus"> --}}
-              Register
-              {{!-- </i> --}}
-            </button>
-          </a>
+        <a href="/login" class="btnRight">
+          <button id="loginNav" class="btn btn-primary" type="submit">
+            Login
+          </button>
+        </a>
         {{/if}}
-        </div>
-       {{!-- </div> --}}
+        {{#if loggedIn}}
+        <a href="/api/user/logout" class="btnRight">
+          <button id="logout" class="btn btn-primary" type="submit">
+            Logout
+          </button>
+        </a>
+        {{else}}
+        <a href="/signup" class="btnRight">
+          <button class="btn btn-primary" type="submit">
+            Register
+          </button>
+        </a>
+        {{/if}}
+      </div>
+
     </nav>
-    <!-- nav ends -->
-</header>
 
 
+  </header>
+
+  {{{ body }}}
 
 
-    {{{ body }}}
-
-    <footer>
-      {{!-- {{#if loggedIn}}
-        <a href="/navigation/dashboard"><button class="btn btn-primary" type="submit"><i class="fas fa-home">
-              Dashboard</i></button></a>
-      {{/if }}
-      <a href="/navigation/asks"><button class="btn btn-primary" type="submit"><i class="fas fa-hand-holding-heart">
-            Community Forum</i></button></a>
-      <a href="/navigation/resources"><button class="btn btn-primary" type="submit"><i class="fas fa-hands-helping">
-            Resources</i></button></a>
-      {{#if loggedIn}}
-        <a href="/api/user/logout"><button id="logout" class="btn btn-primary" type="submit"><i
-              class="fas fa-sign-out-alt"> Logout</i></button></a>
-      {{else}}
-        <a href="/login"><button id="login" class="btn btn-primary" type="submit"><i class="fas fa-sign-in-alt">
-              Login</i></button></a>
-        <a href="/signup"><button class="btn btn-primary" type="submit"><i class="fas fa-user-plus">
-              Register</i></button></a>
-      {{/if}} --}}
-
-    </footer>
 
     <script>"/js/logout.js"</script>
 <script src= "/js/scrolltrig.js"></script>
 
 
-  </body>
+
+</body>
 
 </html>

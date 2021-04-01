@@ -12,8 +12,17 @@ const newPostHandler = async (event) => {
     const resource_type = document.querySelector('#inputCategory').value.trim();
 
     const contact = document.querySelector('#inputContact').value.trim();
+
+    if(!contact){
+      alert("Please enter contact information so your neighbors can connect with you!")
+      return;
+    }
     
-  console.log(title)
+    if(zip_code.length < 5 || zip_code.length > 5 ){
+      alert("Please enter a 5 digit zip code!")
+      return;
+    }
+  
       const response = await fetch(`/api/post/askpost`, {
         method: 'POST',
         body: JSON.stringify({
@@ -22,10 +31,7 @@ const newPostHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
 
-      if(zip_code.length < 5 || zip_code.length > 5 ){
-        alert("Please enter a 5 digit zip code!")
-        return;
-      }
+      
   
       if (response.ok) {
         document.location.replace("/dashboard");

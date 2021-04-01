@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Ask_Give, User, Comment } = require('../../models');
 const axios = require('axios');
 
-// Using the /api/ask endpoint
 
 //ask Search API
 router.get('/ask_search', async (req, res) => {
