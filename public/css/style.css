@@ -1,88 +1,195 @@
+.container {
+  margin-top: 100px;
+  background-color: rgba(250, 252, 252, 0.777);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+  font-family: 'Montserrat', sans-serif !important;
+  padding: 20px;
+}
 
-    .container {
-    margin-top: 100px;
-    background-color:  rgb(10, 157, 164);
-    text-align: center;
-    border: 2px solid black;
-    box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
-  }
-  
-  .jumbotron {
-    text-align: center;
-    background-color:  rgb(10, 157, 164);
-    color: white;
-  }
-  
+.nav {
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.navImages {
+  background-color: rgb(25, 218, 244);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+  font-family: 'Montserrat', sans-serif !important;
+  padding: 20px;
+}
+
+.welcome {
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color: rgba(250, 252, 252, 0.777);
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+  width: 75%;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+
+}
+
 
 .navbar {
-    background-color: rgb(10, 157, 164); 
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: black;
-  }
-  body {
-    height: auto;
-    /* background-image: url("/Cup_of_Sugar_wireframes.png"); */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: 70px;
-  }
-  .btn  {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 35px;
-  margin-right: 35px;
-  background-color: white;
+  width: 100%;
   color: black;
-  border: 1px solid rgb(0, 0, 12, 0.8);
+  background-color: rgba(250, 252, 252, 0.647);
+  top: 0px;
+  text-align: center;
+}
+
+#headerLogo {
+  font-family: 'Lily Script One', cursive;
+  font-size: 40px;
+  text-align: center;
+  color: black;
+  flex-grow: 3;
+}
+
+ body {
+  height: auto;
+  top: 75px;
+  background-image: url("/images/shutterstock_1415147612.jpg");
+  font-family: 'Merriweather', serif;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 70px;
+}
+
+.btn {
+  margin: 5px;
+  padding: 1px 10px 1px 10px;
+  background-color: transparent;
+  color: black;
+  border: 0px solid rgb(0, 0, 12, 0.8);
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.pageBtn {
+  margin: 5px;
+  padding: 5px 20px 5px 20px;
+  background-color: rgba(25, 219, 244, 0.492);
+  color: black;
+  border: 0px solid rgb(0, 0, 12, 0.8);
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .btn:hover {
-  background-color:rgb(10, 157, 164);
-  color: white;
-  border: 1px solid white;
+  background-color: white;
+  color: rgb(10, 157, 164);
+  border: 0px solid white;
 }
 
 .btn:active {
-  background-color: rgb(138, 246, 246);
+  background-color: pink;
+  border: 0px solid white;
+}
+
+.pageBtn:hover {
+  background-color: white;
+  color: rgb(10, 157, 164);
+  border: 0px solid white;
+}
+
+.pageBtn:active {
+  background-color: pink;
+  border: 0px solid white;
 }
 
 .btn:active {
-  -webkit-box-shadow: inset 0px 0px 5px black;
-  -moz-box-shadow: inset 0px 0px 5px black;
-  box-shadow: inset 0px 0px 5px black;
+  -webkit-box-shadow: inset 0px 0px 5px white;
+  -moz-box-shadow: inset 0px 0px 5px white;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+.tooltip-wrap {
+  position: relative;
+}
+
+.tooltip-wrap .tooltip-content {
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  background-color: #fff;
+  padding: .5em;
+}
+
+.tooltip-wrap:hover .tooltip-content {
+  display: block;
+}
+
+.photo:hover {
+  opacity: 0.75;
 }
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    height: auto;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: black;
-    text-align: center;
-  }
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: white;
+  text-align: center;
+}
 
-  a {
-    text-decoration: none;
-    color: black;
-  }
+a {
+  text-decoration: none;
+  color: #000000;
+}
 
-  .card {
-    text-align: left;
-  }
+.card {
+  text-align: left;
+}
+
+.card:hover {
+  background-color: rgb(255, 235, 238);
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
 
 .newpost {
   margin: 0 auto;
   margin-top: 20px;
 }
 
-/* #inputZip {
-  width: 100%;
-  margin: 0 auto;
-} */
+#askSearch {
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#tinyText {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 669px) {
+
+  .navbar {
+    flex-direction: column;
+  }
+
+}

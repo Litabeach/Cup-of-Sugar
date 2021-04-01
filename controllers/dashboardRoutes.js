@@ -2,13 +2,10 @@ const router = require('express').Router();
 const { Ask_Give, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-//Need GET route to the create post form
-//Need GET route to view an existing post for updating or deleting
-
 //from the /dashboard:
 
 //render dashboard with all the users asks and gives
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     const user = req.session.user_id;
     try {
         const askgiveData = await Ask_Give.findAll({
@@ -23,8 +20,6 @@ router.get('/', async (req, res) => {
                 user_id: user,
             },
         });
-        console.log(askgiveData);
-        console.log(user);
 
         if (!askgiveData) {
             res.status(404).json({
@@ -37,7 +32,8 @@ router.get('/', async (req, res) => {
         console.log(askgives);
         res.render('dashboard', {
             askgives,
-            loggedIn: req.session.logged_in
+            loggedIn: req.session.logged_in,
+            name: req.session.name
         });
 
     } catch (err) {
@@ -68,12 +64,9 @@ router.get("/getpost/:id", withAuth, async (req, res) => {
         id: req.params.id
       },
       attributes: ["id", "ask_or_give", "title", "content", "zip_code", "resource_type", "contact"],
-    })
+    });
 
-    console.log(postData)
     const post = postData.get({ plain: true });
-
-    console.log(post)
 
     res.render('updatedelete', {
       post,

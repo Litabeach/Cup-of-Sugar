@@ -1,53 +1,52 @@
 <div class="container col-md-6">
-    <form>
-        <H2>Create New Post</h2>
+  <form>
+    <H2>Create New Post</h2>
 
-       <H4>Ask or Give:</H4>
+    <H4>Ask or Give:</H4>
     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
       <option selected> Select</option>
       <option value="ask">Asks</option>
       <option value="give">Gives</option>
     </select>
-        
-        <H4>Select category</H4>
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
-      <option selected> Select</option>
-      <option value="Services">Services</option>
+
+    <H4>Select category</H4>
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
       <option value="Clothing">Clothing</option>
       <option value="Food">Food</option>
       <option value="Healthcare">Healthcare</option>
-      <option value="Misc">Misc</option>
-      <option value="6">Toys, Games, and Hobbies</option>
-      <option value="7">Sports and Outdoors</option>
-      <option value="8">Pet supplies</option>
-      <option value="9">Home and Garden</option>
-      <option value="10">General</option>
+      <option value="Home and Garden">Home and Garden</option>
+      <option value="Pet supplies">Pet supplies</option>
+      <option value="Services">Services</option>
+      <option value="Sports and Outdoors">Sports and Outdoors</option>
+      <option value="Toys, Games, and Hobbies">Toys, Games, and Hobbies</option>
+      <option value="Miscellaneous">Misc</option>
     </select>
-        <H4>Title</H4>
-        <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" id="titleInput">
-        <H4>Description</H4>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label"></label>
-            <textarea class="form-control"  rows="3" id="contentInput"></textarea>
-        </div>
-        <div class="row">
-            <H4>Location</H4>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-             <div class="col-md-2">
-                <label for="inputZip" class="form-label">Contact Info</label>
-                <input type="text" class="form-control" id="inputContact">
-            </div>
-        </div>
-
-     <div>
-        <button id="postAsk" type="submit">Post Ask</button>
+    <H4>Title</H4>
+    <input class="form-control" type="text" placeholder="Type title here..." aria-label="default input example"
+      id="titleInput">
+    <br>
+    <div class="mb-3">
+      <H4>Description</H4>
+      <textarea class="form-control" rows="3" placeholder="Type content here..." id="contentInput"></textarea>
+    </div>
+    <div class="row">
+      <H4>Location</H4>
+      <div class="col-md-6">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip" placeholder="Type zip code here...">
       </div>
-      </form>
+      <div class="col-md-6">
+        <label for="inputZip" class="form-label">Contact Info</label>
+        <input type="text" class="form-control" id="inputContact" placeholder="Type contact info here...">
+      </div>
+    </div>
+    <br>
+    <div>
+      <button class="pageBtn" id="postAsk" type="submit">Submit</button>
+    </div>
+  </form>
 
-    </form>
+  </form>
 
 
 </div>

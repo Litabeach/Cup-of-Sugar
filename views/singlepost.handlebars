@@ -1,0 +1,49 @@
+<div class="container">
+
+    <div class="row">
+        <div class="card">
+            <h3>{{title}}</h3>
+            <h5>{{content}}</h5>
+            <br>
+            <p><b>Written by: </b> {{user.name}} on {{format_date createdAt}}</p>
+            <p><b>Category: </b>{{resource_type}}</p>
+            <p><b>Contact: </b>{{contact}}</p>
+
+        </div>
+    </div>
+
+    {{#if loggedIn}}
+    <br>
+    <form class="comment-form">
+        <h4> <label for="comments">Leave a comment:</label></h4>
+
+        <textarea id="comment-content" name="comment" placeholder="Enter comment here." data-id={{id}}
+            style="width: 100%"></textarea>
+        <button class="commentBtn pageBtn" type="submit" id="commentBtn">Save Comment</button>
+    </form>
+
+
+    {{/if}}
+</div>
+<div class="container">
+    <h3>Comments</h3>
+
+
+    {{#each comments as |comment|}}
+    <div class="row">
+        <div class="card">
+
+            <p>{{comment.content}}</p>
+            <p>-{{comment.user.name}}, {{format_date comment.createdAt}}</p>
+
+        </div>
+    </div>
+    <br>
+    {{/each}}
+
+
+</div>
+
+
+
+<script src="/js/comment.js"></script>

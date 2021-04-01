@@ -1,25 +1,24 @@
-<div class="container">
+<div class="container" style="width: 50%">
     <form>
         <h2>{{post.title}}</h2>
         <div class="form-group">
             <label for="changeTitle">Change Title</label>
-            <input type="text" class="form-control" id="changeTitle" placeholder="{{post.title}}">
+            <input type="text" class="form-control" id="changeTitle" value="{{post.title}}">
         </div>
         <div class="form-group">
             <label for="changeCategory">Change Category</label>
             <select class="form-control" id="changeCategory">
 
                 <option selected>{{post.resource_type}}</option>
-                <option value="1">Clothing, Shoes, & Accessories</option>
-                <option value="2">Baby & Kids</option>
-                <option value="3">Health & Beauty</option>
-                <option value="4">Electronics</option>
-                <option value="5">Vehicles</option>
-                <option value="6">Toys, Games, and Hobbies</option>
-                <option value="7">Sports and Outdoors</option>
-                <option value="8">Pet supplies</option>
-                <option value="9">Home and Garden</option>
-                <option value="10">General</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Food">Food</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Home and Garden">Home and Garden</option>
+                <option value="Pet supplies">Pet supplies</option>
+                <option value="Services">Services</option>
+                <option value="Sports and Outdoors">Sports and Outdoors</option>
+                <option value="Toys, Games, and Hobbies">Toys, Games, and Hobbies</option>
+                <option value="Miscellaneous">Misc</option>
             </select>
         </div>
         <div class="form-group">
@@ -34,8 +33,8 @@
             <label for="changeContact">Change Contact Information</label>
             <input type="text" class="form-control" id="changeContact" value={{post.contact}}>
         </div>
-        <button type="submit" class="btn btn-primary" id="update">Update Post</button>
-        <button type="submit" class="btn btn-primary delete">Delete Post</button>
+        <button type="submit" class="btn btn-primary pageBtn" id="update">Update Post</button>
+        <button type="submit" class="btn btn-primary delete pageBtn">Delete Post</button>
         <br>
     </form>
 </div>

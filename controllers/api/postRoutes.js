@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Ask_Give, Comment } = require('../../models');
+const { Ask_Give, Comment, User } = require('../../models');
 // const withAuth = require('../../utils/auth')
 
 //Using the /api/post endpoint
@@ -7,7 +7,7 @@ const { Ask_Give, Comment } = require('../../models');
 //CREATE new post
 
 router.post('/askpost', async (req, res) => {
-    console.log("I'M HERE")
+    console.log("I'M HERE");
     try {
         const newPost = await Ask_Give.create(
             {
@@ -20,7 +20,7 @@ router.post('/askpost', async (req, res) => {
             user_id: req.session.user_id
         }
         );
-        console.log(newPost)
+        console.log(newPost);
         res.status(200).json(newPost);
     } catch (err) {
         res.status(500).json(err);
@@ -32,24 +32,38 @@ router.get('/askpost', (req, res) => {
     res.render('askpost');
 });
 
-//READ post by ID
-router.get('/:id', async (req,res) => {
+//get post by ID
+router.get('/:id', async (req, res) => {
     try {
-        const postData = await Ask_Give.findAll({
-            where: {
-                id: req.params.id,
-                // user_id: req.session.id,
-            }
-        });
-        if (!postData) {
-            res.status(404).json({ message: "No posts found with that ID!" });
-            return;
-        }
-        res.status(200).json(postData);
+      const askGiveData = await Ask_Give.findByPk(req.params.id, {
+        include: [
+            {
+                model: User,
+                attributes: ['name', 'id'],
+            },
+
+            {
+                model: Comment,
+                attributes: ['content', 'createdAt', 'user_id'],
+                include: {
+                    model: User, 
+                    attributes: ['name', 'id'],
+                }
+            },
+        ],
+      });
+  
+      const asks = askGiveData.get({ plain: true });
+    //   console.log("here is the data from the get post by ID route:", asks)
+  
+      res.render('singlepost', {
+        ...asks,
+        loggedIn: req.session.logged_in
+      });
     } catch (err) {
-        res.status(400).json(err);
+      res.status(500).json(err);
     }
-})
+  });
 
 //UPDATE a post by ID
 router.put('/:id', async (req, res) => {
@@ -76,7 +90,7 @@ router.put('/:id', async (req, res) => {
 
 //DELETE a post
 router.delete('/:id', async (req, res) => {
-    console.log("I'M HERE")
+    console.log("I'M HERE");
     try {
         const postData = await Ask_Give.destroy({
             where: {
@@ -94,15 +108,19 @@ router.delete('/:id', async (req, res) => {
     }
 });
 
-//CREATE a comment on a post
-router.post('/comment', async (req, res) => {
+//Create a comment
+router.post("/comment/", async (req, res) => {
     try {
-        const comment = await Comment.create(req.body);
-        res.status(200).json(comment);
+        const newComment = await Comment.create({
+            content: req.body.content,
+            ask_give_id: req.body.ask_give_id,
+            user_id: req.session.user_id
+        });
+        res.status(200).json(newComment);
     } catch (err) {
-        res.status(500).json(err);
+        res.status(400).json(err);
+        // console.log("user id", user_id)
     }
 });
-
 
 module.exports = router;

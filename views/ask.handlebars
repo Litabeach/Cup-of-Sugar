@@ -1,62 +1,81 @@
-<div class="container col-md-6">
-  <form>
+<div class="container" style="width: 50%">
+  <div>
+    <h2> Community Forum</h2>
+    <p>
+      Search below for our current posts. Selecting a category and a zip code will bring you all of your neighbors’
+      current requests ("asks") and offers of help ("gives").</p>
+    <p>Click on a post to see it’s full information.</p>
 
-    <H3>Search Asks and Gives</H3>
+  </div>
+</div>
 
-    <H4>Ask or Give:</H4>
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
-      <option selected> Select</option>
-      <option value="ask">Asks</option>
-      <option value="give">Gives</option>
-    </select>
+{{!-- <div class="container col-md-6"> --}}
 
-    <H4>Category:</H4>
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
-     <option value="Services">Services</option>
-      <option value="Clothing">Clothing</option>
-      <option value="Food">Food</option>
-      <option value="Healthcare">Healthcare</option>
-      <option value="Misc">Misc</option>
-      <option value="6">Toys, Games, and Hobbies</option>
-      <option value="7">Sports and Outdoors</option>
-      <option value="8">Pet supplies</option>
-      <option value="9">Home and Garden</option>
-      <option value="10">General</option>
-    </select>
+  <div class="container" style="width: 50%">
+    <form>
 
-    <H4>Your Zip Code</H4>
-    <div class="col-md-6">
-      <label for="inputZip" class="form-label">Zip Code</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
-    {{!-- <div class="col-md-2">
-      <label for="inputZip" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div> --}}
+      <H3>Search Current Posts</H3>
 
-    <div>
-      <button id="searchAsks" type="submit">Search</button>
-    </div>
-  </form>
+      <H4>Search Asks or Gives:</H4>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
+        <option selected value=""> Select</option>
+        <option value="ask">Asks</option>
+        <option value="give">Gives</option>
+      </select>
+
+      <H4>Category:</H4>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
+        <option selected value=""> Select</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Food">Food</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Home and Garden">Home and Garden</option>
+        <option value="Pet Supplies">Pet Supplies</option>
+        <option value="Services">Services</option>
+        <option value="Sports and Outdoors">Sports and Outdoors</option>
+        <option value="Toys, Games, and Hobbies">Toys, Games, and Hobbies</option>
+        <option value="Miscellaneous">Miscellaneous</option>
+      </select>
+
+      <div class="col-md-12">
+        <H4>Your Zip Code</H4>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+
+      <div>
+        <button id="searchAsks" class="btn btn-info pageBtn" type="submit">Search</button>
+      </div>
+    </form>
   </div>
 
-  {{#if loggedIn}}
-  <div class="container col-md-6 newpost">
-<div class="row">
-    <div class="col-sm-12">
-      <div>
-        <a href="/api/post/askpost"><button class="newPost">Create New Post</button></a>
-      </div>
-      </div>
-</div>
-</div>
-  {{/if}}
-<h1>This is a test</h1>
+
   {{#each asks}}
   {{> asksearch}}
   {{/each}}
 
+  {{#if message}}
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h4>{{message}}</h4>
+      </div>
+    </div>
+  </div>
+  {{/if}}
 
 
+  {{#if loggedIn}}
+  <div class="container col-md-6 newpost" style="margin-bottom: 20px">
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          <a href="/api/post/askpost"><button class="newPost btn btn-info pageBtn">Create New Post</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<script src="/js/asksearch.js"></script>
+  {{/if}}
+
+
+  <script src="/js/asksearch.js"></script>

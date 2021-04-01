@@ -1,51 +1,49 @@
 const router = require('express').Router();
 const { Ask_Give, User, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
-
-// Using the /api/ask endpoint
 
 //ask Search API
-router.get('/ask_search/:category/:askGive/:zip', withAuth, async (req, res) =>{
-    try{
-        console.log(req.params);
+router.get('/ask_search', async (req, res) => {
+    try {
+        const whereClause = {}
+        if (req.query.askGive) {
+            whereClause.ask_or_give = req.query.askGive
+        }
+        if (req.query.category) {
+            whereClause.resource_type = req.query.category
+        }
+        if (req.query.zip) {
+            whereClause.zip_code = req.query.zip
+        }
         const askData = await Ask_Give.findAll({
-
             include: [
                 {
                     model: User,
-                    attributes: ['name'],
-                  },
-                  {
-                    model: Comment,
-                    attributes: ['content', 'createdAt'],
-                    include: {
-                      model: User, attributes: ['name'],
-                    }
-                  },
+                    attributes: ['name']
+                },
             ],
-            where: {
-                ask_or_give: req.params.askGive,
-                resource_type: req.params.category,
-                // city: req.body.city,
-                zip_code: req.params.zip
-            },
-        });
-        
-        const asks = askData.map((ask_give) => ask_give.get({ plain: true }));
-        
-        console.log('Here is the asks variable: ', asks);
 
+            where: whereClause
+        });
+
+        const asks = askData.map((ask_give) => ask_give.get({ plain: true }));
+
+        if(asks.length==0){
+            res.render('ask', {
+                loggedIn: req.session.logged_in,
+                message: "No results found."
+            });
+        }
+        else {
         res.render('ask', {
 
             asks,
             loggedIn: req.session.logged_in
         });
-        // res.json(asks)
+    }
 
     } catch (err) {
         res.status(500).json(err);
     }
 });
-
 
 module.exports = router;
