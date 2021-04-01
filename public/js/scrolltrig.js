@@ -3,8 +3,6 @@ gsap.to(".pContent", {
     ease: "none",
     scrollTrigger: {
       trigger: ".pSection",
-      // start: "top bottom", // the default values
-      // end: "bottom top",
       scrub: true
     }, 
   });
@@ -14,8 +12,6 @@ gsap.to(".pContent", {
     ease: "none",
     scrollTrigger: {
       trigger: ".pSection",
-      // start: "top bottom", // the default values
-      // end: "bottom top",
       scrub: true
     }, 
   });
