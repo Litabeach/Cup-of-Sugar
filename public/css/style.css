@@ -211,6 +211,10 @@ a:hover {
   font-weight: bold;
 }
 
+#tinyText {
+  font-size: 12px;
+}
+
 @media screen and (max-width: 669px) {
 
   .navbar {
