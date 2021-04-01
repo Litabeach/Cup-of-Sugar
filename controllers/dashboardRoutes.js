@@ -64,7 +64,7 @@ router.get("/getpost/:id", withAuth, async (req, res) => {
         id: req.params.id
       },
       attributes: ["id", "ask_or_give", "title", "content", "zip_code", "resource_type", "contact"],
-    })
+    });
 
     const post = postData.get({ plain: true });
 
