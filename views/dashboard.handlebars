@@ -5,11 +5,12 @@
         {{else}}
         <h2>Welcome to your dashboard!</h2>
         {{/if}}
-
-        <h4>Here you can manage any posts you’ve published on Cup of Sugar. </h4>
-        <h4>Click on a post to update or delete it, or click on the “Create New Post” button to make a new ask or give.
-        </h4>
-
+        
+        <h4>
+Here you can manage any posts you’ve published on Cup of Sugar. </h4>
+<h4>Click on a post to update or delete it, or click on the “Create New Post” button to make a new ask or give.
+</h4>
+        
     </div>
 </div>
 <div class="container">
@@ -19,7 +20,7 @@
                 <h3>My Asks and Gives</h3>
             </div>
             {{#each askgives}}
-            {{> askdash}}
+           {{> askdash}}
             {{/each}}
             <br>
         </div>
@@ -28,11 +29,11 @@
 
 
 <div class="container newpost">
-    <div class="row">
-        <div class="col-sm-12">
-            <div>
-                <a href="/api/post/askpost"><button class="newPost pageBtn">Create New Post</button></a>
-            </div>
-        </div>
-    </div>
+<div class="row">
+    <div class="col-sm-12">
+      <div>
+        <a href="/api/post/askpost"><button class="newPost pageBtn">Create New Post</button></a>
+      </div>
+      </div>
+</div>
 </div>

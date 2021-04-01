@@ -17,16 +17,7 @@ const updateFormHandler = async (event) => {
     const post_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
   ];
-
-  if(!contact){
-    alert("Please enter contact information so your neighbors can connect with you!")
-    return;
-  }
-  
-  if(zip_code.length < 5 || zip_code.length > 5 ){
-    alert("Please enter a 5 digit zip code!")
-    return;
-  }
+   console.log(post_id)
       const response = await fetch(`/api/post/:id'`, {
         method: 'PUT',
         body: JSON.stringify({

@@ -14,7 +14,7 @@ Ask_Give.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        
+        //whether the post is an ask or give. Maybe should be DataTypes.STRING.BINARY?
         ask_or_give: {
             type: DataTypes.STRING,
             allowNull: true,
@@ -27,28 +27,24 @@ Ask_Give.init(
             type: DataTypes.STRING(5000),
             allowNull: false,
         },
-       
+        //can be left blank?
         zip_code: {
             type: DataTypes.INTEGER,
             allowNull: true,
-            defaultValue: null,
-            validate: {
-                isInt: true,  
-                len: [5]
-              },
+            defaultValue: null
         },
-     
+        // type of resource such as: clothing, food, home services etc. Should this be a separate model?
         resource_type: {
             type: DataTypes.STRING,
             allowNull: true,
             defaultValue: null
         },
-       
+        // can be left blank.
         contact: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-
+        //refers to the user model
         user_id: {
             type: DataTypes.INTEGER,
             references: {

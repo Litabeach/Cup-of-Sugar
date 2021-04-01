@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//Using the /api/user endpoint
+
+
+
 //Signup 
 router.post('/signup', async (req, res) => {
     try {
@@ -10,6 +14,7 @@ router.post('/signup', async (req, res) => {
         req.session.name = userData.name;
         req.session.logged_in = true;
         res.status(200).json(userData);
+        //need res.render navigation page when someone registers
       });
     } catch (err) {
       res.status(400).json(err);
@@ -41,6 +46,7 @@ router.post('/login', async (req, res) => {
         req.session.name = userData.name;
         req.session.logged_in = true;
         res.json({ user: userData, message: 'You are now logged in!' });
+        //need res.render navigation page when someone logs in
       });
       res.render('navigation', {
         loggedIn: req.session.logged_in
@@ -51,7 +57,7 @@ router.post('/login', async (req, res) => {
   });
 
   //Logout
-  //redirect user to the homepage
+  //redirect user to the landing page
   router.get('/logout', (req, res) => {
     if (req.session.logged_in) {
       console.log('DESTROY!');
