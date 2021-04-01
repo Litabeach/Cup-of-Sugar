@@ -58,8 +58,9 @@
   text-align: center;
   color: black;
   flex-grow: 3;
+}
 
-body {
+ body {
   height: auto;
   top: 75px;
   background-image: url("/images/shutterstock_1415147612.jpg");
