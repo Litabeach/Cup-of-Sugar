@@ -1,72 +1,85 @@
+ask.handlebars
 
 <div class="container" style="width: 50%">
-<div>
-<h2> Community Forum</h2>
-  <p>
-Search below for our current posts. Selecting a category and a zip code will bring you all of your neighbors’ current requests ("asks") and offers of help ("gives").</p>
-<p>Click on a post to see it’s full information.</p> 
-  
-</div>
+  <div>
+    <h2> Community Forum</h2>
+    <p>
+      Search below for our current posts. Selecting a category and a zip code will bring you all of your neighbors’
+      current requests ("asks") and offers of help ("gives").</p>
+    <p>Click on a post to see it’s full information.</p>
+
   </div>
+</div>
 
 {{!-- <div class="container col-md-6"> --}}
 
   <div class="container" style="width: 50%">
-  <form>
+    <form>
 
-    <H3>Search Current Posts</H3>
+      <H3>Search Current Posts</H3>
 
-    <H4>Search Asks or Gives:</H4>
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
-      <option selected value=""> Select</option>
-      <option value="ask">Asks</option>
-      <option value="give">Gives</option>
-    </select>
+      <H4>Search Asks or Gives:</H4>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
+        <option selected value=""> Select</option>
+        <option value="ask">Asks</option>
+        <option value="give">Gives</option>
+      </select>
 
-    <H4>Category:</H4>
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
-    <option selected value=""> Select</option>
-     <option value="Services">Services</option>
-      <option value="Clothing">Clothing</option>
-      <option value="Food">Food</option>
-      <option value="Healthcare">Healthcare</option>
-      <option value="Misc">Misc</option>
-    </select>
+      <H4>Category:</H4>
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
+        <option selected value=""> Select</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Food">Food</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Home and Garden">Home and Garden</option>
+        <option value="Pet Supplies">Pet Supplies</option>
+        <option value="Services">Services</option>
+        <option value="Sports and Outdoors">Sports and Outdoors</option>
+        <option value="Toys, Games, and Hobbies">Toys, Games, and Hobbies</option>
+        <option value="Miscellaneous">Miscellaneous</option>
+      </select>
 
-    
-    <div class="col-md-12">
-      <H4>Your Zip Code</H4>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
+      <div class="col-md-12">
+        <H4>Your Zip Code</H4>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
 
-    <div>
-      <button id="searchAsks" class="btn btn-info pageBtn" type="submit">Search</button>
-    </div>
-  </form>
-  {{!-- </div> --}}
+      <div>
+        <button id="searchAsks" class="btn btn-info pageBtn" type="submit">Search</button>
+      </div>
+    </form>
+    {{!--
+  </div> --}}
 </div>
 
- 
 
-  {{#each asks}}
-  {{> asksearch}}
-  {{/each}}
+{{#each asks}}
+{{> asksearch}}
+{{/each}}
+
+{{#if message}}
+<div class="container">
+ <div class="card"> 
+    <div class="card-body"> 
+      <h4>{{message}}</h4>
+    </div>
+  </div> 
+</div>
+  {{/if}}
 
   {{#if loggedIn}}
   <div class="container col-md-6 newpost" style="margin-bottom: 20px">
-<div class="row">
-    <div class="col-sm-12">
-      <div>
-        <a href="/api/post/askpost"><button class="newPost btn btn-info pageBtn">Create New Post</button></a>
+    <div class="row">
+      <div class="col-sm-12">
+        <div>
+          <a href="/api/post/askpost"><button class="newPost btn btn-info pageBtn">Create New Post</button></a>
+        </div>
+
       </div>
-      </div>
-</div>
-</div>
+    </div>
+  </div>
 
-{{/if}}  
- 
+  {{/if}}
 
 
-
-
-<script src="/js/asksearch.js"></script>
+  <script src="/js/asksearch.js"></script>
