@@ -1,49 +1,18 @@
-<section class="section">
-<div class="pin-up">
-  <div class="content-wrap">
-    <span class="content content-0">Community</span>
-    <span class="content content-1">Connection</span>
-    <span class="content content-2">Service</span>
-    <span class="content content-3">Giving</span>
-    <span class="content content-4">Sharing</span>
-  </div>  
-  
-  
-    <div class="sideline"></div>
-  
-  
-  <div class="text-wrap">
-    <div class="text">Community</div>
-    <div class="text">Connection</div>
-    <div class="text">Service</div>
-    <div class="text">Giving</div>
-    <div class="text">Sharing</div>  
-  </div>
-  
-</div>
-
-
-<div class="below">
-   <div>
-     <h1 class="p" style= "z-index: 1; font-size: 200px; text-align:center">CUP OF SUGAR</h1>
-   </div> 
-</div>
-</section> 
-
 {{#if name}}
 <div class="container">
     <h2 class="textcolor" style="margin: 20px"> Hi, {{name}}! Welcome to your Cup of Sugar</h2>
+</div>
 
 {{else}}
 <div class="welcome">
     <h2 class="textcolor" style="font-size: 40px">Welcome to Cup of Sugar!</h2>
-{{/if}}
+
 
     <h4>Here we believe in connecting you with good neighbors, wherever you may be.</h4>
     <hr>
     <h5>From requesting goods or services, to offering help of your own, to finding organizations you can assist or get
         assistance from, Cup of Sugar aims to be of service to those in need.</h5>
-    
+    {{/if}}
 
     {{#unless loggedIn}}
     <hr>
@@ -65,7 +34,7 @@
                 <h4>Community Forum</h4>
                 <picture class=" tooltip-wrap photomargin photo col-md-6">
                     <a class="btn" href="/navigation/asks">
-                        <img src="/images/shutterstock_1160913544.jpg" class="rounded margin" width="250" height="250"
+                        <img src="/images/shutterstock_1160913544.jpg" class="rounded margin" width="300" height="300"
                             alt="Image community forum" />
 
                         <div class="tooltip-content">
@@ -79,7 +48,7 @@
                 <h4>Resources</h4>
                 <picture class=" tooltip-wrap photomargin photo col-md-6">
                     <a class="btn" href="/navigation/resources">
-                        <img src="/images/shutterstock_288532283.jpg" class="rounded margin" width="250" height="250"
+                        <img src="/images/shutterstock_288532283.jpg" class="rounded margin" width="300" height="300"
                             alt="Resources" />
 
                         <div class="tooltip-content">
@@ -91,17 +60,16 @@
         </div>
 
         {{#if loggedIn}}
-        <h4>Dashboard</h4>
         <picture class=" tooltip-wrap photomargin photo col-md-6">
+            <h4>Dashboard</h4>
             <a class="btn" href="/dashboard">
-                <img src="/images/shutterstock_661961716.jpg" class="rounded margin" width="250" height="250"
+                <img src="/images/shutterstock_661961716.jpg" class="rounded margin" width="300" height="300"
                     alt="Image of wordweb dashboard" />
                 <div class="tooltip-content">
-                 <p>Dashboard</p>
+                    <p>Dashboard</p>
                 </div>
             </a>
         </picture>
-      
         {{/if}}
     </div>
 </div>
