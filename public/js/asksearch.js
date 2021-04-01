@@ -11,19 +11,9 @@ const askSearchHandler = async (event) => {
   location.replace(queryURL)
 };
 
-
 document
   .querySelector('#searchAsks').addEventListener('click', askSearchHandler);
-  
-  
-  function removeHide() {
-    var noResults = document.getElementById("no-results");
-    noResults.classList.remove("hide");
-  }
 
-
-  document
-  .querySelector('#searchAsks').addEventListener('click', removeHide);
 
 
 
