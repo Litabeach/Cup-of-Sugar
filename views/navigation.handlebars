@@ -20,7 +20,7 @@
     <h5>Click here
 
         to create an account on Cup of Sugar to be able to post and comment in our community forum.</h5>
-    <a href="/login"><button class="loginBtn pageBtn" id="loginBtn" type="submit">Login</button></a>
+    <a href="/login"><button class="loginBtn pageBtn" type="submit">Login</button></a>
     <a href="/signup"><button class="pageBtn">Register</button></a>
 
     </a>
@@ -61,8 +61,8 @@
         </div>
 
         {{#if loggedIn}}
+        <h4>Dashboard</h4>
         <picture class=" tooltip-wrap photomargin photo col-md-6">
-            <h4>Dashboard</h4>
             <a class="btn" href="/dashboard">
                 <img src="/images/shutterstock_661961716.jpg" class="rounded margin" width="200" height="200"
                     alt="Image of wordweb dashboard" />
@@ -74,3 +74,5 @@
         {{/if}}
     </div>
 </div>
+
+<script src="/js/login.js"></script>

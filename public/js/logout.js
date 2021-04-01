@@ -6,10 +6,12 @@ const logout = async () => {
     });
   
     if (response.ok) {
-      document.location.replace('/logout');
+      console.log('Response was OK');
+      alert("You have been logged out");
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
   };
   
-  document.querySelector('#logoutNOW').addEventListener('click', logout);
+  document.querySelector('#logout').addEventListener('click', logout);
