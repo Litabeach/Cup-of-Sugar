@@ -67,13 +67,11 @@
           </a>
           {{/if}}
           {{#if loggedIn}}
-          <a href="/api/user/logout" class="btnRight">
-            <button id="logout" class="btn btn-primary" type="submit">
+            <button id="logout" class="btn btn-primary" type="click">
               
               Logout
               
             </button>
-          </a>
           {{else}}
           <a href="/signup" class="btnRight">
             <button class="btn btn-primary" type="submit">
@@ -92,7 +90,7 @@
 
     <footer></footer>
 
-    <script>"/js/logout.js"</script>
+    <script src="/js/logout.js"></script>
 
   </body>
 
