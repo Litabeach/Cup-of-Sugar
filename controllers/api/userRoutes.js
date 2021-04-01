@@ -25,7 +25,7 @@ router.post('/login', async (req, res) => {
       const userData = await User.findOne({ where: { email: req.body.email } });
       if (!userData) {
         res
-          // .status(400)
+          .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       } 
@@ -33,12 +33,13 @@ router.post('/login', async (req, res) => {
       console.log(validPassword);
       if (!validPassword) {
         res
-          // .status(400)
+          .status(400)
           .json({ message: 'Incorrect email or password, please try again' });
         return;
       
       }
-  console.log(userData);
+      console.log(userData);
+      //
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.name = userData.name;
@@ -55,19 +56,20 @@ router.post('/login', async (req, res) => {
   });
 
   //Logout
-  //redirect user to the landing page
-  router.get('/logout', (req, res) => {
+  // redirect user to the landing page
+  router.post('/logout', (req, res) => {
+    console.log("Beginning of logout route");
     if (req.session.logged_in) {
-      console.log('DESTROY!');
+      console.log('We are deleting the session');
       req.session.destroy(() => {
-        // res.status(204).end();
+        res.status(204).end();
         
         //present a snackbar/alert stating "You have logged out"
       });
       console.log('You are now logged out!');
-      res.render('navigation');
+      //res.render('navigation');
     } else {
-      // res.status(404).end();
+      res.status(404).end();
     }
   });
 

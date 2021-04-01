@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     }
 });
 
-//Login page
+// //Login page
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -27,6 +27,22 @@ router.get('/login', (req, res) => {
         loggedIn: req.session.logged_in
     });
 });
+
+// router.post('/logout', (req, res) => {
+//     console.log("Beginning of logout route");
+//     if (req.session.logged_in) {
+//       console.log('We are deleting the session');
+//       req.session.destroy(() => {
+//         res.status(204).end();
+        
+//         //present a snackbar/alert stating "You have logged out"
+//       });
+//       console.log('You are now logged out!');
+//       //res.render('navigation');
+//     } else {
+//       res.status(404).end();
+//     }
+//   });
 
 //Signup page
 router.get('/signup', (req, res) => {
