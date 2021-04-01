@@ -69,12 +69,12 @@ router.get("/getpost/:id", withAuth, async (req, res) => {
         id: req.params.id
       },
       attributes: ["id", "ask_or_give", "title", "content", "zip_code", "resource_type", "contact"],
-    })
+    });
 
-    console.log(postData)
+    console.log(postData);
     const post = postData.get({ plain: true });
 
-    console.log(post)
+    console.log(post);
 
     res.render('updatedelete', {
       post,
