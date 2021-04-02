@@ -2,6 +2,7 @@
   <form class="createPostForm">
     <H2>Create New Post</h2>
     <br>
+    {{!-- select ask or give --}}
     <div class="row">
       <div class="col-sm-6">
         <H4 class="cnpForm" style="text-align: left">Ask or Give:</H4>
@@ -12,6 +13,7 @@
           <option value="give">Gives</option>
         </select>
       </div>
+      {{!-- select category --}}
       <div class="col-sm-6">
         <H4 class="cnpForm" style="text-align: left">Select category</H4>
         <select class="form-select form-select-lg mb-3 cnpForm" aria-label=".form-select-lg example" id="inputCategory">
@@ -28,26 +30,31 @@
         </select>
       </div>
     </div>
+    {{!-- give title --}}
     <H4 class="cnpForm" style="text-align: left">Title</H4>
     <input class="form-control cnpForm" type="text" placeholder="Type title here..." aria-label="default input example"
       id="titleInput">
     <br>
+    {{!-- give description --}}
     <div class="mb-3 cnpForm">
       <H4 class="cnpForm" style="text-align: left">Description</H4>
       <textarea class="form-control cnpForm" rows="3" placeholder="Type content here..." id="contentInput"></textarea>
     </div>
+    {{!-- give location --}}
     <div class="row cnpForm">
       <H4 class="cnpForm">Location</H4>
       <div class="col-md-3 cnpForm">
         <label for="inputZip" class="form-label cnpForm" style="text-align: left">Zip</label>
         <input type="text" class="form-control cnpForm" id="inputZip" placeholder="Type zip code here...">
       </div>
+      {{!-- contact info --}}
       <div class="col-md-9">
         <label for="inputZip" class="form-label" style="text-align: left">Contact Info</label>
         <textarea type="text" class="form-control" id="inputContact" placeholder="Type contact info here..."></textarea>
       </div>
     </div>
     <br>
+    {{!-- submit button --}}
     <div>
       <button class="pageBtn" id="postAsk" type="submit">Submit</button>
     </div>
@@ -57,5 +64,5 @@
 
 
 </div>
-
+{{!-- javascript link --}}
 <script src="/js/newPost.js"></script>

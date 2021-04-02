@@ -35,6 +35,7 @@ router.get('/ask_search', async (req, res) => {
         }
         else {
         res.render('ask', {
+
             asks,
             loggedIn: req.session.logged_in
         });

@@ -5,7 +5,8 @@
       Search below for our current posts. Selecting a category and a zip code will bring you all of your neighbors’
       current requests ("asks") and offers of help ("gives").</p>
 <p>Click on a post to see it’s full information.</p>
-    {{#if loggedIn}}
+{{!-- if logged in allows user to create new post --}}
+{{#if loggedIn}}
       <a href="/api/post/askpost"><button class="newPost btn btn-info pageBtn">Create New Post</button></a>
       {{else}}
       <p><strong>You must be logged in to create posts and comment in our community forum.</strong></p>
@@ -18,8 +19,9 @@
 
 <div class="container" style="width: 50%">
   <form>
-
+{{!-- search form --}}
     <H3>Search Current Posts</H3>
+    {{!-- search asks or gives --}}
     <div class="row">
       <div class="col-md-4">
         <H5 style="text-align: left">Ask/Give:</H5>
@@ -29,6 +31,7 @@
           <option value="give">Gives</option>
         </select>
       </div>
+      {{!-- search categories --}}
       <div class="col-md-5">
         <H5 style="text-align: left">Category:</H5>
         <select class="form-select form-select-md mb-3" aria-label=".form-select-lg example" id="inputCategory">
@@ -44,6 +47,7 @@
           <option value="Miscellaneous">Miscellaneous</option>
         </select>
       </div>
+      {{!-- search zip --}}
       <div class="col-md-3">
         <H5 style="text-align: left">Zip Code:</H5>
         <input type="text" class="form-control" id="inputZip">
@@ -57,10 +61,12 @@
 </div>
 
 
+
 {{#each asks}}
   {{> asksearch}}
 {{/each}}
 
+{{!-- error message if no results found --}}
 {{#if message}}
   <div class="container">
     <div class="card">
@@ -69,6 +75,7 @@
       </div>
     </div>
   </div>
-{{/if}}
 
+{{/if}}
+{{!-- javascript link --}}
 <script src="/js/asksearch.js"></script>

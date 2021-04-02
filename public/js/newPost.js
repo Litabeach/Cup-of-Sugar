@@ -1,6 +1,8 @@
+//function to create a new post
 const newPostHandler = async (event) => {
   event.preventDefault();
 
+  // variables
   const ask_or_give = document.querySelector('#inputAskGive').value.trim();
 
   const title = document.querySelector('#titleInput').value.trim();
@@ -13,6 +15,7 @@ const newPostHandler = async (event) => {
 
   const contact = document.querySelector('#inputContact').value.trim();
 
+  // validations
   if(!contact){
     alert("Please enter contact information so your neighbors can connect with you!");
     return;
@@ -22,7 +25,7 @@ const newPostHandler = async (event) => {
     alert("Please enter a 5 digit zip code!");
     return;
   }
-
+// fetch
     const response = await fetch(`/api/post/askpost`, {
       method: 'POST',
       body: JSON.stringify({
@@ -39,4 +42,5 @@ const newPostHandler = async (event) => {
   
 };
 
+//on click event for new post
 document.querySelector('#postAsk').addEventListener('click', newPostHandler);

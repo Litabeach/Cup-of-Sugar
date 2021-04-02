@@ -1,10 +1,15 @@
+
+{{!-- main container for page --}}
 <div class="container" style="width: 50%">
     <form>
+        {{!-- title of post --}}
         <h2>{{post.title}}</h2>
+        {{!-- change title --}}
         <div class="form-group">
             <label for="changeTitle">Change Title</label>
             <input type="text" class="form-control" id="changeTitle" value="{{post.title}}">
         </div>
+        {{!-- change category --}}
         <div class="form-group">
             <label for="changeCategory">Change Category</label>
             <select class="form-control" id="changeCategory">
@@ -21,14 +26,17 @@
                 <option value="Miscellaneous">Misc</option>
             </select>
         </div>
+        {{!-- change content --}}
         <div class="form-group">
             <label for="changeContent">Change Content</label>
             <textarea class="form-control" id="changeContent" rows="3">{{post.content}}</textarea>
         </div>
+        {{!-- change zip --}}
         <div class="form-group">
             <label for="changeZip">Change Zip</label>
             <input type="text" class="form-control" id="changeZip" value={{post.zip_code}}>
         </div>
+        {{!-- change contact --}}
         <div class="form-group">
             <label for="changeContact">Change Contact Information</label>
             <input type="text" class="form-control" id="changeContact" value={{post.contact}}>
@@ -39,4 +47,5 @@
     </form>
 </div>
 
+{{!-- javascript connection --}}
 <script src="/js/updatedelete.js"></script>

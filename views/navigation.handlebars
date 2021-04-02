@@ -1,3 +1,4 @@
+{{!-- homepage --}}
 {{#if name}}
     <div class="container" style="width: 50%">
         <h2 class="textcolor" style="margin: 20px"> Hi, {{name}}! Welcome to your Cup of Sugar</h2>
@@ -16,19 +17,19 @@
 </h4>
     
     
-
-
-
+{{!-- login and register buttons if logged out --}}
 {{#unless loggedIn}}
     <hr>
-    
     <a href="/login"><button class="loginBtn pageBtn" type="submit">Login</button></a>
     <a href="/signup"><button class="pageBtn">Register</button></a>
     <br>
 {{/unless}}
 </div>
 
+
+{{!-- navigation --}}
 <div class="container navImages" style="width: 50%">
+
     <div class="portfolio">
         <div class="row">
 
@@ -76,4 +77,5 @@
     </div>
 </div>
 
+{{!-- javascript linked --}}
 <script src="/js/login.js"></script>

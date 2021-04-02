@@ -3,6 +3,7 @@ const axios = require('axios');
 
 //Get all asks, render them to the ask page
 router.get('/asks', (req, res) => {
+    console.log("get asks")
     res.render('ask', {
         loggedIn: req.session.logged_in
     });
@@ -32,6 +33,7 @@ router.get('/resources/:category/:state', async (req, res) => {
     }
 })
 
+//Renders the national resource
 router.get('/national', (req, res) => {
     res.render('national', {
         loggedIn: req.session.logged_in
