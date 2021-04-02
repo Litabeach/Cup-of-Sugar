@@ -1,11 +1,13 @@
+
 {{!-- link to take user to update delete --}}
-<a href="/dashboard/getpost/{{id}}" class="upDelLink">
+<a href="/dashboard/getpost/{{id}}" class="upDelLink" style="width: 50%">
 {{!-- dashboard info --}}
-    <div class="card">
+  <div class="card postCard">
         <div class="card-body">
-            <h3>{{title}}</h3>
-            <h5>Created at {{format_date createdAt}} | Category: {{resource_type}}</h5>
-            <p>{{content}}</p>
+            <h3 style="weight: bold">{{title}}</h3>
+            <h5>{{content}}</h5>
+            <p>Category: {{resource_type}} | Created at {{format_date createdAt}}</p>
+            
         </div>
     </div>
 </a>
