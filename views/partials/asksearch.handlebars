@@ -2,13 +2,15 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
+                {{!-- link to take user to single post page --}}
                 <a href="/api/post/{{id}}">
+                {{!-- post content --}}
                     <h3>{{title}}</h3>
 
                     <p>By: {{user.name}} on {{format_date createdAt}}</p>
                     <h5>{{content}}</h5>
                     <p><b>Category: </b>{{resource_type}}<span>
-                            <b>Contact:</b>{{contact}}</p>
+                            <b>Contact: </b>{{contact}}</p>
                     </span>
                 </a>
             </div>

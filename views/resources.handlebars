@@ -4,6 +4,8 @@
             <h2>Browse Resources</h2>
         </div>
     </div>
+
+    {{!-- resources description --}}
     <div class="row">
         <div class="col-sm-12">
             <p>Resources and Organizations
@@ -13,6 +15,7 @@
             </p>
         </div>
     </div>
+    {{!-- national resource link --}}
     <div class="row">
         <div class="col-sm-12">
             <p>Click below to view our National Resource Connector.
@@ -27,7 +30,7 @@
         <div class="row">
             <div class="col-sm-7">
                 <div class="dropdown">
-
+                    {{!-- select category --}}
                     <H4 style="margin: 10px">Select category of organization</H4>
                     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="catNum">
                         <option selected> Select</option>
@@ -47,6 +50,7 @@
             </div>
             <div class="col-sm-5">
                 <div class="dropdown">
+                    {{!-- select state --}}
                     <H4 style="margin: 10px">Select state</H4>
                     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="state">
                         <option selected> Select</option>
@@ -105,16 +109,17 @@
                 </div>
             </div>
             <div>
+                {{!-- search button --}}
                 <button id="searchResources" class="btn btn-info pageBtn" type="submit">Search</button>
             </div>
         </div>
-
+    {{!-- render charity list --}}
         {{#if charity}}
         {{#each charity}}
         {{> resourcelist}}
         {{/each}}
         {{/if}}
-
+{{!-- render error message --}}
         {{#if message}}
         <div class="row">
             <div class="card">
@@ -128,4 +133,5 @@
     </form>
 </div>
 
+{{!-- javascript link --}}
 <script src="/js/api.js"></script>
