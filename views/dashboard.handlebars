@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="width: 50%">
     <div class='page-title'>
         {{#if name}}
         <h2>Welcome to your dashboard, {{name}}!</h2>
@@ -6,34 +6,24 @@
         <h2>Welcome to your dashboard!</h2>
         {{/if}}
 
-        <h4>
-            Here you can manage any posts you’ve published on Cup of Sugar. </h4>
-        <h4>Click on a post to update or delete it, or click on the “Create New Post” button to make a new ask or give.
+        <h5>
+            Here you can manage any posts you’ve published on Cup of Sugar.
+        Click on a post to update or delete it, or click "Create New Post” button to create a new Ask or Give.
         </h4>
 
+        <a href="/api/post/askpost"><button class="newPost pageBtn">Create New Post</button></a>
     </div>
 </div>
-<div class="container">
+<div class="container" style="width: 50%">
     <div class="row">
         <div class="col-sm-12">
             <div class='ask-title'>
-                <h3>My Asks and Gives</h3>
+                <h2>My Asks and Gives</h2>
             </div>
             {{#each askgives}}
             {{> askdash}}
             {{/each}}
             <br>
-        </div>
-    </div>
-</div>
-
-
-<div class="container newpost">
-    <div class="row">
-        <div class="col-sm-12">
-            <div>
-                <a href="/api/post/askpost"><button class="newPost pageBtn">Create New Post</button></a>
-            </div>
         </div>
     </div>
 </div>

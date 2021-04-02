@@ -24,71 +24,73 @@
 
   <body>
     <header class="navbar">
-    
-    <nav class="navbar navbar-expand-lg navbar-light">
-      
-<div class="nav">
-        <a href="/navigation/asks" class="btnLeft">
-          <button class="btn btn-primary" type="submit">
-           
-            Community
-           
-          </button>
-        </a>
-        <a href="/navigation/resources" class="btnLeft">
-          <button class="btn btn-primary" type="submit">
-            
-            Resources
-            
-          </button>
-        </a>
+
+      <nav class="navbar navbar-expand-lg navbar-light">
+
+        <div class="nav">
+          <a href="/navigation/asks" class="btnLeft">
+            <button class="btn btn-primary navBtn" type="submit">
+
+              Community
+
+            </button>
+          </a>
+          <a href="/navigation/resources" class="btnLeft">
+            <button class="btn btn-primary navBtn" type="submit">
+
+              Resources
+
+            </button>
+          </a>
         </div>
-        
+
 
         <a class="navbar-brand" id="headerLogo" href="/">
           Cup Of Sugar
         </a>
 
-      <div class="nav">
-        {{#if loggedIn}}
-          <a href="/dashboard" class="btnLeft">
-            <button class="btn btn-primary" type="submit">
-              
-              Dashboard
-              
-            </button>
-          </a>
-        {{else}}
-          <a href="/login" class="btnRight">
-            <button id="loginNav" class="btn btn-primary" type="submit">
-              Login
-             
-            </button>
-          </a>
+        <div class="nav">
+          {{#if loggedIn}}
+            <a href="/dashboard" class="btnLeft">
+              <button class="btn btn-primary navBtn" type="submit">
+
+                Dashboard
+
+              </button>
+            </a>
+          {{else}}
+            <a href="/login" class="btnRight">
+              <button id="loginNav" class="btn btn-primar navBtn" type="submit">
+                Login
+
+              </button>
+            </a>
           {{/if}}
           {{#if loggedIn}}
-            <button id="logout" class="btn btn-primary" type="click">
-              
+            <button id="logout" class="btn btn-primary navBtn" type="click">
+
               Logout
-              
+
             </button>
           {{else}}
-          <a href="/signup" class="btnRight">
-            <button class="btn btn-primary" type="submit">
-             
-              Register
-              
-            </button>
-          </a>
-        {{/if}}
+            <a href="/signup" class="btnRight">
+              <button class="btn btn-primary navBtn" type="submit">
+
+                Register
+
+              </button>
+            </a>
+          {{/if}}
         </div>
-       
-    </nav>
-    <!-- nav ends -->
-</header>
+
+      </nav>
+      <!-- nav ends -->
+    </header>
     {{{ body }}}
 
-    <footer></footer>
+    <footer class="footer">
+        <p class="text-muted">Designed and built with all the love in the world by the Le Mustache team. Currently v1.0. Code licenses MIT.</p>
+    </footer>
 
     <script src="/js/logout.js"></script>
 
