@@ -29,7 +29,6 @@ router.post('/login', async (req, res) => {
         return;
       } 
       const validPassword = await userData.checkPassword(req.body.password);
-      console.log(validPassword);
       if (!validPassword) {
         res
           .status(400)
@@ -37,8 +36,7 @@ router.post('/login', async (req, res) => {
         return;
       
       }
-      console.log(userData);
-      //
+      
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.name = userData.name;

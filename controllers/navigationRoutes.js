@@ -33,6 +33,7 @@ router.get('/resources/:category/:state', async (req, res) => {
     }
 })
 
+//Renders the national resource
 router.get('/national', (req, res) => {
     res.render('national', {
         loggedIn: req.session.logged_in

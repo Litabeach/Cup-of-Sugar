@@ -1,10 +1,8 @@
 const router = require('express').Router();
-// const { Ask_Give, User } = require('../models');
-const withAuth = require('../utils/auth');
 
 //Using the root endpoint
 
-//READ the landing page
+//Home page
 router.get('/', (req, res) => {
     try {
 
@@ -27,22 +25,6 @@ router.get('/login', (req, res) => {
         loggedIn: req.session.logged_in
     });
 });
-
-// router.post('/logout', (req, res) => {
-//     console.log("Beginning of logout route");
-//     if (req.session.logged_in) {
-//       console.log('We are deleting the session');
-//       req.session.destroy(() => {
-//         res.status(204).end();
-        
-//         //present a snackbar/alert stating "You have logged out"
-//       });
-//       console.log('You are now logged out!');
-//       //res.render('navigation');
-//     } else {
-//       res.status(404).end();
-//     }
-//   });
 
 //Signup page
 router.get('/signup', (req, res) => {
