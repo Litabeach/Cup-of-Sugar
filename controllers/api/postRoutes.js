@@ -27,7 +27,9 @@ router.post('/askpost', async (req, res) => {
 
 //get to page to render askpost
 router.get('/askpost', (req, res) => {
-    res.render('askpost');
+    res.render('askpost', {
+        loggedIn: req.session.logged_in
+    });
 });
 
 //get post by ID
