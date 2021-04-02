@@ -1,6 +1,9 @@
+
+// function to sign up for an account
 const signupFormHandler = async (event) => {
     event.preventDefault();
   
+    // variables
     const name = document.querySelector('#uName-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
@@ -10,6 +13,7 @@ const signupFormHandler = async (event) => {
         alert ("Password must be at least 8 characters.");
         return;
       }
+      // fetch
       const response = await fetch('/api/user/signup', {
         method: 'POST',
         body: JSON.stringify({ name, email, password }),
@@ -24,6 +28,7 @@ const signupFormHandler = async (event) => {
     }
   };
 
+  //on click event for signup
   document
   .querySelector('#signupBtn')
   .addEventListener('click', signupFormHandler);

@@ -1,4 +1,5 @@
 <div class="container">
+    {{!-- h2 changes if logged in --}}
     <div class='page-title'>
         {{#if name}}
         <h2>Welcome to your dashboard, {{name}}!</h2>
@@ -13,6 +14,8 @@
 
     </div>
 </div>
+
+{{!-- lists all asks and gives of logged in user --}}
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -27,7 +30,7 @@
     </div>
 </div>
 
-
+{{!-- create new post button --}}
 <div class="container newpost">
     <div class="row">
         <div class="col-sm-12">

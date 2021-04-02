@@ -1,12 +1,12 @@
+//function to run third party api
 function charityFormHandler(event) {
     event.preventDefault();
 
-    console.log("hi");
-
+    //variables
     const state = document.querySelector("#state").value;
     const category = document.querySelector("#catNum").value.trim();
 
-    console.log(state + " " + category);
+    // url
 
     queryURL = `/navigation/resources/${category}/${state}`;     
 
@@ -14,6 +14,7 @@ function charityFormHandler(event) {
     
 }
 
+// on click for third party api
 document
 .querySelector('#searchResources').addEventListener('click', charityFormHandler);
 

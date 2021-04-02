@@ -1,3 +1,4 @@
+{{!-- homepage --}}
 {{#if name}}
 <div class="container">
     <h2 class="textcolor" style="margin: 20px"> Hi, {{name}}! Welcome to your Cup of Sugar</h2>
@@ -14,7 +15,7 @@
             assistance from, Cup of Sugar aims to be of service to those in need.</h5>
 
 
-
+    {{!-- login and register buttons if logged out --}}
     {{#unless loggedIn}}
     <hr>
     <h5>Click here
@@ -27,6 +28,7 @@
     {{/unless}}
 </div>
 
+{{!-- navigation --}}
 <div class="container navImages">
     <div class="portfolio">
         <div class="row">
@@ -75,4 +77,5 @@
     </div>
 </div>
 
+{{!-- javascript linked --}}
 <script src="/js/login.js"></script>

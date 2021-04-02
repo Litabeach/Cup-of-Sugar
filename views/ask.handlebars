@@ -9,20 +9,19 @@
   </div>
 </div>
 
-{{!-- <div class="container col-md-6"> --}}
-
+{{!-- search form --}}
   <div class="container" style="width: 50%">
     <form>
 
       <H3>Search Current Posts</H3>
-
+  {{!-- search asks or gives --}}
       <H4>Search Asks or Gives:</H4>
       <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
         <option selected value=""> Select</option>
         <option value="ask">Asks</option>
         <option value="give">Gives</option>
       </select>
-
+{{!-- search categories --}}
       <H4>Category:</H4>
       <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
         <option selected value=""> Select</option>
@@ -36,7 +35,7 @@
         <option value="Toys, Games, and Hobbies">Toys, Games, and Hobbies</option>
         <option value="Miscellaneous">Miscellaneous</option>
       </select>
-
+{{!-- search zip --}}
       <div class="col-md-12">
         <H4>Your Zip Code</H4>
         <input type="text" class="form-control" id="inputZip">
@@ -48,11 +47,12 @@
     </form>
   </div>
 
-
+{{!-- renders results --}}
   {{#each asks}}
   {{> asksearch}}
   {{/each}}
 
+{{!-- error message if no results found --}}
   {{#if message}}
   <div class="container">
     <div class="card">
@@ -63,7 +63,7 @@
   </div>
   {{/if}}
 
-
+{{!-- if logged in allows user to create new post --}}
   {{#if loggedIn}}
   <div class="container col-md-6 newpost" style="margin-bottom: 20px">
     <div class="row">
@@ -77,5 +77,5 @@
 
   {{/if}}
 
-
+{{!-- javascript link --}}
   <script src="/js/asksearch.js"></script>

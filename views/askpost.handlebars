@@ -1,14 +1,14 @@
 <div class="container col-md-6">
   <form>
     <H2>Create New Post</h2>
-
+  {{!-- select ask or give --}}
     <H4>Ask or Give:</H4>
     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputAskGive">
       <option selected> Select</option>
       <option value="ask">Asks</option>
       <option value="give">Gives</option>
     </select>
-
+  {{!-- select category --}}
     <H4>Select category</H4>
     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="inputCategory">
       <option selected value=""> Select</option>
@@ -22,26 +22,31 @@
       <option value="Toys, Games, and Hobbies">Toys, Games, and Hobbies</option>
       <option value="Miscellaneous">Misc</option>
     </select>
+    {{!-- give title --}}
     <H4>Title</H4>
     <input class="form-control" type="text" placeholder="Type title here..." aria-label="default input example"
       id="titleInput">
     <br>
     <div class="mb-3">
+      {{!-- give description --}}
       <H4>Description</H4>
       <textarea class="form-control" rows="3" placeholder="Type content here..." id="contentInput"></textarea>
     </div>
     <div class="row">
+      {{!-- give location --}}
       <H4>Location</H4>
       <div class="col-md-6">
         <label for="inputZip" class="form-label">Zip</label>
         <input type="text" class="form-control" id="inputZip" placeholder="Type zip code here...">
       </div>
+      {{!-- contact info --}}
       <div class="col-md-6">
         <label for="inputZip" class="form-label">Contact Info</label>
         <input type="text" class="form-control" id="inputContact" placeholder="Type contact info here...">
       </div>
     </div>
     <br>
+    {{!-- submit button --}}
     <div>
       <button class="pageBtn" id="postAsk" type="submit">Submit</button>
     </div>
@@ -51,5 +56,5 @@
 
 
 </div>
-
+{{!-- javascript link --}}
 <script src="/js/newPost.js"></script>

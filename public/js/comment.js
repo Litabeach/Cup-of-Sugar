@@ -1,12 +1,13 @@
-
+//function to create new comment
 const newCommentHandler = async function (event) {
   event.preventDefault();
 
+  //variables
   const content = document.querySelector('#comment-content').value.trim();
   const ask_give_id = document.querySelector('#comment-content').getAttribute("data-id");
 
   if (content) {
-
+    //fetch
     const response = await fetch(`/api/post/comment/`, {
       method: 'POST',
       body: JSON.stringify({ content: content, ask_give_id: ask_give_id }),
@@ -23,6 +24,8 @@ const newCommentHandler = async function (event) {
     }
   }
 }
+
+//onclick for comment button
 document
   .querySelector('#commentBtn')
   .addEventListener('click', newCommentHandler)
