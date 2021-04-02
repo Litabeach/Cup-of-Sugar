@@ -52,7 +52,7 @@ router.get("/createpost", withAuth, async (req, res) => {
     });
   });
 
-  //render post by id, this is where user can update or delete
+  //render post by id
 router.get("/getpost/:id", withAuth, async (req, res) => {
     if (!req.session.logged_in) {
       res.redirect('/');

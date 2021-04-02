@@ -1,11 +1,9 @@
 const router = require('express').Router();
 const { Ask_Give, Comment, User } = require('../../models');
-// const withAuth = require('../../utils/auth')
 
 //Using the /api/post endpoint
 
 //CREATE new post
-
 router.post('/askpost', async (req, res) => {
     console.log("I'M HERE");
     try {
@@ -54,7 +52,6 @@ router.get('/:id', async (req, res) => {
       });
   
       const asks = askGiveData.get({ plain: true });
-    //   console.log("here is the data from the get post by ID route:", asks)
   
       res.render('singlepost', {
         ...asks,
@@ -119,7 +116,6 @@ router.post("/comment/", async (req, res) => {
         res.status(200).json(newComment);
     } catch (err) {
         res.status(400).json(err);
-        // console.log("user id", user_id)
     }
 });
 
