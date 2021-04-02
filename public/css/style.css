@@ -24,7 +24,7 @@
   background-color: white;
   color: black;
   text-align: center;
-  opacity: 0.80;
+  opacity: 0.90;
   border-radius: 6px;
   box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
   font-family: 'Montserrat', sans-serif !important;
@@ -148,7 +148,7 @@
 }
 
 .photo:hover {
-  opacity: 0.75;
+  opacity: 0.90;
 }
 
 footer {
